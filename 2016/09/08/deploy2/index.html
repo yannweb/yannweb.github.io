@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="测试了这么久,终于要写正式的了.hexo的 3.2.2 貌似不再支持2个仓库发布了(我是没找到方法),无奈之余想了个曲线救国的方法:”发布之前手工替换配置文件”.蠢是蠢了点,好坏满足我的需求了
 脚本如下:123456sed -i &apos;/^  repo/c \  repo: git@github.com:xxx/xxx.github.io.git&apos; _config.ymlhexo ghexo dsed">
-<meta property="og:updated_time" content="2016-09-09T03:43:05.495Z">
+<meta property="og:updated_time" content="2016-09-09T03:45:46.788Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第一篇">
 <meta name="twitter:description" content="测试了这么久,终于要写正式的了.hexo的 3.2.2 貌似不再支持2个仓库发布了(我是没找到方法),无奈之余想了个曲线救国的方法:”发布之前手工替换配置文件”.蠢是蠢了点,好坏满足我的需求了
@@ -239,8 +239,8 @@
       
         <p>测试了这么久,终于要写正式的了.<br>hexo的 3.2.2 貌似不再支持2个仓库发布了(我是没找到方法),无奈之余想了个曲线救国的方法:”发布之前手工替换配置文件”.<br>蠢是蠢了点,好坏满足我的需求了</p>
 <p>脚本如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sed -i <span class="string">'/^  repo/c \  repo: git@github.com:xxx/xxx.github.io.git'</span> _config.yml</div><div class="line">hexo g</div><div class="line">hexo d</div><div class="line">sed -i <span class="string">'/^  repo/c \  repo: git@git.coding.net:xxx/xxx.git'</span> _config.yml</div><div class="line">hexo d</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
-<p>写完这篇文章的第二天就验证了自己的愚蠢,同时发布2个仓库是可以的,只是格式比较严,<br>讨厌yml.<br>代码块就不加了,避免再次失败.</p>
-<p>deploy:<br>  type: git<br>  message: “”<br>  repo:<br>    github: git@github.com:xxx/xxx.github.io.git,master<br>    coding: git@git.coding.net:xxx/xxx.git,coding-pages</p>
+<p>写完这篇文章的第二天就验证了自己的愚蠢,同时发布2个仓库是可以的,只是格式比较严,<br>讨厌yml.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  message: <span class="string">""</span></div><div class="line">  repo: </div><div class="line">    github: git@github.com:xxx/xxx.github.io.git,master</div><div class="line">    coding: git@git.coding.net:xxx/xxx.git,coding-pages</div></pre></td></tr></table></figure>
 <p>deploy2,如上,这是一篇比较2的deploy脚本的故事,yann</p>
 
       
