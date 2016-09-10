@@ -236,6 +236,146 @@
             
             
               
+              <a class="post-title-link post-title-link-external" target="_blank" href="http://iamyann.com/?p=92" itemprop="url">
+                lnmp
+                <i class="fa fa-external-link"></i>
+              </a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2015-05-07T10:44:42+08:00" content="2015-05-07">
+              2015-05-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/工作细节/" itemprop="url" rel="index">
+                    <span itemprop="name">工作细节</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>花了一个下午把环境编译好了，偷了个小懒，结果要推倒重来，所以我喜欢自己编译，不喜欢一键工具<br>安装命令随后附上,借水哥的帖子编辑了一下</p>
+<p>关防火墙</p>
+<p>php-5.5.24<br>yum install libmcrypt-devel -y<br>yum install gcc make gd-devel libjpeg-devel libpng-devel libxml2-devel bzip2-devel libcurl-devel -y</p>
+<p>./configure –prefix=/usr/local/php-5.5.24<br>–with-config-file-path=/usr/local/php-5.5.24/etc<br>–with-bz2<br>–with-curl –enable-ftp<br>–enable-sockets<br>–disable-ipv6<br>–with-gd –with-jpeg-dir=/usr/local<br>–with-png-dir=/usr/local<br>–with-freetype-dir=/usr/local<br>–enable-gd-native-ttf<br>–with-iconv-dir=/usr/local<br>–enable-mbstring<br>–enable-calendar<br>–with-gettext<br>–with-libxml-dir=/usr/local<br>–with-zlib<br>–with-pdo-mysql=mysqlnd<br>–with-mysqli=mysqlnd<br>–with-mysql=mysqlnd<br>–enable-dom<br>–enable-xml<br>–enable-fpm<br>–with-mcrypt –enable-mbstring<br>–with-libdir=lib64</p>
+<p>make<br>make install</p>
+<p>make clean<br>重新编译ok ?动态编译<br>配置<br>cp php.ini-production /usr/local/php-5.5.24/etc/php.ini<br>cp /usr/local/php-5.5.24/etc/php-fpm.conf.default /usr/local/php-5.5.24/etc/php-fpm.conf</p>
+<p>/usr/local/php-5.5.24/sbin/php-fpm<br>killall php-fpm<br>cp /tmp/php-5.5.24/sapi/fpm/init.d.php-fpm.in /etc/init.d/php-fpm<br>216 cd /etc/init.d<br>217 chmod 755 php-fpm<br>218 /sbin/chkconfig php-fpm on<br>安装nginx<br>yum install pcre*</p>
+<p>#yum install openssl*<br>yum install gcc gcc-c++ ncurses-devel perl<br>yum -y install openssl openssl-devel</p>
+<p>./configure –prefix=/usr/local/nginx-1.7.12<br>–with-http_ssl_module<br>–with-http_spdy_module<br>–with-http_stub_status_module –with-pcre</p>
+<p>make<br>make install<br>./configure: error: C compiler cc is not found<br>./configure: error: SSL modules require the OpenSSL library.</p>
+<p>/usr/local/nginx-1.7.12/sbin/nginx<br>curl -s <a href="http://localhost" target="_blank" rel="external">http://localhost</a> | grep nginx.com<br>/usr/local/nginx-1.7.12/sbin/nginx -s stop<br>/usr/local/nginx-1.7.12/sbin/nginx -s reload</p>
+<p>配置测试站点test.ttlsa.com<br>mkdir -p /data/logs/nginx/<br>mkdir -p /data/site/test.ttlsa.com/<br>vi /data/site/test.ttlsa.com/info.php<br>&lt;?php<br>phpinfo();<br>?&gt;</p>
+<p>/usr/local/nginx-1.7.12/conf/nginx.conf<br>nginx配置,有空对比<br>server {<br>listen 80;<br>server_name test.ttlsa.com;<br>access_log /data/logs/nginx/test.ttlsa.com.access.log main;</p>
+<p>index index.php index.html index.html;<br>root /data/site/test.ttlsa.com;</p>
+<p>location /<br>{<br>try_files $uri $uri/ /index.php?$args;<br>}</p>
+<p>location ~ .*.(php)?$<br>{<br>expires -1s;<br>try_files $uri =404;<br>fastcgi_split_path_info ^(.+.php)(/.+)$;<br>include fastcgi_params;<br>fastcgi_param PATH_INFO $fastcgi_path_info;<br>fastcgi_index index.php;<br>fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;<br>fastcgi_pass 127.0.0.1:9000;</p>
+<p>}<br>}<br>nginx: [emerg] unknown log format “main” in /usr/local/nginx-1.7.12/conf/nginx.conf:38</p>
+<p>别人的<br>1.解压tar包<br>cd /tmp<br>tar -xzvf mysql-5.6.21-linux-glibc2.5-x86_64.tar.gz<br>mv mysql-5.6.21-linux-glibc2.5-x86_64 mysql-5.6.21</p>
+<p>2.添加用户与组<br>groupadd mysql<br>useradd -r -g mysql mysql<br>chown -R mysql:mysql mysql-5.6.21<br>yum install libaio<br>mv mysql-5.6.21/ /var</p>
+<p>3.安装数据库<br>su mysql<br>cd /var/mysql-5.6.21/scripts<br>./mysql_install_db –user=mysql –basedir=/var/mysql-5.6.21 –datadir=/var/mysql-5.6.21/data<br>exit</p>
+<p>4.配置文件<br>cd /var/mysql-5.6.21/support-files<br>cp my-default.cnf /etc/my.cnf<br>cp mysql.server /etc/init.d/mysql<br>vi /etc/init.d/mysql #若mysql的安装目录是/usr/local/mysql,则可省略此步<br>修改文件中的两个变更值<br>basedir=/var/mysql-5.6.21<br>datadir=/var/mysql-5.6.21/data</p>
+<p>5.配置环境变量<br>vi /etc/profile<br>export MYSQL_HOME=”/var/mysql-5.6.21”<br>export PATH=”$PATH:$MYSQL_HOME/bin”<br>保存退出<br>. /etc/profile</p>
+<p>6.添加自启动服务<br>chkconfig –add mysql<br>chkconfig mysql on</p>
+<p>7.启动mysql<br>service mysql start</p>
+<p>8.登录mysql及改密码与配置远程访问<br>mysqladmin -u root password ‘root’ #修改root用户密码<br>mysql -u root -p #登录mysql,需要输入密码<br>GRANT ALL PRIVILEGES ON <em>.</em> TO ‘root’@’%’ IDENTIFIED BY ‘root’ WITH GRANT OPTION;</p>
+<p>#允许root用户远程访问<br>FLUSH PRIVILEGES;</p>
+<p>#刷新权限<br>mysql&gt;exit</p>
+<p>—————————2014/11/25 添加<br>又装了一次此版本的mysql，发现root用户不能登录，提示没权限。使用mysqld_safe 登进去，发现user表居然是空的，没有一个用户，郁闷。<br>于是从其它地方导出了一份user表的sql语句，手动插入了一个用户，再登录就可以了。<br>附：<br>忘记root密码后，如何找回密码<br>cd $MYSQL_HOME<br>./bin/mysqld_safe –basedir=/data/mysql-5.6.21 –datadir=/data/mysql-5.6.21/data –skip-grant-tables &amp;<br>mysql -u root mysql<br>UPDATE user SET password=PASSWORD(“new_password”) WHERE user=’root’;<br>FLUSH PRIVILEGES;</p>
+<p>要不要搞个linux主机迁移呢？要的,重布了一下,又花了一个上午</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
               <a class="post-title-link post-title-link-external" target="_blank" href="http://iamyann.com/?p=90" itemprop="url">
                 crontab
                 <i class="fa fa-external-link"></i>
@@ -1287,7 +1427,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-count">40</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
@@ -1304,7 +1444,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">Tags</span>
               </a>
             </div>
