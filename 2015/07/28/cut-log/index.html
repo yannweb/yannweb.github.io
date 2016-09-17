@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="和redis死磕了一天，发现白屏不一定是缺少predis，也有可能是版本不对，需求的某个指令是2.8版本才提供的">
+<meta name="description" content="1234ErrorLog “| /usr/local/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_error_log 86400 480″CustomLog “| /usr/local/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_access_log 86400 480″ common0 1 * * *">
 <meta property="og:type" content="article">
-<meta property="og:title" content="phpredisadmin白屏">
-<meta property="og:url" content="http://iamyann.com/2015/06/04/phpredisadmine799bde5b18f/index.html">
+<meta property="og:title" content="按天分隔日志，隔几天删除">
+<meta property="og:url" content="http://iamyann.com/2015/07/28/cut-log/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="和redis死磕了一天，发现白屏不一定是缺少predis，也有可能是版本不对，需求的某个指令是2.8版本才提供的">
-<meta property="og:updated_time" content="2016-09-09T18:13:59.805Z">
+<meta property="og:description" content="1234ErrorLog “| /usr/local/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_error_log 86400 480″CustomLog “| /usr/local/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_access_log 86400 480″ common0 1 * * *">
+<meta property="og:updated_time" content="2016-09-17T12:45:48.451Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="phpredisadmin白屏">
-<meta name="twitter:description" content="和redis死磕了一天，发现白屏不一定是缺少predis，也有可能是版本不对，需求的某个指令是2.8版本才提供的">
+<meta name="twitter:title" content="按天分隔日志，隔几天删除">
+<meta name="twitter:description" content="1234ErrorLog “| /usr/local/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_error_log 86400 480″CustomLog “| /usr/local/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_access_log 86400 480″ common0 1 * * *">
 
 
 
@@ -116,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2015/06/04/phpredisadmine799bde5b18f/"/>
+  <link rel="canonical" href="http://iamyann.com/2015/07/28/cut-log/"/>
 
-  <title> phpredisadmin白屏 | yann的小站 </title>
+  <title> 按天分隔日志，隔几天删除 | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,10 +238,8 @@
             
             
               
-              <a class="post-title-link post-title-link-external" target="_blank" href="http://iamyann.com/?p=137" itemprop="url">
-                phpredisadmin白屏
-                <i class="fa fa-external-link"></i>
-              </a>
+                按天分隔日志，隔几天删除
+              
             
           </h1>
         
@@ -252,8 +250,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-06-04T07:59:02+08:00" content="2015-06-04">
-              2015-06-04
+            <time itemprop="dateCreated" datetime="2015-07-28T07:29:00+08:00" content="2015-07-28">
+              2015-07-28
             </time>
           </span>
 
@@ -282,8 +280,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/06/04/phpredisadmine799bde5b18f/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/04/phpredisadmine799bde5b18f/" itemprop="commentsCount"></span>
+                <a href="/2015/07/28/cut-log/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/28/cut-log/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -306,7 +304,8 @@
       
 
       
-        <p>和redis死磕了一天，发现白屏不一定是缺少predis，也有可能是版本不对，需求的某个指令是2.8版本才提供的</p>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ErrorLog “| /usr/<span class="built_in">local</span>/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_error_log 86400 480″</div><div class="line">CustomLog “| /usr/<span class="built_in">local</span>/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_access_log 86400 480″ common</div><div class="line">0 1 * * * /usr/bin/find /alidata/logs/www -name \access_log* -mtime +2 | xargs rm -rf</div><div class="line">0 1 * * * /usr/bin/find /alidata/logs/www -name \error_log* -mHtime +2 | xargs rm -rf</div></pre></td></tr></table></figure>
+<p>更新，*号要转译，不然文件多了会报错</p>
 
       
     </div>
@@ -332,16 +331,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/06/03/nagios/" rel="next" title="nagios">
-                <i class="fa fa-chevron-left"></i> nagios
+              <a href="/2015/07/27/shooting/" rel="next" title="排错一则">
+                <i class="fa fa-chevron-left"></i> 排错一则
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/06/04/nagiose79b91e68ea7redis/" rel="prev" title="nagios监控redis">
-                nagios监控redis <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/08/deploy2/" rel="prev" title="回归第一篇">
+                回归第一篇 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -368,8 +367,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/06/04/phpredisadmine799bde5b18f/"
-           data-title="phpredisadmin白屏" data-url="http://iamyann.com/2015/06/04/phpredisadmine799bde5b18f/">
+      <div class="ds-thread" data-thread-key="2015/07/28/cut-log/"
+           data-title="按天分隔日志，隔几天删除" data-url="http://iamyann.com/2015/07/28/cut-log/">
       </div>
     
   </div>
