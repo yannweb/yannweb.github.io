@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux iptables web," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="上周忙了几天，搞预装win8的电脑换装系统，坑死人的gpt+uefi，这周有弄gzip了，各种忙乱">
+<meta name="description" content="用户反映网站不能上传123456789du -h apachetop -f /alidata/server/httpd-2.4.10/logs/access_logtail -f error_logiptables -I INPUT -s 100.97.0.0/16 -j DROPkillall httpdrm error_logtouch error_loglsof |grep deleteds">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gzip">
-<meta property="og:url" content="http://iamyann.com/2015/06/01/2015-06-01-gzip/index.html">
+<meta property="og:title" content="排错一则">
+<meta property="og:url" content="http://iamyann.com/2015/07/27/2015-07-27-truble-shooting/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="上周忙了几天，搞预装win8的电脑换装系统，坑死人的gpt+uefi，这周有弄gzip了，各种忙乱">
-<meta property="og:updated_time" content="2016-09-09T18:13:59.798Z">
+<meta property="og:description" content="用户反映网站不能上传123456789du -h apachetop -f /alidata/server/httpd-2.4.10/logs/access_logtail -f error_logiptables -I INPUT -s 100.97.0.0/16 -j DROPkillall httpdrm error_logtouch error_loglsof |grep deleteds">
+<meta property="og:updated_time" content="2016-09-17T12:54:57.700Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gzip">
-<meta name="twitter:description" content="上周忙了几天，搞预装win8的电脑换装系统，坑死人的gpt+uefi，这周有弄gzip了，各种忙乱">
+<meta name="twitter:title" content="排错一则">
+<meta name="twitter:description" content="用户反映网站不能上传123456789du -h apachetop -f /alidata/server/httpd-2.4.10/logs/access_logtail -f error_logiptables -I INPUT -s 100.97.0.0/16 -j DROPkillall httpdrm error_logtouch error_loglsof |grep deleteds">
 
 
 
@@ -116,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2015/06/01/2015-06-01-gzip/"/>
+  <link rel="canonical" href="http://iamyann.com/2015/07/27/2015-07-27-truble-shooting/"/>
 
-  <title> gzip | yann的小站 </title>
+  <title> 排错一则 | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -238,10 +238,8 @@
             
             
               
-              <a class="post-title-link post-title-link-external" target="_blank" href="http://iamyann.com/?p=130" itemprop="url">
-                gzip
-                <i class="fa fa-external-link"></i>
-              </a>
+                排错一则
+              
             
           </h1>
         
@@ -252,8 +250,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2015-06-01T02:33:26+08:00" content="2015-06-01">
-              2015-06-01
+            <time itemprop="dateCreated" datetime="2015-07-27T10:00:00+08:00" content="2015-07-27">
+              2015-07-27
             </time>
           </span>
 
@@ -266,8 +264,8 @@
               <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
+                  <a href="/categories/故障记录/" itemprop="url" rel="index">
+                    <span itemprop="name">故障记录</span>
                   </a>
                 </span>
 
@@ -282,8 +280,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/06/01/2015-06-01-gzip/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/01/2015-06-01-gzip/" itemprop="commentsCount"></span>
+                <a href="/2015/07/27/2015-07-27-truble-shooting/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/27/2015-07-27-truble-shooting/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -306,7 +304,8 @@
       
 
       
-        <p>上周忙了几天，搞预装win8的电脑换装系统，坑死人的gpt+uefi，这周有弄gzip了，各种忙乱</p>
+        <p>用户反映网站不能上传<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">du -h</div><div class="line"> apachetop <span class="_">-f</span> /alidata/server/httpd-2.4.10/logs/access_log</div><div class="line">tail <span class="_">-f</span> error_log</div><div class="line">iptables -I INPUT <span class="_">-s</span> 100.97.0.0/16 -j DROP</div><div class="line">killall httpd</div><div class="line">rm error_log</div><div class="line">touch error_log</div><div class="line">lsof |grep deleted</div><div class="line">service httpd start</div></pre></td></tr></table></figure></p>
+<p>其他交给开发处理了</p>
 
       
     </div>
@@ -327,21 +326,27 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/linux-iptables-web/" rel="tag">#linux iptables web</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/05/25/2015-05-25-e7bd91e7ab99e8b7b3e8bdac/" rel="next" title="网站跳转">
-                <i class="fa fa-chevron-left"></i> 网站跳转
+              <a href="/2015/07/16/2015-07-16-githube88081e698afe9aa8ce8af81e5a4b1e8b4a5e79a84e8a7a3e6b395/" rel="next" title="github老是验证失败的解法">
+                <i class="fa fa-chevron-left"></i> github老是验证失败的解法
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/06/03/2015-06-03-e5bc80e5a78be4bdbfe794a8tmux1/" rel="prev" title="开始使用tmux1">
-                开始使用tmux1 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/07/28/2015-07-28-log-cut/" rel="prev" title="按天分隔日志，隔几天删除">
+                按天分隔日志，隔几天删除 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -368,8 +373,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/06/01/2015-06-01-gzip/"
-           data-title="gzip" data-url="http://iamyann.com/2015/06/01/2015-06-01-gzip/">
+      <div class="ds-thread" data-thread-key="2015/07/27/2015-07-27-truble-shooting/"
+           data-title="排错一则" data-url="http://iamyann.com/2015/07/27/2015-07-27-truble-shooting/">
       </div>
     
   </div>

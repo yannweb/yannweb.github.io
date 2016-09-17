@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="hexo script git," />
 
 
 
@@ -86,15 +86,19 @@
 
 
 
-<meta name="description" content="yann&apos;s blog | linux | git | auto deploy">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yann的小站">
-<meta property="og:url" content="http://iamyann.com/categories/未分类/page/4/index.html">
+<meta name="description" content="测试了这么久,终于要写正式的了.hexo的 3.2.2 貌似不再支持2个仓库发布了(我是没找到方法),无奈之余想了个曲线救国的方法:”发布之前手工替换配置文件”.蠢是蠢了点,好坏满足我的需求了
+脚本如下:123456sed -i &apos;/^  repo/c \  repo: git@github.com:xxx/xxx.github.io.git&apos; _config.ymlhexo ghexo dsed">
+<meta property="og:type" content="article">
+<meta property="og:title" content="回归第一篇">
+<meta property="og:url" content="http://iamyann.com/2016/09/08/2016-09-08-deploy2/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="yann&apos;s blog | linux | git | auto deploy">
+<meta property="og:description" content="测试了这么久,终于要写正式的了.hexo的 3.2.2 貌似不再支持2个仓库发布了(我是没找到方法),无奈之余想了个曲线救国的方法:”发布之前手工替换配置文件”.蠢是蠢了点,好坏满足我的需求了
+脚本如下:123456sed -i &apos;/^  repo/c \  repo: git@github.com:xxx/xxx.github.io.git&apos; _config.ymlhexo ghexo dsed">
+<meta property="og:updated_time" content="2016-09-17T13:01:35.160Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yann的小站">
-<meta name="twitter:description" content="yann&apos;s blog | linux | git | auto deploy">
+<meta name="twitter:title" content="回归第一篇">
+<meta name="twitter:description" content="测试了这么久,终于要写正式的了.hexo的 3.2.2 貌似不再支持2个仓库发布了(我是没找到方法),无奈之余想了个曲线救国的方法:”发布之前手工替换配置文件”.蠢是蠢了点,好坏满足我的需求了
+脚本如下:123456sed -i &apos;/^  repo/c \  repo: git@github.com:xxx/xxx.github.io.git&apos; _config.ymlhexo ghexo dsed">
 
 
 
@@ -115,9 +119,9 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/categories/未分类/page/4/"/>
+  <link rel="canonical" href="http://iamyann.com/2016/09/08/2016-09-08-deploy2/"/>
 
-  <title> Kategorie: 未分类 | yann的小站 </title>
+  <title> 回归第一篇 | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -138,7 +142,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,77 +220,156 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        未分类
-        <small>Kategorie</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-          <a class="post-title-link post-title-link-external" target="_blank" href="http://iamyann.com/?p=76" itemprop="url">
-            部署本地git服务器
-            <i class="fa fa-external-link"></i>
-          </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-04-30T11:07:44+08:00"
-              content="2015-04-30" >
-          04-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-          <a class="post-title-link post-title-link-external" target="_blank" href="http://iamyann.com/?p=74" itemprop="url">
-            增加流量统计功能
-            <i class="fa fa-external-link"></i>
-          </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-04-27T12:10:10+08:00"
-              content="2015-04-27" >
-          04-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </section>
 
   
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/categories/未分类/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/categories/未分类/">1</a><span class="space">&hellip;</span><a class="page-number" href="/categories/未分类/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                回归第一篇
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-09-08T23:50:33+08:00" content="2016-09-08">
+              2016-09-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/部署/" itemprop="url" rel="index">
+                    <span itemprop="name">部署</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/08/2016-09-08-deploy2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/08/2016-09-08-deploy2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
 
 
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>测试了这么久,终于要写正式的了.<br>hexo的 3.2.2 貌似不再支持2个仓库发布了(我是没找到方法),无奈之余想了个曲线救国的方法:”发布之前手工替换配置文件”.<br>蠢是蠢了点,好坏满足我的需求了</p>
+<p>脚本如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sed -i <span class="string">'/^  repo/c \  repo: git@github.com:xxx/xxx.github.io.git'</span> _config.yml</div><div class="line">hexo g</div><div class="line">hexo d</div><div class="line">sed -i <span class="string">'/^  repo/c \  repo: git@git.coding.net:xxx/xxx.git'</span> _config.yml</div><div class="line">hexo d</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
+<p>写完这篇文章的第二天就验证了自己的愚蠢,同时发布2个仓库是可以的,只是格式比较严,<br>讨厌yml.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  message: <span class="string">""</span></div><div class="line">  repo: </div><div class="line">    github: git@github.com:xxx/xxx.github.io.git,master</div><div class="line">    coding: git@git.coding.net:xxx/xxx.git,coding-pages</div></pre></td></tr></table></figure>
+<p>deploy2,如上,这是一篇比较2的deploy脚本的故事,yann</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo-script-git/" rel="tag">#hexo script git</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/07/28/2015-07-28-log-cut/" rel="next" title="按天分隔日志，隔几天删除">
+                <i class="fa fa-chevron-left"></i> 按天分隔日志，隔几天删除
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/11/2016-09-11-Import-articles-from-WordPress/" rel="prev" title="Import-articles-from-WordPress">
+                Import-articles-from-WordPress <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -294,6 +377,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/08/2016-09-08-deploy2/"
+           data-title="回归第一篇" data-url="http://iamyann.com/2016/09/08/2016-09-08-deploy2/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -313,8 +404,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -333,7 +433,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">Kategorien</span>
               
             </div>
@@ -342,7 +442,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">Tags</span>
               </a>
             </div>
@@ -371,6 +471,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -469,6 +580,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
@@ -484,7 +599,7 @@
   
 
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"曹扬_kk"};
+    var duoshuoQuery = {short_name:"iamyann"};
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
