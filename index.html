@@ -74,7 +74,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="yann的小站" type="application/atom+xml" />
 
 
 
@@ -86,12 +86,15 @@
 
 
 
+<meta name="description" content="yann&apos;s blog | linux | git | auto deploy">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:title" content="yann的小站">
+<meta property="og:url" content="http://iamyann.com/index.html">
+<meta property="og:site_name" content="yann的小站">
+<meta property="og:description" content="yann&apos;s blog | linux | git | auto deploy">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="yann的小站">
+<meta name="twitter:description" content="yann&apos;s blog | linux | git | auto deploy">
 
 
 
@@ -112,12 +115,12 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://iamyann.com/"/>
 
-  <title> Hexo </title>
+  <title> yann的小站 </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
 
@@ -147,11 +150,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">yann的小站</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle"></p>
+  <p class="site-subtitle">做运维写代码,git版本天天打,个人小站是我家</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -492,7 +495,8 @@
       
         
           
-            <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ErrorLog “| /usr/<span class="built_in">local</span>/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_error_log 86400 480″</div><div class="line">CustomLog “| /usr/<span class="built_in">local</span>/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_access_log 86400 480″ common</div><div class="line">0 1 * * * /usr/bin/find /alidata/logs/www -name \access_log* -mtime +2 | xargs rm -rf</div><div class="line">0 1 * * * /usr/bin/find /alidata/logs/www -name \error_log* -mHtime +2 | xargs rm -rf</div><div class="line">更新，*号要转译，不然文件多了会报错</div></pre></td></tr></table></figure>
+            <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ErrorLog “| /usr/<span class="built_in">local</span>/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_error_log 86400 480″</div><div class="line">CustomLog “| /usr/<span class="built_in">local</span>/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_access_log 86400 480″ common</div><div class="line">0 1 * * * /usr/bin/find /alidata/logs/www -name \access_log* -mtime +2 | xargs rm -rf</div><div class="line">0 1 * * * /usr/bin/find /alidata/logs/www -name \error_log* -mHtime +2 | xargs rm -rf</div></pre></td></tr></table></figure>
+<p>更新，*号要转译，不然文件多了会报错</p>
 
           
         
@@ -1349,9 +1353,9 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+               alt="Yann Cao" />
+          <p class="site-author-name" itemprop="name">Yann Cao</p>
+          <p class="site-description motion-element" itemprop="description">yann's blog | linux | git | auto deploy</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -1421,7 +1425,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Yann Cao</span>
 </div>
 
 <div class="powered-by">
