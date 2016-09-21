@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="随笔," />
+  <meta name="keywords" content="linux,bash," />
 
 
 
@@ -86,25 +86,16 @@
 
 
 
-<meta name="description" content="看了一下流量统计的相关知识，注册了百度和量子衡道；
-插在了小站的foot里面，上了个厕回来发现数据了；
-百度有老代码和新代码之分， 放置位置和原理都不一样，要注意区分；
-百度还有给电商专用的代码，不过略复杂，要配合开发人员补完代码，后面再处理">
+<meta name="description" content="RSYNCOPT=(–rsh=”ssh -p 22 -c des” –rsync-path=\”/usr/bin/rsync\” –inplace –progress -az -vv –delete –stats)自昨天写出主备机同用户目录间同步的脚本之后,总想改善一下,于是就有了这一篇东西还是一样的东西,但做了标准化处理,封装了参数,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="增加流量统计功能">
-<meta property="og:url" content="http://iamyann.com/2015/04/27/e5a29ee58aa0e6b581e9878fe7bb9fe8aea1e58a9fe883bd/index.html">
+<meta property="og:title" content="auto rsync Standard script">
+<meta property="og:url" content="http://iamyann.com/2016/09/22/auto-rsync-Standard-script/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="看了一下流量统计的相关知识，注册了百度和量子衡道；
-插在了小站的foot里面，上了个厕回来发现数据了；
-百度有老代码和新代码之分， 放置位置和原理都不一样，要注意区分；
-百度还有给电商专用的代码，不过略复杂，要配合开发人员补完代码，后面再处理">
-<meta property="og:updated_time" content="2016-09-09T18:13:59.745Z">
+<meta property="og:description" content="RSYNCOPT=(–rsh=”ssh -p 22 -c des” –rsync-path=\”/usr/bin/rsync\” –inplace –progress -az -vv –delete –stats)自昨天写出主备机同用户目录间同步的脚本之后,总想改善一下,于是就有了这一篇东西还是一样的东西,但做了标准化处理,封装了参数,">
+<meta property="og:updated_time" content="2016-09-21T16:22:34.527Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="增加流量统计功能">
-<meta name="twitter:description" content="看了一下流量统计的相关知识，注册了百度和量子衡道；
-插在了小站的foot里面，上了个厕回来发现数据了；
-百度有老代码和新代码之分， 放置位置和原理都不一样，要注意区分；
-百度还有给电商专用的代码，不过略复杂，要配合开发人员补完代码，后面再处理">
+<meta name="twitter:title" content="auto rsync Standard script">
+<meta name="twitter:description" content="RSYNCOPT=(–rsh=”ssh -p 22 -c des” –rsync-path=\”/usr/bin/rsync\” –inplace –progress -az -vv –delete –stats)自昨天写出主备机同用户目录间同步的脚本之后,总想改善一下,于是就有了这一篇东西还是一样的东西,但做了标准化处理,封装了参数,">
 
 
 
@@ -125,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2015/04/27/e5a29ee58aa0e6b581e9878fe7bb9fe8aea1e58a9fe883bd/"/>
+  <link rel="canonical" href="http://iamyann.com/2016/09/22/auto-rsync-Standard-script/"/>
 
-  <title> 增加流量统计功能 | yann的小站 </title>
+  <title> auto rsync Standard script | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -247,10 +238,8 @@
             
             
               
-              <a class="post-title-link post-title-link-external" target="_blank" href="http://iamyann.com/?p=74" itemprop="url">
-                增加流量统计功能
-                <i class="fa fa-external-link"></i>
-              </a>
+                auto rsync Standard script
+              
             
           </h1>
         
@@ -261,8 +250,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-04-27T12:10:10+08:00" content="2015-04-27">
-              2015-04-27
+            <time itemprop="dateCreated" datetime="2016-09-22T00:12:43+08:00" content="2016-09-22">
+              2016-09-22
             </time>
           </span>
 
@@ -275,8 +264,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
+                  <a href="/categories/模块化部署/" itemprop="url" rel="index">
+                    <span itemprop="name">模块化部署</span>
                   </a>
                 </span>
 
@@ -291,8 +280,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/04/27/e5a29ee58aa0e6b581e9878fe7bb9fe8aea1e58a9fe883bd/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/27/e5a29ee58aa0e6b581e9878fe7bb9fe8aea1e58a9fe883bd/" itemprop="commentsCount"></span>
+                <a href="/2016/09/22/auto-rsync-Standard-script/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/22/auto-rsync-Standard-script/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -315,10 +304,8 @@
       
 
       
-        <p>看了一下流量统计的相关知识，注册了百度和量子衡道；</p>
-<p>插在了小站的foot里面，上了个厕回来发现数据了；</p>
-<p>百度有老代码和新代码之分， 放置位置和原理都不一样，要注意区分；</p>
-<p>百度还有给电商专用的代码，不过略复杂，要配合开发人员补完代码，后面再处理</p>
+        <p>RSYNCOPT=(–rsh=”ssh -p 22 -c des” –rsync-path=\”/usr/bin/rsync\” –inplace –progress -az -vv –delete –stats)<br>自昨天写出主备机同用户目录间同步的脚本之后,总想改善一下,于是就有了这一篇<br>东西还是一样的东西,但做了标准化处理,封装了参数,<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"><span class="comment">#赋值</span></div><div class="line"><span class="comment">#RSYNC_OPTS="-e \\\"ssh -p 22 -o StrictHostKeyChecking=no\\\" -azv --delete --stats"</span></div><div class="line">RSYNC=<span class="string">"/usr/bin/rsync"</span></div><div class="line"><span class="comment">#RSYNCOPT="--rsh=\"ssh -p 22 -c des\" --rsync-path=\"/opt/bin/rsync\" --inplace --progress -a -vv"</span></div><div class="line">USER=`whoami`</div><div class="line">REMOTE_HOST=<span class="string">"192.168.1.1"</span></div><div class="line">TARGET_DIR=<span class="string">"/目录/"</span></div><div class="line"><span class="comment">#REMOTE_USER="tomcat@"</span></div><div class="line">REMOTE_BASE=<span class="string">":"</span></div><div class="line">REMOTE_At=<span class="string">"@"</span></div><div class="line"><span class="comment"># 该脚本需要非root用户运行,注意更新例外文件</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="title">local_rsync</span></span>() &#123;</div><div class="line">RSYNCOPT=(--rsh=<span class="string">"ssh -p 22 -c des"</span> --rsync-path=\<span class="string">"/usr/bin/rsync\" --inplace --progress -az -vv --delete --stats)</span></div><div class="line">#/usr/bin/rsync -azv --delete --stats --exclude "<span class="built_in">log</span>/<span class="string">" --exclude "</span>file/<span class="string">"  -e "</span>ssh -p22 -o StrictHostKeyChecking=no<span class="string">" /posp/posp/online/  posp@10.2.170.82:/posp/posp/online/</span></div><div class="line">#/usr/bin/rsync -azv --delete --stats --exclude "<span class="built_in">log</span>/<span class="string">" --exclude "</span>file/<span class="string">"  <span class="variable">$LOCAL_DIR</span> <span class="variable">$USER</span>@<span class="variable">$IP</span>:<span class="variable">$REMOTE_DIR</span></span></div><div class="line">printf "%q <span class="string">" <span class="variable">$&#123;RSYNC&#125;</span> "</span><span class="variable">$&#123;RSYNCOPT[@]&#125;</span><span class="string">" --exclude "</span><span class="built_in">log</span>/<span class="string">" <span class="variable">$&#123;TARGET_DIR&#125;</span> <span class="variable">$&#123;USER&#125;</span><span class="variable">$&#123;REMOTE_At&#125;</span><span class="variable">$&#123;REMOTE_HOST&#125;</span><span class="variable">$&#123;REMOTE_BASE&#125;</span><span class="variable">$&#123;TARGET_DIR&#125;</span></span></div><div class="line">echo</div><div class="line"><span class="variable">$&#123;RSYNC&#125;</span> "<span class="variable">$&#123;RSYNCOPT[@]&#125;</span><span class="string">" --exclude "</span><span class="built_in">log</span>/<span class="string">" <span class="variable">$&#123;TARGET_DIR&#125;</span> <span class="variable">$&#123;USER&#125;</span><span class="variable">$&#123;REMOTE_At&#125;</span><span class="variable">$&#123;REMOTE_HOST&#125;</span><span class="variable">$&#123;REMOTE_BASE&#125;</span><span class="variable">$&#123;TARGET_DIR&#125;</span></span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>以下代码主要供演示,完整代码请移步<br><a href="http://www.iamyann.com/2016/09/19/auto-moudle-rsync/#more" target="_blank" rel="external">http://www.iamyann.com/2016/09/19/auto-moudle-rsync/#more</a></p>
 
       
     </div>
@@ -341,7 +328,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/随笔/" rel="tag">#随笔</a>
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+            <a href="/tags/bash/" rel="tag">#bash</a>
           
         </div>
       
@@ -350,17 +339,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/01/22/e794b1e7a7bbe58aa8e5ae9ae588b6e6898be69cbae79c8be5be85e4baa7e59381e585bce5aeb9e680a7/" rel="next" title="由移动定制手机看待产品兼容性">
-                <i class="fa fa-chevron-left"></i> 由移动定制手机看待产品兼容性
+              <a href="/2016/09/19/auto-moudle-rsync/" rel="next" title="auto moudle rsync">
+                <i class="fa fa-chevron-left"></i> auto moudle rsync
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/04/30/e983a8e7bdb2e69cace59cb0gite69c8de58aa1e599a8/" rel="prev" title="部署本地git服务器">
-                部署本地git服务器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -386,8 +371,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/04/27/e5a29ee58aa0e6b581e9878fe7bb9fe8aea1e58a9fe883bd/"
-           data-title="增加流量统计功能" data-url="http://iamyann.com/2015/04/27/e5a29ee58aa0e6b581e9878fe7bb9fe8aea1e58a9fe883bd/">
+      <div class="ds-thread" data-thread-key="2016/09/22/auto-rsync-Standard-script/"
+           data-title="auto rsync Standard script" data-url="http://iamyann.com/2016/09/22/auto-rsync-Standard-script/">
       </div>
     
   </div>

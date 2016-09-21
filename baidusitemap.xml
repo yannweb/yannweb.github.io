@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>http://iamyann.com/2016/09/19/auto-moudle-rsync/</loc>
-    <lastmod>2016-09-19T13:52:47.712Z</lastmod>
+    <loc>http://iamyann.com/2016/09/22/auto-rsync-Standard-script/</loc>
+    <lastmod>2016-09-21T16:22:34.527Z</lastmod>
     <data>
         <display>
-        <title>auto moudle rsync</title>
-        <pubTime>2016-09-19T13:30:37.000Z</pubTime>
+        <title>auto rsync Standard script</title>
+        <pubTime>2016-09-21T16:12:43.000Z</pubTime>
         
         <tag>linux</tag>
          
@@ -27,7 +27,7 @@
     
   <url>
     <loc>http://iamyann.com/2016/09/08/deploy2/</loc>
-    <lastmod>2016-09-18T17:07:17.893Z</lastmod>
+    <lastmod>2016-09-19T19:07:05.697Z</lastmod>
     <data>
         <display>
         <title>回归第一篇</title>
@@ -41,8 +41,65 @@
          
          
            
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2016/09/17/temple1/</loc>
+    <lastmod>2016-09-19T19:02:01.181Z</lastmod>
+    <data>
+        <display>
+        <title>name and name</title>
+        <pubTime>2016-09-17T14:00:41.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2016/09/17/temple/</loc>
+    <lastmod>2016-09-19T19:01:29.419Z</lastmod>
+    <data>
+        <display>
+        <title>name and name</title>
+        <pubTime>2016-09-17T14:00:41.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2016/09/19/auto-moudle-rsync/</loc>
+    <lastmod>2016-09-19T13:52:47.712Z</lastmod>
+    <data>
+        <display>
+        <title>auto moudle rsync</title>
+        <pubTime>2016-09-19T13:30:37.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>bash</tag>
+         
+         
+           
              
-              <breadCrumb title="部署" url="http://iamyann.com/categories/%E9%83%A8%E7%BD%B2/"/>
+              <breadCrumb title="模块化部署" url="http://iamyann.com/categories/%E6%A8%A1%E5%9D%97%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
           
         </display>
     </data>
