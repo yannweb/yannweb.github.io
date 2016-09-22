@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux,vpn," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="848 yum install -y ppp iptables854 rpm -ivh pptpd-1.3.4-2.el6.x86_64.rpm855 vi /etc/pptpd.conf856 vi /etc/ppp/options.pptpd857 vi /etc/ppp/chap-secrets858 vi /etc/sysctl.conf859 sysctl -p860 iptables">
+<meta name="description" content="公司美工需要国外的图库素材,所以需要搭个vpn">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阿里云vpn">
 <meta property="og:url" content="http://iamyann.com/2015/06/25/ali-vpn/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="848 yum install -y ppp iptables854 rpm -ivh pptpd-1.3.4-2.el6.x86_64.rpm855 vi /etc/pptpd.conf856 vi /etc/ppp/options.pptpd857 vi /etc/ppp/chap-secrets858 vi /etc/sysctl.conf859 sysctl -p860 iptables">
-<meta property="og:updated_time" content="2016-09-18T14:37:42.405Z">
+<meta property="og:description" content="公司美工需要国外的图库素材,所以需要搭个vpn">
+<meta property="og:updated_time" content="2016-09-22T13:31:37.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阿里云vpn">
-<meta name="twitter:description" content="848 yum install -y ppp iptables854 rpm -ivh pptpd-1.3.4-2.el6.x86_64.rpm855 vi /etc/pptpd.conf856 vi /etc/ppp/options.pptpd857 vi /etc/ppp/chap-secrets858 vi /etc/sysctl.conf859 sysctl -p860 iptables">
+<meta name="twitter:description" content="公司美工需要国外的图库素材,所以需要搭个vpn">
 
 
 
@@ -264,8 +264,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
+                  <a href="/categories/系统部署/" itemprop="url" rel="index">
+                    <span itemprop="name">系统部署</span>
                   </a>
                 </span>
 
@@ -304,7 +304,8 @@
       
 
       
-        <p>848 yum install -y ppp iptables<br>854 rpm -ivh pptpd-1.3.4-2.el6.x86_64.rpm<br>855 vi /etc/pptpd.conf<br>856 vi /etc/ppp/options.pptpd<br>857 vi /etc/ppp/chap-secrets<br>858 vi /etc/sysctl.conf<br>859 sysctl -p<br>860 iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth1 -jMASQUERADE<br>861 /etc/init.d/pptpd restart<br>862 chkconfig pptpd on<br>863 netstat -tunpl<br>修改成<br>localip 192.168.0.1<br>remoteip 192.168.0.234-238,192.168.0.245<br>ms-dns 8.8.8.8<br>ms-dns 8.8.4.4<br>kuro pptpd 123456 *<br>/etc/init.d/iptables save<br>[root@kuro ~]#/etc/init.d/iptablesrestart<br>chkconfig pptpd on<br>[root@kuro ~]#chkconfig iptables on</p>
+        <p>公司美工需要国外的图库素材,所以需要搭个vpn<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">yum install -y ppp iptables</div><div class="line">rpm -ivh pptpd-1.3.4-2.el6.x86_64.rpm</div><div class="line">vi /etc/pptpd.conf</div><div class="line">vi /etc/ppp/options.pptpd</div><div class="line">vi /etc/ppp/chap-secrets</div><div class="line">vi /etc/sysctl.conf</div><div class="line">sysctl -p</div><div class="line">iptables -t nat -A POSTROUTING <span class="_">-s</span> 192.168.0.0/24 -o eth1 -jMASQUERADE</div><div class="line">/etc/init.d/pptpd restart</div><div class="line">chkconfig pptpd on</div><div class="line">netstat -tunpl</div></pre></td></tr></table></figure></p>
+<p>修改成<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">localip 192.168.0.1 </div><div class="line">remoteip 192.168.0.234-238,192.168.0.245</div><div class="line">ms-dns 8.8.8.8 </div><div class="line">ms-dns 8.8.4.4 </div><div class="line">kuro pptpd 123456 * </div><div class="line">/etc/init.d/iptables save</div><div class="line">/etc/init.d/iptablesrestart</div><div class="line">chkconfig pptpd on </div><div class="line">chkconfig iptables on</div></pre></td></tr></table></figure></p>
 <p>应该是这样的，可惜主机卖完了</p>
 
       
@@ -325,6 +326,14 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+            <a href="/tags/vpn/" rel="tag">#vpn</a>
+          
+        </div>
       
 
       
@@ -421,7 +430,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -430,7 +439,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

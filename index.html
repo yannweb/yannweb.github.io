@@ -840,8 +840,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
+                  <a href="/categories/故障记录/" itemprop="url" rel="index">
+                    <span itemprop="name">故障记录</span>
                   </a>
                 </span>
 
@@ -1174,10 +1174,11 @@
             
             
               
-              <a class="post-title-link post-title-link-external" target="_blank" href="http://iamyann.com/?p=158" itemprop="url">
-                集成了git和禪道
-                <i class="fa fa-external-link"></i>
-              </a>
+                
+                <a class="post-title-link" href="/2015/07/07/git-tentao/" itemprop="url">
+                  集成了git和禪道
+                </a>
+              
             
           </h1>
         
@@ -1202,8 +1203,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
+                  <a href="/categories/工作细节/" itemprop="url" rel="index">
+                    <span itemprop="name">工作细节</span>
                   </a>
                 </span>
 
@@ -1218,8 +1219,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/07/07/e99b86e68890e4ba86gite5928ce7a6aae98193/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/07/e99b86e68890e4ba86gite5928ce7a6aae98193/" itemprop="commentsCount"></span>
+                <a href="/2015/07/07/git-tentao/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/07/git-tentao/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1293,10 +1294,11 @@
             
             
               
-              <a class="post-title-link post-title-link-external" target="_blank" href="http://iamyann.com/?p=153" itemprop="url">
-                待修改
-                <i class="fa fa-external-link"></i>
-              </a>
+                
+                <a class="post-title-link" href="/2015/06/30/centos-deploy-node.js/" itemprop="url">
+                  node.js部署
+                </a>
+              
             
           </h1>
         
@@ -1321,8 +1323,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
+                  <a href="/categories/系统部署/" itemprop="url" rel="index">
+                    <span itemprop="name">系统部署</span>
                   </a>
                 </span>
 
@@ -1337,8 +1339,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/06/30/153/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/30/153/" itemprop="commentsCount"></span>
+                <a href="/2015/06/30/centos-deploy-node.js/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/30/centos-deploy-node.js/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1363,8 +1365,9 @@
       
         
           
-            <p>centos 部署node.js<br>wget <a href="http://nodejs.org/dist/v0.10.24/node-v0.10.24.tar.gz" target="_blank" rel="external">http://nodejs.org/dist/v0.10.24/node-v0.10.24.tar.gz</a><br>yum install gcc openssl-devel gcc-c++ compat-gcc-34 compat-gcc-34-c++<br>2.开始安装node.js<br>tar -xf node-v0.10.24.tar.gz<br>cd node-v0.10.24<br>./configure –prefix=/usr/local/node<br>make<br>make install<br>ln -s /usr/local/node/bin/* /usr/sbin/<br>node ed.js</p>
-<p>var http = require(‘http’);<br>http.createServer(function(req,res){<br>res.end(‘eded’);<br>}).listen(80,”192.168.1.58”);<br>console.log(‘Server is running at <a href="http://127.0.0.1:8080/" target="_blank" rel="external">http://127.0.0.1:8080/</a>‘)</p>
+            <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">centos 部署node.js</div><div class="line">wget http://nodejs.org/dist/v0.10.24/node-v0.10.24.tar.gz</div><div class="line">yum install gcc openssl-devel gcc-c++ compat-gcc-34 compat-gcc-34-c++</div></pre></td></tr></table></figure>
+<p>开始安装node.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">tar -xf node-v0.10.24.tar.gz</div><div class="line"><span class="built_in">cd</span> node-v0.10.24</div><div class="line">./configure --prefix=/usr/<span class="built_in">local</span>/node</div><div class="line">make</div><div class="line">make install</div><div class="line">ln <span class="_">-s</span> /usr/<span class="built_in">local</span>/node/bin/* /usr/sbin/</div><div class="line">node ed.js</div></pre></td></tr></table></figure></p>
+<p>ed.js的内容<br>var http = require(‘http’);<br>http.createServer(function(req,res){<br>res.end(‘eded’);<br>}).listen(80,”192.168.1.58”);<br>console.log(‘Server is running at <a href="http://127.0.0.1:8080/" target="_blank" rel="external">http://127.0.0.1:8080/</a>‘)</p>
 
           
         
@@ -1446,7 +1449,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -1455,7 +1458,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
