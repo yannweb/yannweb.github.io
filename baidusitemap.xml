@@ -4,6 +4,72 @@
 
     
   <url>
+    <loc>http://iamyann.com/2016/09/29/copy-files-with-same-name/</loc>
+    <lastmod>2016-09-29T11:46:51.586Z</lastmod>
+    <data>
+        <display>
+        <title>复制大量同名的配置文件</title>
+        <pubTime>2016-09-29T11:21:20.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>bash</tag>
+         
+         
+           
+             
+              <breadCrumb title="效率" url="http://iamyann.com/categories/%E6%95%88%E7%8E%87/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2016/09/23/mybase-love-eventnote/</loc>
+    <lastmod>2016-09-23T06:21:08.904Z</lastmod>
+    <data>
+        <display>
+        <title>mybase love evernote</title>
+        <pubTime>2016-09-23T06:16:10.000Z</pubTime>
+        
+        <tag>windows</tag>
+         
+        <tag>mybase</tag>
+         
+         
+           
+             
+              <breadCrumb title="效率" url="http://iamyann.com/categories/%E6%95%88%E7%8E%87/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2014/11/07/lnmp/</loc>
+    <lastmod>2016-09-22T16:35:05.216Z</lastmod>
+    <data>
+        <display>
+        <title>lnmp</title>
+        <pubTime>2014-11-07T02:44:42.000Z</pubTime>
+        
+        <tag>lnmp</tag>
+         
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="系统部署" url="http://iamyann.com/categories/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://iamyann.com/2015/01/22/m812-compatibility/</loc>
     <lastmod>2016-09-22T16:31:25.645Z</lastmod>
     <data>
@@ -231,28 +297,6 @@
            
              
               <breadCrumb title="故障记录" url="http://iamyann.com/categories/%E6%95%85%E9%9A%9C%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://iamyann.com/2014/11/07/lnmp/</loc>
-    <lastmod>2016-09-22T13:31:37.912Z</lastmod>
-    <data>
-        <display>
-        <title>lnmp</title>
-        <pubTime>2014-11-07T02:44:42.000Z</pubTime>
-        
-        <tag>lnmp</tag>
-         
-        <tag>linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="工作细节" url="http://iamyann.com/categories/%E5%B7%A5%E4%BD%9C%E7%BB%86%E8%8A%82/"/>
           
         </display>
     </data>
