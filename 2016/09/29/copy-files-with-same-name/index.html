@@ -87,21 +87,18 @@
 
 
 <meta name="description" content="有时候我们需要复制一些同名的文件到同一个目录,比如备份tomcat的配置文件.我就遇到了这件事, 我们可是有20个tomcat在一台服务器上.每份配置文件的名字都一样,我可不想一个个改名,怎么办
-只好曲线救国了先用 locate 名字找个各个配置的位置1locate server.xml
-然后把抓出来的值扔进下面的脚本里,转啊转当然你用sublime处理下更方便123456789101112131">
+只好曲线救国了先用 locate 名字找个各个配置的位置1locate server.xml">
 <meta property="og:type" content="article">
 <meta property="og:title" content="复制大量同名的配置文件">
 <meta property="og:url" content="http://iamyann.com/2016/09/29/copy-files-with-same-name/index.html">
 <meta property="og:site_name" content="yann的小站">
 <meta property="og:description" content="有时候我们需要复制一些同名的文件到同一个目录,比如备份tomcat的配置文件.我就遇到了这件事, 我们可是有20个tomcat在一台服务器上.每份配置文件的名字都一样,我可不想一个个改名,怎么办
-只好曲线救国了先用 locate 名字找个各个配置的位置1locate server.xml
-然后把抓出来的值扔进下面的脚本里,转啊转当然你用sublime处理下更方便123456789101112131">
-<meta property="og:updated_time" content="2016-09-29T11:46:51.586Z">
+只好曲线救国了先用 locate 名字找个各个配置的位置1locate server.xml">
+<meta property="og:updated_time" content="2016-09-30T07:13:48.010Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="复制大量同名的配置文件">
 <meta name="twitter:description" content="有时候我们需要复制一些同名的文件到同一个目录,比如备份tomcat的配置文件.我就遇到了这件事, 我们可是有20个tomcat在一台服务器上.每份配置文件的名字都一样,我可不想一个个改名,怎么办
-只好曲线救国了先用 locate 名字找个各个配置的位置1locate server.xml
-然后把抓出来的值扔进下面的脚本里,转啊转当然你用sublime处理下更方便123456789101112131">
+只好曲线救国了先用 locate 名字找个各个配置的位置1locate server.xml">
 
 
 
@@ -312,8 +309,11 @@
       
         <p>有时候我们需要复制一些同名的文件到同一个目录,比如备份tomcat的配置文件.<br>我就遇到了这件事, 我们可是有20个tomcat在一台服务器上.<br>每份配置文件的名字都一样,我可不想一个个改名,怎么办</p>
 <p>只好曲线救国了<br>先用 locate 名字找个各个配置的位置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">locate server.xml</div></pre></td></tr></table></figure></p>
-<p>然后把抓出来的值扔进下面的脚本里,转啊转<br>当然你用sublime处理下更方便<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#/bin/bash</span></div><div class="line"><span class="comment"># author: yann</span></div><div class="line"><span class="comment"># date :2016.9.29</span></div><div class="line">arr=( \</div><div class="line">/usr/<span class="built_in">local</span>/server/8888-tomcat7/bin/server.xml \  </div><div class="line">/usr/<span class="built_in">local</span>/server/6666-tomcat7/bin/server.xml \  </div><div class="line"></div><div class="line">)</div><div class="line"><span class="built_in">echo</span> <span class="string">"arr is (<span class="variable">$&#123;arr[@]&#125;</span>)"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"item in array:"</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="variable">$&#123;arr[@]&#125;</span></div><div class="line"><span class="keyword">do</span></div><div class="line"> /usr/bin/install <span class="variable">$i</span> /home/xx/<span class="variable">$&#123;i//\//_&#125;</span> -o xx -g xx</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure></p>
-<p>结果如下<br>```Bash<br>_usr_local_server_8888-tomcat7_conf_server.xml<br>_usr_local_server_6666-tomcat7_conf_server.xml</p>
+<a id="more"></a> 
+<h2 id="基本需求"><a href="#基本需求" class="headerlink" title="基本需求"></a>基本需求</h2><p>然后把抓出来的值扔进下面的脚本里,转啊转<br>当然你用sublime处理下更方便<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#/bin/bash</span></div><div class="line"><span class="comment"># author: yann</span></div><div class="line"><span class="comment"># date :2016.9.29</span></div><div class="line">arr=( \</div><div class="line">/usr/<span class="built_in">local</span>/server/8888-tomcat7/bin/server.xml \  </div><div class="line">/usr/<span class="built_in">local</span>/server/6666-tomcat7/bin/server.xml \  </div><div class="line"></div><div class="line">)</div><div class="line"><span class="built_in">echo</span> <span class="string">"arr is (<span class="variable">$&#123;arr[@]&#125;</span>)"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"item in array:"</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="variable">$&#123;arr[@]&#125;</span></div><div class="line"><span class="keyword">do</span></div><div class="line"> /usr/bin/install <span class="variable">$i</span> /home/xx/<span class="variable">$&#123;i//\//_&#125;</span> -o xx -g xx</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure></p>
+<p>结果如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">_usr_local_server_8888-tomcat7_conf_server.xml</div><div class="line">_usr_local_server_6666-tomcat7_conf_server.xml</div></pre></td></tr></table></figure></p>
+<h2 id="进阶版"><a href="#进阶版" class="headerlink" title="进阶版"></a>进阶版</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#/bin/bash</span></div><div class="line"><span class="comment"># author: yann</span></div><div class="line"><span class="comment"># date :2016.9.29</span></div><div class="line"></div><div class="line">filename=<span class="variable">$1</span></div><div class="line"><span class="function"><span class="title">all_print</span></span>() &#123;</div><div class="line">fileGroup=( \</div><div class="line">/etc/keepalived/keepalived.conf \</div><div class="line">/etc/sysconfig/iptables \</div><div class="line">)</div><div class="line"><span class="built_in">echo</span> <span class="string">"fileGroup is (<span class="variable">$&#123;fileGroup[@]&#125;</span>)"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"item in fileGroupay:"</span></div><div class="line"><span class="keyword">for</span> file <span class="keyword">in</span> <span class="variable">$&#123;fileGroup[@]&#125;</span></div><div class="line"><span class="keyword">do</span></div><div class="line"> /usr/bin/install <span class="variable">$file</span> /home/git/<span class="variable">$&#123;file//\//_&#125;</span> -o git -g git</div><div class="line"><span class="keyword">done</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="title">manual_input</span></span>()&#123;</div><div class="line">/usr/bin/install <span class="variable">$filename</span> /home/git/<span class="variable">$&#123;filename//\//_&#125;</span> -o git -g git</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"Input Param Is [<span class="variable">$1</span>]"</span></div><div class="line"><span class="keyword">if</span> [ ! -n <span class="string">"<span class="variable">$1</span>"</span> ] ;<span class="keyword">then</span></div><div class="line">        all_print</div><div class="line"><span class="built_in">exit</span></div><div class="line"><span class="keyword">fi</span></div><div class="line">manual_input</div><div class="line"><span class="built_in">exit</span></div></pre></td></tr></table></figure>
+<p>除了固定备份的条目,还可以加个参数,零时手动备份一条<br>致此,够用了,搞定收工</p>
 
       
     </div>
@@ -354,6 +354,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/30/remote-share-session-without-password/" rel="prev" title="remote share session without password">
+                remote share session without password <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -425,7 +429,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">45</span>
+              <span class="site-state-item-count">46</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -478,7 +482,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本需求"><span class="nav-number">1.</span> <span class="nav-text">基本需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进阶版"><span class="nav-number">2.</span> <span class="nav-text">进阶版</span></a></li></ol></div>
             
           </div>
         </section>

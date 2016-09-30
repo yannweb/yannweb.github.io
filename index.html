@@ -240,6 +240,128 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/30/remote-share-session-without-password/" itemprop="url">
+                  remote share session without password
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-30T14:39:47+08:00" content="2016-09-30">
+              2016-09-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/效率/" itemprop="url" rel="index">
+                    <span itemprop="name">效率</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/30/remote-share-session-without-password/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/remote-share-session-without-password/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>经常会有这样的场景,我们需要外面的朋友帮忙调试程序,<br>但是不方便把密码提供出去,也不方便修改密码让他自行操作(安全要求)<br>所以想出一个可以远程操作又不需要密码的方法<br>使用前提:<br>有一台跳板机,可以连接生产,也可以让外面的朋友和自己和同一个帐号连进去<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/30/remote-share-session-without-password/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/29/copy-files-with-same-name/" itemprop="url">
                   复制大量同名的配置文件
                 </a>
@@ -309,13 +431,13 @@
 
       
         
-          
-            <p>有时候我们需要复制一些同名的文件到同一个目录,比如备份tomcat的配置文件.<br>我就遇到了这件事, 我们可是有20个tomcat在一台服务器上.<br>每份配置文件的名字都一样,我可不想一个个改名,怎么办</p>
+          <p>有时候我们需要复制一些同名的文件到同一个目录,比如备份tomcat的配置文件.<br>我就遇到了这件事, 我们可是有20个tomcat在一台服务器上.<br>每份配置文件的名字都一样,我可不想一个个改名,怎么办</p>
 <p>只好曲线救国了<br>先用 locate 名字找个各个配置的位置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">locate server.xml</div></pre></td></tr></table></figure></p>
-<p>然后把抓出来的值扔进下面的脚本里,转啊转<br>当然你用sublime处理下更方便<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#/bin/bash</span></div><div class="line"><span class="comment"># author: yann</span></div><div class="line"><span class="comment"># date :2016.9.29</span></div><div class="line">arr=( \</div><div class="line">/usr/<span class="built_in">local</span>/server/8888-tomcat7/bin/server.xml \  </div><div class="line">/usr/<span class="built_in">local</span>/server/6666-tomcat7/bin/server.xml \  </div><div class="line"></div><div class="line">)</div><div class="line"><span class="built_in">echo</span> <span class="string">"arr is (<span class="variable">$&#123;arr[@]&#125;</span>)"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"item in array:"</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="variable">$&#123;arr[@]&#125;</span></div><div class="line"><span class="keyword">do</span></div><div class="line"> /usr/bin/install <span class="variable">$i</span> /home/xx/<span class="variable">$&#123;i//\//_&#125;</span> -o xx -g xx</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure></p>
-<p>结果如下<br>```Bash<br>_usr_local_server_8888-tomcat7_conf_server.xml<br>_usr_local_server_6666-tomcat7_conf_server.xml</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/29/copy-files-with-same-name/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -432,10 +554,12 @@
 
       
         
-          
-            <p>mybase用来记录文字的感觉很好,但图片处理极差<br>evernote放图片舒服,但是对大段文字不是很友好<br>于是,它们相爱了<br>…<br>区线救国, 本地数据,借用#印象笔记 外连接,<br>evernote已同步的目录在网上的可以直接生成公开连接,但不同步的数据,无法生成,<br>下面提供了一个解决的方法:<br>选复制笔记内部连接,然后找到印象笔记的程序目录,<br>然后运行,”D:\Evernote.exe” evernote:///xxx连接/ 就可以从外部打开了<br>这个链接可以记在mybase里,要看图的时候,点一下就用evernote打开了<br>^^当然,前提是电脑上安装evernote</p>
-
-          
+          <p>mybase用来记录文字的感觉很好,但图片处理极差<br>evernote放图片舒服,但是对大段文字不是很友好<br>于是,它们相爱了<br>…<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/23/mybase-love-eventnote/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1276,127 +1400,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/07/16/GitHub-validation-failed/" itemprop="url">
-                  github老是验证失败的解法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-07-16T09:14:23+08:00" content="2015-07-16">
-              2015-07-16
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/故障记录/" itemprop="url" rel="index">
-                    <span itemprop="name">故障记录</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/07/16/GitHub-validation-failed/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/16/GitHub-validation-failed/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>先说一个字，作<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">touch ~/.ssh/config </div><div class="line"><span class="comment">#个人</span></div><div class="line">chmod 600  ~/.ssh/config</div><div class="line">   /etc/ssh/ssh_config <span class="comment">#全局</span></div><div class="line">Host *</div><div class="line">User git</div><div class="line">Port 22</div><div class="line">CheckHostIP no</div><div class="line">Compression yes</div><div class="line">ForwardAgent yes</div><div class="line">IdentityFile ~/.ssh/e540</div><div class="line"></div><div class="line">Host 114.80.119.*</div><div class="line">User www</div><div class="line">Port 22</div><div class="line">IdentityFile ~/.ssh/ya</div></pre></td></tr></table></figure></p>
-<p>请参考以上自行修改</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1442,7 +1445,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">45</span>
+              <span class="site-state-item-count">46</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
