@@ -87,18 +87,18 @@
 
 
 <meta name="description" content="有时候我们需要复制一些同名的文件到同一个目录,比如备份tomcat的配置文件.我就遇到了这件事, 我们可是有20个tomcat在一台服务器上.每份配置文件的名字都一样,我可不想一个个改名,怎么办
-只好曲线救国了先用 locate 名字找个各个配置的位置1locate server.xml">
+只好曲线救国了先用 locate 加上文件名找出各个配置文件的位置1locate server.xml">
 <meta property="og:type" content="article">
 <meta property="og:title" content="复制大量同名的配置文件">
 <meta property="og:url" content="http://iamyann.com/2016/09/29/copy-files-with-same-name/index.html">
 <meta property="og:site_name" content="yann的小站">
 <meta property="og:description" content="有时候我们需要复制一些同名的文件到同一个目录,比如备份tomcat的配置文件.我就遇到了这件事, 我们可是有20个tomcat在一台服务器上.每份配置文件的名字都一样,我可不想一个个改名,怎么办
-只好曲线救国了先用 locate 名字找个各个配置的位置1locate server.xml">
-<meta property="og:updated_time" content="2016-09-30T07:13:48.010Z">
+只好曲线救国了先用 locate 加上文件名找出各个配置文件的位置1locate server.xml">
+<meta property="og:updated_time" content="2016-09-30T07:19:46.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="复制大量同名的配置文件">
 <meta name="twitter:description" content="有时候我们需要复制一些同名的文件到同一个目录,比如备份tomcat的配置文件.我就遇到了这件事, 我们可是有20个tomcat在一台服务器上.每份配置文件的名字都一样,我可不想一个个改名,怎么办
-只好曲线救国了先用 locate 名字找个各个配置的位置1locate server.xml">
+只好曲线救国了先用 locate 加上文件名找出各个配置文件的位置1locate server.xml">
 
 
 
@@ -308,7 +308,7 @@
 
       
         <p>有时候我们需要复制一些同名的文件到同一个目录,比如备份tomcat的配置文件.<br>我就遇到了这件事, 我们可是有20个tomcat在一台服务器上.<br>每份配置文件的名字都一样,我可不想一个个改名,怎么办</p>
-<p>只好曲线救国了<br>先用 locate 名字找个各个配置的位置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">locate server.xml</div></pre></td></tr></table></figure></p>
+<p>只好曲线救国了<br>先用 locate 加上文件名找出各个配置文件的位置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">locate server.xml</div></pre></td></tr></table></figure></p>
 <a id="more"></a> 
 <h2 id="基本需求"><a href="#基本需求" class="headerlink" title="基本需求"></a>基本需求</h2><p>然后把抓出来的值扔进下面的脚本里,转啊转<br>当然你用sublime处理下更方便<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#/bin/bash</span></div><div class="line"><span class="comment"># author: yann</span></div><div class="line"><span class="comment"># date :2016.9.29</span></div><div class="line">arr=( \</div><div class="line">/usr/<span class="built_in">local</span>/server/8888-tomcat7/bin/server.xml \  </div><div class="line">/usr/<span class="built_in">local</span>/server/6666-tomcat7/bin/server.xml \  </div><div class="line"></div><div class="line">)</div><div class="line"><span class="built_in">echo</span> <span class="string">"arr is (<span class="variable">$&#123;arr[@]&#125;</span>)"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"item in array:"</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="variable">$&#123;arr[@]&#125;</span></div><div class="line"><span class="keyword">do</span></div><div class="line"> /usr/bin/install <span class="variable">$i</span> /home/xx/<span class="variable">$&#123;i//\//_&#125;</span> -o xx -g xx</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure></p>
 <p>结果如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">_usr_local_server_8888-tomcat7_conf_server.xml</div><div class="line">_usr_local_server_6666-tomcat7_conf_server.xml</div></pre></td></tr></table></figure></p>
@@ -429,7 +429,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">46</span>
+              <span class="site-state-item-count">48</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -446,7 +446,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
