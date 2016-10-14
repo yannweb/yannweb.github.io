@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://iamyann.com/2016/10/12/many-war-packet-many-tomcat-startup-and-shutdown/index.html">
 <meta property="og:site_name" content="yann的小站">
 <meta property="og:description" content="先说下场景:同外部人员合作,外部人员访问不了生产环境然后他们编译好的war包需要我帮忙上传,然后他们一次喜欢给十几包于是常常需要起停十几个tomcat &amp;amp;&amp;amp; 重命名十几个程序目录搞的多了,于是我就懒了">
-<meta property="og:updated_time" content="2016-10-12T07:22:59.883Z">
+<meta property="og:updated_time" content="2016-10-14T07:15:43.871Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="many war packet many tomcat startup and shutdown">
 <meta name="twitter:description" content="先说下场景:同外部人员合作,外部人员访问不了生产环境然后他们编译好的war包需要我帮忙上传,然后他们一次喜欢给十几包于是常常需要起停十几个tomcat &amp;amp;&amp;amp; 重命名十几个程序目录搞的多了,于是我就懒了">
@@ -306,6 +306,7 @@
       
         <p>先说下场景:<br>同外部人员合作,外部人员访问不了生产环境<br>然后他们编译好的war包需要我帮忙上传,然后他们一次喜欢给十几包<br>于是常常需要起停十几个tomcat &amp;&amp; 重命名十几个程序目录<br>搞的多了,于是我就懒了<br><a id="more"></a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"><span class="comment">#yann 20161012</span></div><div class="line"></div><div class="line"><span class="function"><span class="title">war_move</span></span>() &#123;</div><div class="line"><span class="keyword">for</span> NAME <span class="keyword">in</span> `ls`; <span class="keyword">do</span></div><div class="line">DATE=`date <span class="string">"+%Y-%m-%d-%H:%M"</span> `</div><div class="line"><span class="comment">#echo $&#123;NAME%%.*&#125;</span></div><div class="line">locate -r /usr/<span class="built_in">local</span>/abc/app/<span class="variable">$&#123;NAME%%.*&#125;</span>$</div><div class="line"><span class="comment">#if [ $? = 0 ]; then</span></div><div class="line">mv  /usr/<span class="built_in">local</span>/abc/app/<span class="variable">$&#123;NAME%%.*&#125;</span>  /usr/<span class="built_in">local</span>/abc/app/<span class="variable">$&#123;NAME%%.*&#125;</span>.<span class="variable">$DATE</span> &amp;&amp; unzip <span class="variable">$&#123;NAME&#125;</span> <span class="_">-d</span> /usr/<span class="built_in">local</span>/abc/app/<span class="variable">$&#123;NAME%%.*&#125;</span></div><div class="line"><span class="comment">#else</span></div><div class="line"><span class="comment">#   echo "Error run Environment"</span></div><div class="line"><span class="comment">#fi</span></div><div class="line"><span class="keyword">done</span></div><div class="line">chown -R tomcat.tomcat /usr/<span class="built_in">local</span>/abc/app</div><div class="line"><span class="built_in">echo</span> <span class="string">"file need change own!!"</span></div><div class="line">find /usr/<span class="built_in">local</span>/abc/ -group root -exec ls <span class="_">-l</span> &#123;&#125; \;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="title">kill_tomcat</span></span>() &#123;</div><div class="line"><span class="keyword">for</span> ID <span class="keyword">in</span> `ps -ef |grep java|grep -v grep|awk <span class="string">'&#123;print $2&#125;'</span>`; <span class="keyword">do</span></div><div class="line"><span class="built_in">kill</span> <span class="variable">$&#123;ID&#125;</span></div><div class="line"><span class="keyword">done</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="title">start_tomcat</span></span>() &#123;</div><div class="line">su - tomcat</div><div class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/server/</div><div class="line"><span class="keyword">for</span> DIR <span class="keyword">in</span> `ls |grep tomcat_app`; <span class="keyword">do</span></div><div class="line"><span class="comment">##echo $&#123;DIR&#125; &gt;&gt; /tmp/tomcat_log &amp;&amp; cd $&#123;DIR&#125; &amp;&amp; bin/startup.sh ; tail -100 logs/catalina.out &gt;&gt; /tmp/tomcat_log &amp;&amp; cd ..</span></div><div class="line"><span class="built_in">echo</span> <span class="variable">$&#123;DIR&#125;</span> &gt;&gt; /tmp/tomcat_log &amp;&amp; <span class="built_in">cd</span> <span class="variable">$&#123;DIR&#125;</span> &amp;&amp; tail -100 logs/catalina.out &gt;&gt; /tmp/tomcat_log &amp;&amp; <span class="built_in">cd</span> ..</div><div class="line"><span class="keyword">done</span></div><div class="line"><span class="built_in">exit</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">#kill_tomcat</span></div><div class="line"><span class="comment">#war_move</span></div><div class="line">start_tomcat</div></pre></td></tr></table></figure>
+<p>更新10.14<br>其实这个脚本有个小瑕疵,tomcat是用root用户起的,如果权限划分细致,使用tomcat的用户可能会有一些麻烦,如果修复这个问题,请看日志 <a href="http://www.iamyann.com/2016/10/14/su-tomcat-in-script/" target="_blank" rel="external">http://www.iamyann.com/2016/10/14/su-tomcat-in-script/</a></p>
 
       
     </div>
@@ -348,6 +349,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/14/su-tomcat-in-script/" rel="prev" title="su tomcat in script">
+                su tomcat in script <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -419,7 +424,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">48</span>
+              <span class="site-state-item-count">49</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -4,8 +4,32 @@
 
     
   <url>
+    <loc>http://iamyann.com/2016/10/14/su-tomcat-in-script/</loc>
+    <lastmod>2016-10-14T07:23:23.844Z</lastmod>
+    <data>
+        <display>
+        <title>su tomcat in script</title>
+        <pubTime>2016-10-14T06:44:37.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>bash</tag>
+         
+        <tag>tomcat</tag>
+         
+         
+           
+             
+              <breadCrumb title="工作细节" url="http://iamyann.com/categories/%E5%B7%A5%E4%BD%9C%E7%BB%86%E8%8A%82/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://iamyann.com/2016/10/12/many-war-packet-many-tomcat-startup-and-shutdown/</loc>
-    <lastmod>2016-10-12T07:22:59.883Z</lastmod>
+    <lastmod>2016-10-14T07:15:43.871Z</lastmod>
     <data>
         <display>
         <title>many war packet many tomcat startup and shutdown</title>

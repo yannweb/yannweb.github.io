@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux,bash," />
+  <meta name="keywords" content="linux,bash,tomcat," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="Rsync是比较好用的同步工具,但是往往有些地方是禁止root登录的用标准的部署方式就比较困难了,会一直报rsync error: error in socket IO (code 10) at clientserver.c(124) [receiver=3.0.6]所以采用其他方法.本脚本使用了模块化布局,方便打开或关闭部分功能,也方便其他脚本复用">
+<meta name="description" content="接上次的问题:我使用root帐号运行脚本启动tomcat后发现部分文件是root权限的说明启动过程中我是以root身份启动tomcat的但是我在脚本中su到tomcat了啊以下展开分析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="auto moudle rsync">
-<meta property="og:url" content="http://iamyann.com/2016/09/19/auto-moudle-rsync/index.html">
+<meta property="og:title" content="su tomcat in script">
+<meta property="og:url" content="http://iamyann.com/2016/10/14/su-tomcat-in-script/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="Rsync是比较好用的同步工具,但是往往有些地方是禁止root登录的用标准的部署方式就比较困难了,会一直报rsync error: error in socket IO (code 10) at clientserver.c(124) [receiver=3.0.6]所以采用其他方法.本脚本使用了模块化布局,方便打开或关闭部分功能,也方便其他脚本复用">
-<meta property="og:updated_time" content="2016-09-22T13:31:37.426Z">
+<meta property="og:description" content="接上次的问题:我使用root帐号运行脚本启动tomcat后发现部分文件是root权限的说明启动过程中我是以root身份启动tomcat的但是我在脚本中su到tomcat了啊以下展开分析">
+<meta property="og:updated_time" content="2016-10-14T07:23:23.844Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="auto moudle rsync">
-<meta name="twitter:description" content="Rsync是比较好用的同步工具,但是往往有些地方是禁止root登录的用标准的部署方式就比较困难了,会一直报rsync error: error in socket IO (code 10) at clientserver.c(124) [receiver=3.0.6]所以采用其他方法.本脚本使用了模块化布局,方便打开或关闭部分功能,也方便其他脚本复用">
+<meta name="twitter:title" content="su tomcat in script">
+<meta name="twitter:description" content="接上次的问题:我使用root帐号运行脚本启动tomcat后发现部分文件是root权限的说明启动过程中我是以root身份启动tomcat的但是我在脚本中su到tomcat了啊以下展开分析">
 
 
 
@@ -116,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2016/09/19/auto-moudle-rsync/"/>
+  <link rel="canonical" href="http://iamyann.com/2016/10/14/su-tomcat-in-script/"/>
 
-  <title> auto moudle rsync | yann的小站 </title>
+  <title> su tomcat in script | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +238,7 @@
             
             
               
-                auto moudle rsync
+                su tomcat in script
               
             
           </h1>
@@ -250,8 +250,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-19T21:30:37+08:00" content="2016-09-19">
-              2016-09-19
+            <time itemprop="dateCreated" datetime="2016-10-14T14:44:37+08:00" content="2016-10-14">
+              2016-10-14
             </time>
           </span>
 
@@ -264,8 +264,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/模块化部署/" itemprop="url" rel="index">
-                    <span itemprop="name">模块化部署</span>
+                  <a href="/categories/工作细节/" itemprop="url" rel="index">
+                    <span itemprop="name">工作细节</span>
                   </a>
                 </span>
 
@@ -280,8 +280,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/19/auto-moudle-rsync/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/19/auto-moudle-rsync/" itemprop="commentsCount"></span>
+                <a href="/2016/10/14/su-tomcat-in-script/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/su-tomcat-in-script/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -304,7 +304,22 @@
       
 
       
-        <p>Rsync是比较好用的同步工具,但是往往有些地方是禁止root登录的<br>用标准的部署方式就比较困难了,会一直报<br>rsync error: error in socket IO (code 10) at clientserver.c(124) [receiver=3.0.6]<br>所以采用其他方法.本脚本使用了模块化布局,方便打开或关闭部分功能,也方便其他脚本复用<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"><span class="comment">#赋值</span></div><div class="line">IP=<span class="string">"1.2.3.4"</span></div><div class="line">USER=`whoami`</div><div class="line">LOCAL_DIR=<span class="string">"目录"</span></div><div class="line">REMOTE_DIR=<span class="string">"目录"</span></div><div class="line"><span class="comment"># 该脚本需要非root用户运行,注意更新例外文件</span></div><div class="line"></div><div class="line"><span class="comment">#建立认证</span></div><div class="line"><span class="function"><span class="title">make_ssh</span></span>() &#123;</div><div class="line">	<span class="built_in">cd</span> ~</div><div class="line">	ssh-keygen -t rsa -C <span class="string">"hostname"</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line"><span class="comment">#分发公钥</span></div><div class="line"><span class="function"><span class="title">send_pubkey</span></span>() &#123;</div><div class="line">ssh -p 22 <span class="variable">$USER</span>@<span class="variable">$IP</span> <span class="string">'mkdir .ssh &amp;&amp; chmod 700 .ssh'</span></div><div class="line">scp .ssh/id_rsa.pub <span class="variable">$USER</span>@<span class="variable">$IP</span>:.ssh </div><div class="line">ssh -p 22 <span class="variable">$USER</span>@<span class="variable">$IP</span> <span class="string">'cd .ssh &amp;&amp; mv id_rsa.pub authorized_keys '</span></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="title">local_rsync</span></span>() &#123;</div><div class="line">/usr/bin/rsync -azv --delete --stats --exclude <span class="string">"log/"</span> --exclude <span class="string">"file/"</span>  <span class="variable">$LOCAL_DIR</span> <span class="variable">$USER</span>@<span class="variable">$IP</span>:<span class="variable">$REMOTE_DIR</span></div><div class="line"><span class="comment">#ssh -p 22 $USER@$IP 'mkdir file &amp;&amp; mkdir log'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">make_ssh</div><div class="line">send_pubkey</div><div class="line">local_rsync</div></pre></td></tr></table></figure></p>
+        <p>接上次的问题:<br>我使用root帐号运行脚本<br>启动tomcat后发现部分文件是root权限的<br>说明启动过程中我是以root身份启动tomcat的<br>但是我在脚本中su到tomcat了啊<br>以下展开分析</p>
+<a id="more"></a>
+<h2 id="位置测试"><a href="#位置测试" class="headerlink" title="位置测试"></a>位置测试</h2><p>修改su的位置<br>“su - tomcat” 命令放在模块内或者放在脚本最前面<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">start_tomcat</span></span>() &#123;</div><div class="line">su - tomcat</div><div class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/server/</div><div class="line">xxx</div><div class="line">&#125;</div><div class="line"><span class="comment">#或</span></div><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line">su - tomcat</div></pre></td></tr></table></figure></p>
+<p>文件权限扫描<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find /home/tomcat/ -group root -exec ls <span class="_">-l</span> &#123;&#125; \;</div></pre></td></tr></table></figure></p>
+<p>依然有root权限的文件存在</p>
+<h2 id="命令拼接"><a href="#命令拼接" class="headerlink" title="命令拼接"></a>命令拼接</h2><p>是不是指令没有放在一个语句中,让我们用&amp;&amp;拼接一下吧<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">su - tomcat &amp;&amp; <span class="built_in">echo</span> 123-tomcat &gt;&gt; /tmp/tomcat_log &amp;&amp; <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/yann/123-tomcat &amp;&amp; bin/startup.sh &amp;&amp; tail -1000 logs/catalina.out &gt;&gt; /tmp/tomcat_log </div><div class="line">find /home/tomcat/ -group root -exec ls <span class="_">-l</span> &#123;&#125; \;</div></pre></td></tr></table></figure></p>
+<p>依然有root权限的文件存在</p>
+<h2 id="正确答案"><a href="#正确答案" class="headerlink" title="正确答案"></a>正确答案</h2><p>看来su指令在脚本中支持的不好,换一个方式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">su <span class="_">-l</span> tomcat -c <span class="string">"echo 456-tomcat &gt;&gt; /tmp/tomcat_log &amp;&amp; cd /usr/local/yann/456-tomcat &amp;&amp; bin/startup.sh &amp;&amp; tail -100 logs/catalina.out &gt;&gt; /tmp/tomcat_log"</span></div></pre></td></tr></table></figure></p>
+<p>文件权限正常</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>其实还有很多可以尝试的方案,只是我懒得写出来了^^<br>以下直接给结论:</p>
+<ul>
+<li>脚本中的每一条命令都是以执行者的身份运行(比如我是用root执行脚本的)<br>由此而见,上一条命令su到了tomcat,下一条又是以root执行了</li>
+<li>在一条由条件语句连接的长命令其实是视为若干条短命令的,所以结果同上一条结论一样,全是root身份执行</li>
+<li>引号””之间的命令视为一条命令,如果切换其他身份执行,可以得到预期结果</li>
+</ul>
+<h2 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h2><p>最后留下一个尾巴<br>以下是我从启动脚本里扒出的命令,是否有效及运作原理待有空再分析拉<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/bin/su -p <span class="_">-s</span> /bin/sh <span class="variable">$TOMCAT_USER</span> <span class="variable">$TOMCAT_HOME</span>/bin/startup.sh &gt; /dev/null 2&gt;&amp;1</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -331,6 +346,8 @@
           
             <a href="/tags/bash/" rel="tag">#bash</a>
           
+            <a href="/tags/tomcat/" rel="tag">#tomcat</a>
+          
         </div>
       
 
@@ -338,17 +355,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/17/name-and-name/" rel="next" title="name and name">
-                <i class="fa fa-chevron-left"></i> name and name
+              <a href="/2016/10/12/many-war-packet-many-tomcat-startup-and-shutdown/" rel="next" title="many war packet many tomcat startup and shutdown">
+                <i class="fa fa-chevron-left"></i> many war packet many tomcat startup and shutdown
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/22/auto-rsync-Standard-script/" rel="prev" title="auto rsync Standard script">
-                auto rsync Standard script <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -374,8 +387,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/19/auto-moudle-rsync/"
-           data-title="auto moudle rsync" data-url="http://iamyann.com/2016/09/19/auto-moudle-rsync/">
+      <div class="ds-thread" data-thread-key="2016/10/14/su-tomcat-in-script/"
+           data-title="su tomcat in script" data-url="http://iamyann.com/2016/10/14/su-tomcat-in-script/">
       </div>
     
   </div>
@@ -473,7 +486,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#位置测试"><span class="nav-number">1.</span> <span class="nav-text">位置测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令拼接"><span class="nav-number">2.</span> <span class="nav-text">命令拼接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正确答案"><span class="nav-number">3.</span> <span class="nav-text">正确答案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论"><span class="nav-number">4.</span> <span class="nav-text">结论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#练习题"><span class="nav-number">5.</span> <span class="nav-text">练习题</span></a></li></ol></div>
             
           </div>
         </section>
