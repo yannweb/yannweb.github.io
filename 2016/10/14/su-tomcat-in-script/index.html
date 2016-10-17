@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="接上次的问题:我使用root帐号运行脚本启动tomcat后发现部分文件是root权限的说明启动过程中我是以root身份启动tomcat的但是我在脚本中su到tomcat了啊以下展开分析">
+<meta name="description" content="接上次的问题:使用root帐号运行脚本启动tomcat后发现部分文件是root权限的说明启动过程中以root身份启动tomcat的但是在脚本中有指令从root su到tomcat了啊以下展开分析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="su tomcat in script">
 <meta property="og:url" content="http://iamyann.com/2016/10/14/su-tomcat-in-script/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="接上次的问题:我使用root帐号运行脚本启动tomcat后发现部分文件是root权限的说明启动过程中我是以root身份启动tomcat的但是我在脚本中su到tomcat了啊以下展开分析">
-<meta property="og:updated_time" content="2016-10-14T07:23:23.844Z">
+<meta property="og:description" content="接上次的问题:使用root帐号运行脚本启动tomcat后发现部分文件是root权限的说明启动过程中以root身份启动tomcat的但是在脚本中有指令从root su到tomcat了啊以下展开分析">
+<meta property="og:updated_time" content="2016-10-14T08:33:25.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="su tomcat in script">
-<meta name="twitter:description" content="接上次的问题:我使用root帐号运行脚本启动tomcat后发现部分文件是root权限的说明启动过程中我是以root身份启动tomcat的但是我在脚本中su到tomcat了啊以下展开分析">
+<meta name="twitter:description" content="接上次的问题:使用root帐号运行脚本启动tomcat后发现部分文件是root权限的说明启动过程中以root身份启动tomcat的但是在脚本中有指令从root su到tomcat了啊以下展开分析">
 
 
 
@@ -304,7 +304,7 @@
       
 
       
-        <p>接上次的问题:<br>我使用root帐号运行脚本<br>启动tomcat后发现部分文件是root权限的<br>说明启动过程中我是以root身份启动tomcat的<br>但是我在脚本中su到tomcat了啊<br>以下展开分析</p>
+        <p>接上次的问题:<br>使用root帐号运行脚本<br>启动tomcat后发现部分文件是root权限的<br>说明启动过程中以root身份启动tomcat的<br>但是在脚本中有指令从root su到tomcat了啊<br>以下展开分析</p>
 <a id="more"></a>
 <h2 id="位置测试"><a href="#位置测试" class="headerlink" title="位置测试"></a>位置测试</h2><p>修改su的位置<br>“su - tomcat” 命令放在模块内或者放在脚本最前面<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">start_tomcat</span></span>() &#123;</div><div class="line">su - tomcat</div><div class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/server/</div><div class="line">xxx</div><div class="line">&#125;</div><div class="line"><span class="comment">#或</span></div><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line">su - tomcat</div></pre></td></tr></table></figure></p>
 <p>文件权限扫描<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find /home/tomcat/ -group root -exec ls <span class="_">-l</span> &#123;&#125; \;</div></pre></td></tr></table></figure></p>
@@ -320,6 +320,9 @@
 <li>引号””之间的命令视为一条命令,如果切换其他身份执行,可以得到预期结果</li>
 </ul>
 <h2 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h2><p>最后留下一个尾巴<br>以下是我从启动脚本里扒出的命令,是否有效及运作原理待有空再分析拉<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/bin/su -p <span class="_">-s</span> /bin/sh <span class="variable">$TOMCAT_USER</span> <span class="variable">$TOMCAT_HOME</span>/bin/startup.sh &gt; /dev/null 2&gt;&amp;1</div></pre></td></tr></table></figure></p>
+<p>注意: 以上情节均为启发新同学所设计的实验环境,老鸟请勿模仿</p>
+<p>更新<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/bin/su -p <span class="_">-s</span> /bin/sh <span class="variable">$TOMCAT_USER</span> <span class="variable">$TOMCAT_HOME</span>/bin/version.sh</div></pre></td></tr></table></figure></p>
+<p>目测只能执行tomcat目录下的指令,/bin下的命令会报cannot execute binary file<br>而su -l xx -c 没有以上限制,/bin下的指令均可执行<br>只能待有空再具体分析了</p>
 
       
     </div>
