@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="lnmp,linux,iptables," />
+  <meta name="keywords" content="linux,hexo," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="用户反映网站不能上传123456789du -h apachetop -f /alidata/server/httpd-2.4.10/logs/access_logtail -f error_logiptables -I INPUT -s 100.97.0.0/16 -j DROPkillall httpdrm error_logtouch error_loglsof |grep deleteds">
+<meta name="description" content="今天发生了件不好的事情正在我快乐的调试bash命令的时候,boss和我说效益不好,部门在上海的部分被砍掉了所以我得找工作了等晚上回家写简历去,吹年的东西,肯定不能在公司写吧^^">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排错一则">
-<meta property="og:url" content="http://iamyann.com/2015/07/27/shooting/index.html">
+<meta property="og:title" content="Seek job opportunities">
+<meta property="og:url" content="http://iamyann.com/2016/10/17/Seek-job-opportunities/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="用户反映网站不能上传123456789du -h apachetop -f /alidata/server/httpd-2.4.10/logs/access_logtail -f error_logiptables -I INPUT -s 100.97.0.0/16 -j DROPkillall httpdrm error_logtouch error_loglsof |grep deleteds">
-<meta property="og:updated_time" content="2016-09-22T16:26:26.259Z">
+<meta property="og:description" content="今天发生了件不好的事情正在我快乐的调试bash命令的时候,boss和我说效益不好,部门在上海的部分被砍掉了所以我得找工作了等晚上回家写简历去,吹年的东西,肯定不能在公司写吧^^">
+<meta property="og:updated_time" content="2016-10-17T07:32:43.948Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="排错一则">
-<meta name="twitter:description" content="用户反映网站不能上传123456789du -h apachetop -f /alidata/server/httpd-2.4.10/logs/access_logtail -f error_logiptables -I INPUT -s 100.97.0.0/16 -j DROPkillall httpdrm error_logtouch error_loglsof |grep deleteds">
+<meta name="twitter:title" content="Seek job opportunities">
+<meta name="twitter:description" content="今天发生了件不好的事情正在我快乐的调试bash命令的时候,boss和我说效益不好,部门在上海的部分被砍掉了所以我得找工作了等晚上回家写简历去,吹年的东西,肯定不能在公司写吧^^">
 
 
 
@@ -116,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2015/07/27/shooting/"/>
+  <link rel="canonical" href="http://iamyann.com/2016/10/17/Seek-job-opportunities/"/>
 
-  <title> 排错一则 | yann的小站 </title>
+  <title> Seek job opportunities | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +238,7 @@
             
             
               
-                排错一则
+                Seek job opportunities
               
             
           </h1>
@@ -250,8 +250,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-07-27T10:00:00+08:00" content="2015-07-27">
-              2015-07-27
+            <time itemprop="dateCreated" datetime="2016-10-17T15:24:45+08:00" content="2016-10-17">
+              2016-10-17
             </time>
           </span>
 
@@ -264,8 +264,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/故障记录/" itemprop="url" rel="index">
-                    <span itemprop="name">故障记录</span>
+                  <a href="/categories/闲聊/" itemprop="url" rel="index">
+                    <span itemprop="name">闲聊</span>
                   </a>
                 </span>
 
@@ -280,8 +280,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/07/27/shooting/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/27/shooting/" itemprop="commentsCount"></span>
+                <a href="/2016/10/17/Seek-job-opportunities/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/17/Seek-job-opportunities/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -304,8 +304,9 @@
       
 
       
-        <p>用户反映网站不能上传<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">du -h</div><div class="line"> apachetop <span class="_">-f</span> /alidata/server/httpd-2.4.10/logs/access_log</div><div class="line">tail <span class="_">-f</span> error_log</div><div class="line">iptables -I INPUT <span class="_">-s</span> 100.97.0.0/16 -j DROP</div><div class="line">killall httpd</div><div class="line">rm error_log</div><div class="line">touch error_log</div><div class="line">lsof |grep deleted</div><div class="line">service httpd start</div></pre></td></tr></table></figure></p>
-<p>其他交给开发处理了</p>
+        <p>今天发生了件不好的事情<br>正在我快乐的调试bash命令的时候,boss和我说效益不好,部门在上海的部分被砍掉了<br>所以我得找工作了<br>等晚上回家写简历去,吹年的东西,肯定不能在公司写吧^^<br><a id="more"></a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!base</span></div><div class="line"></div><div class="line"> ID=`ps -u pp|egrep <span class="string">"X001"</span> |wc <span class="_">-l</span>`</div><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$ID</span>"</span> <span class="_">-gt</span> <span class="string">"1"</span> ]; <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"gt"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">   <span class="built_in">echo</span> <span class="string">"st"</span></div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> [ <span class="string">"`ps -u pp|egrep "</span>X001<span class="string">" |wc -l`"</span> <span class="_">-gt</span> <span class="string">"1"</span> ]; <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"true"</span>;</div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
+<p>以上为草稿,待会就挪走</p>
 
       
     </div>
@@ -328,11 +329,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/lnmp/" rel="tag">#lnmp</a>
-          
             <a href="/tags/linux/" rel="tag">#linux</a>
           
-            <a href="/tags/iptables/" rel="tag">#iptables</a>
+            <a href="/tags/hexo/" rel="tag">#hexo</a>
           
         </div>
       
@@ -341,17 +340,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/16/GitHub-validation-failed/" rel="next" title="github老是验证失败的解法">
-                <i class="fa fa-chevron-left"></i> github老是验证失败的解法
+              <a href="/2016/10/14/su-tomcat-in-script/" rel="next" title="su tomcat in script">
+                <i class="fa fa-chevron-left"></i> su tomcat in script
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/07/28/cut-log/" rel="prev" title="按天分隔日志，隔几天删除">
-                按天分隔日志，隔几天删除 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -377,8 +372,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/07/27/shooting/"
-           data-title="排错一则" data-url="http://iamyann.com/2015/07/27/shooting/">
+      <div class="ds-thread" data-thread-key="2016/10/17/Seek-job-opportunities/"
+           data-title="Seek job opportunities" data-url="http://iamyann.com/2016/10/17/Seek-job-opportunities/">
       </div>
     
   </div>
