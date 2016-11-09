@@ -310,7 +310,7 @@
       
         
           
-            <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src</div><div class="line"> yum install -y gcc</div><div class="line"> wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz</div><div class="line"> tar xf libevent-2.0.21-stable.tar.gz</div><div class="line"><span class="built_in">cd</span> libevent-2.0.21-stable</div><div class="line"> ./configure</div><div class="line"> make &amp;&amp;  make install</div><div class="line"></div><div class="line"><span class="comment">#编译安装tmux</span></div><div class="line"> yum install -y automake ncurses-libs ncurses-devel</div><div class="line"></div><div class="line">git <span class="built_in">clone</span> https://github.com/tmux/tmux.git</div><div class="line"><span class="built_in">cd</span> tmux</div><div class="line"> sh autogen.sh</div><div class="line">./configure --prefix=/usr/lcoal/tmux</div><div class="line"> make &amp;&amp;  make install</div><div class="line"></div><div class="line"><span class="comment">#提供头文件</span></div><div class="line"> ln -sv /usr/<span class="built_in">local</span>/lib/libevent-2.0.so.5 /usr/lib64/libevent-2.0.so.5</div><div class="line">ldconfig -v</div></pre></td></tr></table></figure>
+            <p>尚未脚本化<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#libevent</span></div><div class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src</div><div class="line">sudo yum install -y gcc</div><div class="line">sudo wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz</div><div class="line">sudo tar xf libevent-2.0.21-stable.tar.gz</div><div class="line"><span class="built_in">cd</span> libevent-2.0.21-stable</div><div class="line">sudo ./configure </div><div class="line">sudo make &amp;&amp; sudo make install</div><div class="line"> </div><div class="line"><span class="comment">#编译安装tmux</span></div><div class="line">sudo yum install -y automake ncurses-libs ncurses-devel</div><div class="line"></div><div class="line">git <span class="built_in">clone</span> https://github.com/tmux/tmux.git</div><div class="line"><span class="built_in">cd</span> tmux</div><div class="line">sudo sh autogen.sh</div><div class="line">./configure --prefix=/usr/<span class="built_in">local</span>/tmux</div><div class="line">sudo make &amp;&amp; sudo make install</div><div class="line"> </div><div class="line"><span class="comment">#提供头文件</span></div><div class="line">sudo ln -sv /usr/<span class="built_in">local</span>/lib/libevent-2.0.so.5 /usr/lib64/libevent-2.0.so.5</div><div class="line">ldconfig -v</div><div class="line"> </div><div class="line"><span class="comment">#将tmux 脚本路径加入到PATH</span></div><div class="line"></div><div class="line"><span class="comment">#sudo sh -c "echo 'export PATH=$PATH:/usr/local/tmux/bin' &gt;&gt; /etc/profile.d/tmux.sh"</span></div><div class="line">sudo touch /etc/profile.d/tmux.sh</div><div class="line"><span class="built_in">echo</span> <span class="string">"export PATH=<span class="variable">$PATH</span>:/usr/local/tmux/bin"</span> |sudo tee <span class="_">-a</span> /etc/profile.d/tmux.sh</div><div class="line"><span class="comment">#sudo -s </span></div><div class="line"><span class="comment">#会报权限不足</span></div><div class="line"><span class="built_in">source</span> /etc/profile</div><div class="line"> </div><div class="line"><span class="comment">#将tmux命令man 文档路径添加到MANPATH</span></div><div class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/tmux/share/ &amp;&amp; sudo touch man</div><div class="line"><span class="built_in">echo</span> <span class="string">"MANPATH /usr/local/tmux/share/man"</span> |sudo tee <span class="_">-a</span> /usr/<span class="built_in">local</span>/tmux/share/man</div></pre></td></tr></table></figure></p>
 
           
         
@@ -676,128 +676,6 @@
           <p>最近很蛋痛的被人挖矿了,<br>虽然只是一台给外部人员用的测试机,但也比较郁闷,<br>乘着长假刚过完,出游的兴致还在,去探个矿洞吧</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/10/11/face-minerd/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/30/remote-share-session-without-password/" itemprop="url">
-                  remote share session without password
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-30T14:39:47+00:00" content="2016-09-30">
-              2016-09-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/效率/" itemprop="url" rel="index">
-                    <span itemprop="name">效率</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/30/remote-share-session-without-password/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/remote-share-session-without-password/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>经常会有这样的场景,我们需要外面的朋友帮忙调试程序,<br>但是不方便把密码提供出去,也不方便修改密码让他自行操作(安全要求)<br>所以想出一个可以远程操作又不需要密码的方法<br>使用前提:<br>有一台跳板机,可以连接生产,也可以让外面的朋友和自己和同一个帐号连进去<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/30/remote-share-session-without-password/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1390,6 +1268,127 @@
           
             <p>把wordpress导入后,发现导入名称前面带了时间,偏偏我设的url也是以时间为分界的,<br>然后就会变成很奇怪的地址:<br><a href="http://www.iamyann.com/2015/07/28/2015-07-28-log-cut/" target="_blank" rel="external">http://www.iamyann.com/2015/07/28/2015-07-28-log-cut/</a><br>然后就自己写了个脚本删掉时间…<br>使用方法如下:<br>自己写个脚本名字,到_post目录下执行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"><span class="keyword">for</span> name <span class="keyword">in</span> `ls`; <span class="keyword">do</span></div><div class="line">mv <span class="variable">$name</span> <span class="variable">$&#123;name##*-&#125;</span></div><div class="line">    <span class="keyword">done</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/11/Import-articles-from-WordPress/" itemprop="url">
+                  Import-articles-from-WordPress
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-11T00:34:32+00:00" content="2016-09-11">
+              2016-09-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/闲聊/" itemprop="url" rel="index">
+                    <span itemprop="name">闲聊</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/11/Import-articles-from-WordPress/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/11/Import-articles-from-WordPress/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>花了半天时间,成功把自己之前的博客导入新的平台,<br>其中,寻找以前导出的xml文件花了5分钟<br>熟悉Jekyll花了半小时<br>部署ruby花了5小时<br>部署exitwp花了1小时</p>
+<p>我讨厌ruby,真应了运维的一句老话,部署起来越简单的东西,维护起来就越困难.<br>后面计划把域名接上,代码背景加下,tag加上,旧博客整理下格式,站点地图维护下<br>访客,关注,自我介绍,讨钱全加上^^</p>
 
           
         

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux,tmux," />
 
 
 
@@ -86,15 +86,16 @@
 
 
 
-<meta name="description" content="yann&apos;s blog | linux | git | auto deploy">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yann的小站">
-<meta property="og:url" content="http://iamyann.com/archives/2015/page/2/index.html">
+<meta name="description" content="经常会有这样的场景,我们需要外面的朋友帮忙调试程序,但是不方便把密码提供出去,也不方便修改密码让他自行操作(安全要求)所以想出一个可以远程操作又不需要密码的方法使用前提:有一台跳板机,可以连接生产,也可以让外面的朋友和自己和同一个帐号连进去">
+<meta property="og:type" content="article">
+<meta property="og:title" content="remote share session without password">
+<meta property="og:url" content="http://iamyann.com/2015/09/30/remote-share-session-without-password/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="yann&apos;s blog | linux | git | auto deploy">
+<meta property="og:description" content="经常会有这样的场景,我们需要外面的朋友帮忙调试程序,但是不方便把密码提供出去,也不方便修改密码让他自行操作(安全要求)所以想出一个可以远程操作又不需要密码的方法使用前提:有一台跳板机,可以连接生产,也可以让外面的朋友和自己和同一个帐号连进去">
+<meta property="og:updated_time" content="2016-11-09T01:52:47.209Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yann的小站">
-<meta name="twitter:description" content="yann&apos;s blog | linux | git | auto deploy">
+<meta name="twitter:title" content="remote share session without password">
+<meta name="twitter:description" content="经常会有这样的场景,我们需要外面的朋友帮忙调试程序,但是不方便把密码提供出去,也不方便修改密码让他自行操作(安全要求)所以想出一个可以远程操作又不需要密码的方法使用前提:有一台跳板机,可以连接生产,也可以让外面的朋友和自己和同一个帐号连进去">
 
 
 
@@ -115,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/archives/2015/page/2/"/>
+  <link rel="canonical" href="http://iamyann.com/2015/09/30/remote-share-session-without-password/"/>
 
-  <title> 归档 | yann的小站 </title>
+  <title> remote share session without password | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -138,7 +139,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,402 +217,158 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-       
-        
-      好! 目前共计 52 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2015">2015</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/06/11/gitolite-set/" itemprop="url">
-              
-                <span itemprop="name">gitolite搞定</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-06-11T06:39:46+00:00"
-              content="2015-06-11" >
-          06-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/06/10/rsync-think/" itemprop="url">
-              
-                <span itemprop="name">rsync机器多了的必然</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-06-10T05:26:18+00:00"
-              content="2015-06-10" >
-          06-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/06/08/lvs-set/" itemprop="url">
-              
-                <span itemprop="name">lvs 搞定，工作多的做不完</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-06-08T05:36:20+00:00"
-              content="2015-06-08" >
-          06-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/06/04/redis-with-nagios/" itemprop="url">
-              
-                <span itemprop="name">nagios监控redis</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-06-04T10:25:29+00:00"
-              content="2015-06-04" >
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/06/04/phpredisadmin-with-white-screen/" itemprop="url">
-              
-                <span itemprop="name">phpredisadmin白屏</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-06-04T07:59:02+00:00"
-              content="2015-06-04" >
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/06/03/nagios/" itemprop="url">
-              
-                <span itemprop="name">nagios</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-06-03T09:05:21+00:00"
-              content="2015-06-03" >
-          06-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/06/03/tmux-short-key/" itemprop="url">
-              
-                <span itemprop="name">开始使用tmux1</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-06-03T02:46:12+00:00"
-              content="2015-06-03" >
-          06-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/06/01/gzip/" itemprop="url">
-              
-                <span itemprop="name">gzip</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-06-01T02:33:26+00:00"
-              content="2015-06-01" >
-          06-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/05/25/webset-forward-Rewrite/" itemprop="url">
-              
-                <span itemprop="name">网站跳转</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-05-25T12:21:14+00:00"
-              content="2015-05-25" >
-          05-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/05/22/aliyun-memcache-to-redis/" itemprop="url">
-              
-                <span itemprop="name">redis 3.0</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-05-22T02:00:22+00:00"
-              content="2015-05-22" >
-          05-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2015/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2015/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2015/page/3/">3</a><a class="page-number" href="/archives/2015/page/4/">4</a><a class="extend next" rel="next" href="/archives/2015/page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                remote share session without password
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-09-30T14:39:47+00:00" content="2015-09-30">
+              2015-09-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/效率/" itemprop="url" rel="index">
+                    <span itemprop="name">效率</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/09/30/remote-share-session-without-password/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/30/remote-share-session-without-password/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
 
 
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>经常会有这样的场景,我们需要外面的朋友帮忙调试程序,<br>但是不方便把密码提供出去,也不方便修改密码让他自行操作(安全要求)<br>所以想出一个可以远程操作又不需要密码的方法<br>使用前提:<br>有一台跳板机,可以连接生产,也可以让外面的朋友和自己和同一个帐号连进去<br><a id="more"></a></p>
+<h2 id="tmux版"><a href="#tmux版" class="headerlink" title="tmux版"></a>tmux版</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">自己先进去,并登入生产服务器</div><div class="line">tmux new <span class="_">-s</span> abc</div><div class="line">ssh abc@1.2.3.4</div><div class="line"><span class="comment">#然后对方</span></div><div class="line">tmux a</div></pre></td></tr></table></figure>
+<p>就注意次序,然后两边的屏幕就同步进行了<br>虽然也有更高大上的Tmate工具,但是需要外网ip所以用途不大<br>有兴趣可以自行百度</p>
+<h2 id="screen版"><a href="#screen版" class="headerlink" title="screen版"></a>screen版</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#自己先进去,并登入生产服务器</span></div><div class="line">screen -S abc</div><div class="line">ssh abc@1.2.3.4</div><div class="line"><span class="comment">#然后对方</span></div><div class="line">screen -x abc</div></pre></td></tr></table></figure>
+<p>搞定收工</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+            <a href="/tags/tmux/" rel="tag">#tmux</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/07/28/cut-log/" rel="next" title="按天分隔日志，隔几天删除">
+                <i class="fa fa-chevron-left"></i> 按天分隔日志，隔几天删除
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/14/su-tomcat-in-script/" rel="prev" title="su tomcat in script">
+                su tomcat in script <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -619,6 +376,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/09/30/remote-share-session-without-password/"
+           data-title="remote share session without password" data-url="http://iamyann.com/2015/09/30/remote-share-session-without-password/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -638,8 +403,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -696,6 +470,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tmux版"><span class="nav-number">1.</span> <span class="nav-text">tmux版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#screen版"><span class="nav-number">2.</span> <span class="nav-text">screen版</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -794,11 +579,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
