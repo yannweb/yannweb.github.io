@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="Rsync是比较好用的同步工具,但是往往有些地方是禁止root登录的用标准的部署方式就比较困难了,会一直报rsync error: error in socket IO (code 10) at clientserver.c(124) [receiver=3.0.6]今天被python坑了一下,用语言表示说不大清楚,直接贴上来好了">
+<meta name="description" content="今天被python坑了一下,用语言表示说不大清楚,直接贴上来好了">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 格式错误">
 <meta property="og:url" content="http://iamyann.com/2014/09/19/python-format-error/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="Rsync是比较好用的同步工具,但是往往有些地方是禁止root登录的用标准的部署方式就比较困难了,会一直报rsync error: error in socket IO (code 10) at clientserver.c(124) [receiver=3.0.6]今天被python坑了一下,用语言表示说不大清楚,直接贴上来好了">
-<meta property="og:updated_time" content="2017-01-17T09:08:14.561Z">
+<meta property="og:description" content="今天被python坑了一下,用语言表示说不大清楚,直接贴上来好了">
+<meta property="og:updated_time" content="2017-01-17T09:12:51.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 格式错误">
-<meta name="twitter:description" content="Rsync是比较好用的同步工具,但是往往有些地方是禁止root登录的用标准的部署方式就比较困难了,会一直报rsync error: error in socket IO (code 10) at clientserver.c(124) [receiver=3.0.6]今天被python坑了一下,用语言表示说不大清楚,直接贴上来好了">
+<meta name="twitter:description" content="今天被python坑了一下,用语言表示说不大清楚,直接贴上来好了">
 
 
 
@@ -285,9 +285,9 @@
       
 
       
-        <p>Rsync是比较好用的同步工具,但是往往有些地方是禁止root登录的<br>用标准的部署方式就比较困难了,会一直报<br>rsync error: error in socket IO (code 10) at clientserver.c(124) [receiver=3.0.6]<br>今天被python坑了一下,用语言表示说不大清楚,直接贴上来好了<br><a id="more"></a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span><span class="params">(animal_type, pet_name)</span>:</span></div><div class="line"><span class="string">"""宠物信息"""</span></div><div class="line">        print(<span class="string">"\nI have a "</span> + animal_type + <span class="string">"."</span>)</div><div class="line">        print(<span class="string">"My "</span> + animal_type + <span class="string">"'s name is "</span> + pet_name.title() + <span class="string">"."</span>)</div><div class="line"></div><div class="line">describe_pet(<span class="string">'hamster'</span>, <span class="string">'harry'</span>)</div></pre></td></tr></table></figure></p>
+        <p>今天被python坑了一下,用语言表示说不大清楚,直接贴上来好了<br><a id="more"></a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span><span class="params">(animal_type, pet_name)</span>:</span></div><div class="line"><span class="string">"""宠物信息"""</span></div><div class="line">        print(<span class="string">"\nI have a "</span> + animal_type + <span class="string">"."</span>)</div><div class="line">        print(<span class="string">"My "</span> + animal_type + <span class="string">"'s name is "</span> + pet_name.title() + <span class="string">"."</span>)</div><div class="line"></div><div class="line">describe_pet(<span class="string">'hamster'</span>, <span class="string">'harry'</span>)</div></pre></td></tr></table></figure></p>
 <p>故障其实很简单, python对格式要求极严,一般情况下,我们认为被注释的部分没有格式,<br>但事实上,它仍然存在于函数之中,造成函数格式错误.</p>
-<p>使用#也有同样问题,但多行使用’’’就没有问题了</p>
+<p>使用#也有同样问题,但多行使用’’’ ‘’’就没有问题了</p>
 
       
     </div>
@@ -329,8 +329,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/10/24/zen-of-python/" rel="prev" title="zen of python">
-                zen of python <i class="fa fa-chevron-right"></i>
+              <a href="/2014/09/21/python-logic-error/" rel="prev" title="python 逻辑错误">
+                python 逻辑错误 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -403,7 +403,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">54</span>
+              <span class="site-state-item-count">55</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

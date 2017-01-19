@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux,bash,tomcat," />
+  <meta name="keywords" content="bash,python," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="先说下场景:同外部人员合作,外部人员访问不了生产环境然后他们编译好的war包需要我帮忙上传,然后他们一次喜欢给十几包于是常常需要起停十几个tomcat &amp;amp;&amp;amp; 重命名十几个程序目录搞的多了,于是我就懒了">
+<meta name="description" content="今天发现一个书本上的错误,当然也可能是作者留的彩蛋">
 <meta property="og:type" content="article">
-<meta property="og:title" content="many war packet many tomcat startup and shutdown">
-<meta property="og:url" content="http://iamyann.com/2016/10/12/many-war-packet-many-tomcat-startup-and-shutdown/index.html">
+<meta property="og:title" content="python 逻辑错误">
+<meta property="og:url" content="http://iamyann.com/2014/09/21/python-logic-error/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="先说下场景:同外部人员合作,外部人员访问不了生产环境然后他们编译好的war包需要我帮忙上传,然后他们一次喜欢给十几包于是常常需要起停十几个tomcat &amp;amp;&amp;amp; 重命名十几个程序目录搞的多了,于是我就懒了">
-<meta property="og:updated_time" content="2016-10-14T07:15:43.000Z">
+<meta property="og:description" content="今天发现一个书本上的错误,当然也可能是作者留的彩蛋">
+<meta property="og:updated_time" content="2017-01-19T08:28:22.616Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="many war packet many tomcat startup and shutdown">
-<meta name="twitter:description" content="先说下场景:同外部人员合作,外部人员访问不了生产环境然后他们编译好的war包需要我帮忙上传,然后他们一次喜欢给十几包于是常常需要起停十几个tomcat &amp;amp;&amp;amp; 重命名十几个程序目录搞的多了,于是我就懒了">
+<meta name="twitter:title" content="python 逻辑错误">
+<meta name="twitter:description" content="今天发现一个书本上的错误,当然也可能是作者留的彩蛋">
 
 
 
@@ -116,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2016/10/12/many-war-packet-many-tomcat-startup-and-shutdown/"/>
+  <link rel="canonical" href="http://iamyann.com/2014/09/21/python-logic-error/"/>
 
-  <title> many war packet many tomcat startup and shutdown | yann的小站 </title>
+  <title> python 逻辑错误 | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +238,7 @@
             
             
               
-                many war packet many tomcat startup and shutdown
+                python 逻辑错误
               
             
           </h1>
@@ -250,38 +250,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-12T15:04:12+00:00" content="2016-10-12">
-              2016-10-12
+            <time itemprop="dateCreated" datetime="2014-09-21T21:30:37+00:00" content="2014-09-21">
+              2014-09-21
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/效率/" itemprop="url" rel="index">
-                    <span itemprop="name">效率</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/12/many-war-packet-many-tomcat-startup-and-shutdown/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/12/many-war-packet-many-tomcat-startup-and-shutdown/" itemprop="commentsCount"></span>
+                <a href="/2014/09/21/python-logic-error/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/09/21/python-logic-error/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -304,9 +285,8 @@
       
 
       
-        <p>先说下场景:<br>同外部人员合作,外部人员访问不了生产环境<br>然后他们编译好的war包需要我帮忙上传,然后他们一次喜欢给十几包<br>于是常常需要起停十几个tomcat &amp;&amp; 重命名十几个程序目录<br>搞的多了,于是我就懒了<br><a id="more"></a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"><span class="comment">#yann 20161012</span></div><div class="line"></div><div class="line"><span class="function"><span class="title">war_move</span></span>() &#123;</div><div class="line"><span class="keyword">for</span> NAME <span class="keyword">in</span> `ls`; <span class="keyword">do</span></div><div class="line">DATE=`date <span class="string">"+%Y-%m-%d-%H:%M"</span> `</div><div class="line"><span class="comment">#echo $&#123;NAME%%.*&#125;</span></div><div class="line">locate -r /usr/<span class="built_in">local</span>/abc/app/<span class="variable">$&#123;NAME%%.*&#125;</span>$</div><div class="line"><span class="comment">#if [ $? = 0 ]; then</span></div><div class="line">mv  /usr/<span class="built_in">local</span>/abc/app/<span class="variable">$&#123;NAME%%.*&#125;</span>  /usr/<span class="built_in">local</span>/abc/app/<span class="variable">$&#123;NAME%%.*&#125;</span>.<span class="variable">$DATE</span> &amp;&amp; unzip <span class="variable">$&#123;NAME&#125;</span> <span class="_">-d</span> /usr/<span class="built_in">local</span>/abc/app/<span class="variable">$&#123;NAME%%.*&#125;</span></div><div class="line"><span class="comment">#else</span></div><div class="line"><span class="comment">#   echo "Error run Environment"</span></div><div class="line"><span class="comment">#fi</span></div><div class="line"><span class="keyword">done</span></div><div class="line">chown -R tomcat.tomcat /usr/<span class="built_in">local</span>/abc/app</div><div class="line"><span class="built_in">echo</span> <span class="string">"file need change own!!"</span></div><div class="line">find /usr/<span class="built_in">local</span>/abc/ -group root -exec ls <span class="_">-l</span> &#123;&#125; \;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="title">kill_tomcat</span></span>() &#123;</div><div class="line"><span class="keyword">for</span> ID <span class="keyword">in</span> `ps -ef |grep java|grep -v grep|awk <span class="string">'&#123;print $2&#125;'</span>`; <span class="keyword">do</span></div><div class="line"><span class="built_in">kill</span> <span class="variable">$&#123;ID&#125;</span></div><div class="line"><span class="keyword">done</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="title">start_tomcat</span></span>() &#123;</div><div class="line">su - tomcat</div><div class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/server/</div><div class="line"><span class="keyword">for</span> DIR <span class="keyword">in</span> `ls |grep tomcat_app`; <span class="keyword">do</span></div><div class="line"><span class="comment">##echo $&#123;DIR&#125; &gt;&gt; /tmp/tomcat_log &amp;&amp; cd $&#123;DIR&#125; &amp;&amp; bin/startup.sh ; tail -100 logs/catalina.out &gt;&gt; /tmp/tomcat_log &amp;&amp; cd ..</span></div><div class="line"><span class="built_in">echo</span> <span class="variable">$&#123;DIR&#125;</span> &gt;&gt; /tmp/tomcat_log &amp;&amp; <span class="built_in">cd</span> <span class="variable">$&#123;DIR&#125;</span> &amp;&amp; tail -100 logs/catalina.out &gt;&gt; /tmp/tomcat_log &amp;&amp; <span class="built_in">cd</span> ..</div><div class="line"><span class="keyword">done</span></div><div class="line"><span class="built_in">exit</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">#kill_tomcat</span></div><div class="line"><span class="comment">#war_move</span></div><div class="line">start_tomcat</div></pre></td></tr></table></figure>
-<p>更新10.14<br>其实这个脚本有个小瑕疵,tomcat是用root用户起的,如果权限划分细致,使用tomcat的用户可能会有一些麻烦,如果修复这个问题,请看日志 <a href="http://www.iamyann.com/2016/10/14/su-tomcat-in-script/" target="_blank" rel="external">http://www.iamyann.com/2016/10/14/su-tomcat-in-script/</a></p>
+        <p>今天发现一个书本上的错误,当然也可能是作者留的彩蛋<br><a id="more"></a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Battery</span><span class="params">()</span>:</span></div><div class="line">   <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, battery_size=<span class="number">60</span>)</span>:</span></div><div class="line">      self.battery_size = battery_size</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">describe_battery</span><span class="params">(self)</span>:</span></div><div class="line">      print(<span class="string">"This car has a "</span> + str(self.battery_size) + <span class="string">"-kWh battery."</span>)</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">get_range</span><span class="params">(self)</span>:</span></div><div class="line">      <span class="comment"># range = 0</span></div><div class="line">      <span class="keyword">if</span> self.battery_size == <span class="number">70</span>:</div><div class="line">          range = <span class="number">240</span></div><div class="line">      <span class="keyword">elif</span> self.battery_size == <span class="number">85</span>:</div><div class="line">          range = <span class="number">270</span></div><div class="line"></div><div class="line">      message = <span class="string">"This car can go approximately "</span> + str(range)</div><div class="line">      message += <span class="string">" miles on a full charge."</span></div><div class="line">      print(message)</div><div class="line">      <span class="comment">#一个逻辑故障,赋值全没命中</span></div></pre></td></tr></table></figure></p>
+<p>这个坑比较深,但个类是不报错的,因为只是定义<br>我在另一个文件里引用这个类,就报错了,当时还以为自己手误,又敲了一遍,汗…</p>
 
       
     </div>
@@ -329,11 +309,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag">#linux</a>
-          
             <a href="/tags/bash/" rel="tag">#bash</a>
           
-            <a href="/tags/tomcat/" rel="tag">#tomcat</a>
+            <a href="/tags/python/" rel="tag">#python</a>
           
         </div>
       
@@ -342,16 +320,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/11/face-minerd/" rel="next" title="face minerd">
-                <i class="fa fa-chevron-left"></i> face minerd
+              <a href="/2014/09/19/python-format-error/" rel="next" title="python 格式错误">
+                <i class="fa fa-chevron-left"></i> python 格式错误
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/17/Seek-job-opportunities/" rel="prev" title="Seek job opportunities">
-                Seek job opportunities <i class="fa fa-chevron-right"></i>
+              <a href="/2014/10/24/zen-of-python/" rel="prev" title="zen of python">
+                zen of python <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -378,8 +356,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/12/many-war-packet-many-tomcat-startup-and-shutdown/"
-           data-title="many war packet many tomcat startup and shutdown" data-url="http://iamyann.com/2016/10/12/many-war-packet-many-tomcat-startup-and-shutdown/">
+      <div class="ds-thread" data-thread-key="2014/09/21/python-logic-error/"
+           data-title="python 逻辑错误" data-url="http://iamyann.com/2014/09/21/python-logic-error/">
       </div>
     
   </div>
