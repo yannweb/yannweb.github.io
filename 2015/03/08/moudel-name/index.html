@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="python,3.5," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="1234ErrorLog “| /usr/local/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_error_log 86400 480″CustomLog “| /usr/local/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_access_log 86400 480″ common0 1 * * *">
+<meta name="description" content="python2 转到python3 之后, 一些模块改名">
 <meta property="og:type" content="article">
-<meta property="og:title" content="按天分隔日志，隔几天删除">
-<meta property="og:url" content="http://iamyann.com/2015/07/28/cut-log/index.html">
+<meta property="og:title" content="一些python3模块名字变动">
+<meta property="og:url" content="http://iamyann.com/2015/03/08/moudel-name/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="1234ErrorLog “| /usr/local/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_error_log 86400 480″CustomLog “| /usr/local/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_access_log 86400 480″ common0 1 * * *">
-<meta property="og:updated_time" content="2016-09-22T14:38:27.000Z">
+<meta property="og:description" content="python2 转到python3 之后, 一些模块改名">
+<meta property="og:updated_time" content="2017-03-08T09:20:08.643Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="按天分隔日志，隔几天删除">
-<meta name="twitter:description" content="1234ErrorLog “| /usr/local/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_error_log 86400 480″CustomLog “| /usr/local/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_access_log 86400 480″ common0 1 * * *">
+<meta name="twitter:title" content="一些python3模块名字变动">
+<meta name="twitter:description" content="python2 转到python3 之后, 一些模块改名">
 
 
 
@@ -116,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2015/07/28/cut-log/"/>
+  <link rel="canonical" href="http://iamyann.com/2015/03/08/moudel-name/"/>
 
-  <title> 按天分隔日志，隔几天删除 | yann的小站 </title>
+  <title> 一些python3模块名字变动 | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +238,7 @@
             
             
               
-                按天分隔日志，隔几天删除
+                一些python3模块名字变动
               
             
           </h1>
@@ -250,38 +250,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-07-28T07:29:00+00:00" content="2015-07-28">
-              2015-07-28
+            <time itemprop="dateCreated" datetime="2015-03-08T09:18:46+00:00" content="2015-03-08">
+              2015-03-08
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/故障记录/" itemprop="url" rel="index">
-                    <span itemprop="name">故障记录</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/07/28/cut-log/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/28/cut-log/" itemprop="commentsCount"></span>
+                <a href="/2015/03/08/moudel-name/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/08/moudel-name/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -304,8 +285,12 @@
       
 
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ErrorLog “| /usr/<span class="built_in">local</span>/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_error_log 86400 480″</div><div class="line">CustomLog “| /usr/<span class="built_in">local</span>/apache/bin/rotatelogs /home/logs/www/%Y_%m_%d_access_log 86400 480″ common</div><div class="line">0 1 * * * /usr/bin/find /alidata/logs/www -name \access_log* -mtime +2 | xargs rm -rf</div><div class="line">0 1 * * * /usr/bin/find /alidata/logs/www -name \error_log* -mHtime +2 | xargs rm -rf</div></pre></td></tr></table></figure>
-<p>更新，*号要转译，不然文件多了会报错</p>
+        <p>python2 转到python3 之后, 一些模块改名<br><a id="more"></a><br>代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#import httplib</span></div><div class="line"><span class="keyword">import</span> http.client</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line">--snip--</div><div class="line"></div><div class="line">        conn = http.client.HTTPConnection(address, port)</div></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#import urllib</span></div><div class="line"><span class="keyword">import</span> urllib.request, urllib.parse, urllib.error</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line">--snip--</div><div class="line"></div><div class="line">urllib.request.urlretrieve(url, filename)</div></pre></td></tr></table></figure>
+<p>#urllib2更好支持认识及cookie</p>
+<p>#urllib2在Python3已拆分更名为urllib.request和urllib.error</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#import SimpleXMLRPCServer</span></div><div class="line"><span class="keyword">import</span> xmlrpc.server</div><div class="line"><span class="keyword">import</span> os</div><div class="line"></div><div class="line">--snip--</div><div class="line"></div><div class="line">    <span class="comment">#s = SimpleXMLRPCServer.SimpleXMLRPCServer(('127.0.0.1', 8765))</span></div><div class="line">    s = xmlrpc.server.SimpleXMLRPCServer((<span class="string">'127.0.0.1'</span>, <span class="number">8765</span>))</div></pre></td></tr></table></figure>
+<p>还有一些早先遇到的,实在想不起来,想到再更新</p>
 
       
     </div>
@@ -328,7 +313,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag">#linux</a>
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+            <a href="/tags/3-5/" rel="tag">#3.5</a>
           
         </div>
       
@@ -337,16 +324,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/27/shooting/" rel="next" title="排错一则">
-                <i class="fa fa-chevron-left"></i> 排错一则
+              <a href="/2015/03/08/socket-err/" rel="next" title="Python 3套接字故障">
+                <i class="fa fa-chevron-left"></i> Python 3套接字故障
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/30/remote-share-session-without-password/" rel="prev" title="remote share session without password">
-                remote share session without password <i class="fa fa-chevron-right"></i>
+              <a href="/2015/04/27/Flow-statistics/" rel="prev" title="增加流量统计功能">
+                增加流量统计功能 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -373,8 +360,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/07/28/cut-log/"
-           data-title="按天分隔日志，隔几天删除" data-url="http://iamyann.com/2015/07/28/cut-log/">
+      <div class="ds-thread" data-thread-key="2015/03/08/moudel-name/"
+           data-title="一些python3模块名字变动" data-url="http://iamyann.com/2015/03/08/moudel-name/">
       </div>
     
   </div>
