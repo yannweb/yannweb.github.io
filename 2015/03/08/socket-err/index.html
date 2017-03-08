@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux,tmux," />
+  <meta name="keywords" content="python,3.5," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="尚未脚本化12345678910111213141516171819202122232425262728293031323334#libeventcd /usr/local/srcsudo yum install -y gccsudo wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gzs">
+<meta name="description" content="套接字编程时遇到的故障之一,详情后续更新">
 <meta property="og:type" content="article">
-<meta property="og:title" content="source install tmux 2.3">
-<meta property="og:url" content="http://iamyann.com/2016/11/09/source-install-tmux-2-3/index.html">
+<meta property="og:title" content="Python 3套接字故障">
+<meta property="og:url" content="http://iamyann.com/2015/03/08/socket-err/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="尚未脚本化12345678910111213141516171819202122232425262728293031323334#libeventcd /usr/local/srcsudo yum install -y gccsudo wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gzs">
-<meta property="og:updated_time" content="2016-11-09T15:10:47.759Z">
+<meta property="og:description" content="套接字编程时遇到的故障之一,详情后续更新">
+<meta property="og:updated_time" content="2017-03-08T02:46:52.949Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="source install tmux 2.3">
-<meta name="twitter:description" content="尚未脚本化12345678910111213141516171819202122232425262728293031323334#libeventcd /usr/local/srcsudo yum install -y gccsudo wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gzs">
+<meta name="twitter:title" content="Python 3套接字故障">
+<meta name="twitter:description" content="套接字编程时遇到的故障之一,详情后续更新">
 
 
 
@@ -116,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2016/11/09/source-install-tmux-2-3/"/>
+  <link rel="canonical" href="http://iamyann.com/2015/03/08/socket-err/"/>
 
-  <title> source install tmux 2.3 | yann的小站 </title>
+  <title> Python 3套接字故障 | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +238,7 @@
             
             
               
-                source install tmux 2.3
+                Python 3套接字故障
               
             
           </h1>
@@ -250,38 +250,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-09T01:49:19+00:00" content="2016-11-09">
-              2016-11-09
+            <time itemprop="dateCreated" datetime="2015-03-08T02:45:02+00:00" content="2015-03-08">
+              2015-03-08
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/效率/" itemprop="url" rel="index">
-                    <span itemprop="name">效率</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/09/source-install-tmux-2-3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/09/source-install-tmux-2-3/" itemprop="commentsCount"></span>
+                <a href="/2015/03/08/socket-err/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/08/socket-err/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -304,7 +285,8 @@
       
 
       
-        <p>尚未脚本化<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#libevent</span></div><div class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src</div><div class="line">sudo yum install -y gcc</div><div class="line">sudo wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz</div><div class="line">sudo tar xf libevent-2.0.21-stable.tar.gz</div><div class="line"><span class="built_in">cd</span> libevent-2.0.21-stable</div><div class="line">sudo ./configure </div><div class="line">sudo make &amp;&amp; sudo make install</div><div class="line"> </div><div class="line"><span class="comment">#编译安装tmux</span></div><div class="line">sudo yum install -y automake ncurses-libs ncurses-devel</div><div class="line"></div><div class="line">git <span class="built_in">clone</span> https://github.com/tmux/tmux.git</div><div class="line"><span class="built_in">cd</span> tmux</div><div class="line">sudo sh autogen.sh</div><div class="line">./configure --prefix=/usr/<span class="built_in">local</span>/tmux</div><div class="line">sudo make &amp;&amp; sudo make install</div><div class="line"> </div><div class="line"><span class="comment">#提供头文件</span></div><div class="line">sudo ln -sv /usr/<span class="built_in">local</span>/lib/libevent-2.0.so.5 /usr/lib64/libevent-2.0.so.5</div><div class="line">ldconfig -v</div><div class="line"> </div><div class="line"><span class="comment">#将tmux 脚本路径加入到PATH</span></div><div class="line"></div><div class="line"><span class="comment">#sudo sh -c "echo 'export PATH=$PATH:/usr/local/tmux/bin' &gt;&gt; /etc/profile.d/tmux.sh"</span></div><div class="line">sudo touch /etc/profile.d/tmux.sh</div><div class="line"><span class="built_in">echo</span> <span class="string">"export PATH=<span class="variable">$PATH</span>:/usr/local/tmux/bin"</span> |sudo tee <span class="_">-a</span> /etc/profile.d/tmux.sh</div><div class="line"><span class="comment">#sudo -s </span></div><div class="line"><span class="comment">#会报权限不足</span></div><div class="line"><span class="built_in">source</span> /etc/profile</div><div class="line"> </div><div class="line"><span class="comment">#将tmux命令man 文档路径添加到MANPATH</span></div><div class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/tmux/share/ &amp;&amp; sudo touch man</div><div class="line"><span class="built_in">echo</span> <span class="string">"MANPATH /usr/local/tmux/share/man"</span> |sudo tee <span class="_">-a</span> /usr/<span class="built_in">local</span>/tmux/share/man</div></pre></td></tr></table></figure></p>
+        <p>套接字编程时遇到的故障之一,详情后续更新<br><a id="more"></a><br>代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    s.connect((address, port))</div><div class="line">    print(<span class="string">"Connected to %s on port %s"</span> % (address, port))</div><div class="line">    <span class="comment">#s.send(request_string)</span></div><div class="line">    s.send(request_string.encode())</div><div class="line">    <span class="comment">#we should only need the first 100 bytes or so</span></div><div class="line">    <span class="comment">#rsp = s.recv(100)</span></div><div class="line">    rsp = s.recv(<span class="number">100</span>).decode()</div></pre></td></tr></table></figure></p>
+<p>TypeError: ‘str’ does not support the buffer interface</p>
 
       
     </div>
@@ -327,9 +309,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag">#linux</a>
+            <a href="/tags/python/" rel="tag">#python</a>
           
-            <a href="/tags/tmux/" rel="tag">#tmux</a>
+            <a href="/tags/3-5/" rel="tag">#3.5</a>
           
         </div>
       
@@ -338,16 +320,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/17/Seek-job-opportunities/" rel="next" title="Seek job opportunities">
-                <i class="fa fa-chevron-left"></i> Seek job opportunities
+              <a href="/2015/03/06/yield/" rel="next" title="yield 使用原因与思想">
+                <i class="fa fa-chevron-left"></i> yield 使用原因与思想
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/26/I-m-back/" rel="prev" title="I'm back">
-                I'm back <i class="fa fa-chevron-right"></i>
+              <a href="/2015/04/27/Flow-statistics/" rel="prev" title="增加流量统计功能">
+                增加流量统计功能 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -374,8 +356,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/09/source-install-tmux-2-3/"
-           data-title="source install tmux 2.3" data-url="http://iamyann.com/2016/11/09/source-install-tmux-2-3/">
+      <div class="ds-thread" data-thread-key="2015/03/08/socket-err/"
+           data-title="Python 3套接字故障" data-url="http://iamyann.com/2015/03/08/socket-err/">
       </div>
     
   </div>
