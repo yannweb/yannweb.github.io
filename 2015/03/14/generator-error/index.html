@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://iamyann.com/2015/03/14/generator-error/index.html">
 <meta property="og:site_name" content="yann的小站">
 <meta property="og:description" content="python2 转到python3 之后, generator对象报错如下:AttributeError: ‘generator’ object has no attribute ‘next’">
-<meta property="og:updated_time" content="2017-03-14T06:58:12.352Z">
+<meta property="og:updated_time" content="2017-03-14T07:00:04.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用generator对象时报错">
 <meta name="twitter:description" content="python2 转到python3 之后, generator对象报错如下:AttributeError: ‘generator’ object has no attribute ‘next’">
@@ -288,7 +288,7 @@
         <p>python2 转到python3 之后, generator对象<br>报错如下:<br>AttributeError: ‘generator’ object has no attribute ‘next’</p>
 <a id="more"></a>
 <p>代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">os.walk(<span class="string">"/tmp"</span>)</div><div class="line">path = os.walk(<span class="string">"/tmp"</span>)</div><div class="line"><span class="comment">#path.next()</span></div><div class="line">path.__next__()</div></pre></td></tr></table></figure></p>
-<p>在python 3.x中 generator（有yield关键字的函数则会被识别为generator函数）中的next变为<strong>next</strong>了,<br>next是python 3.x以前版本中的方法, 需要改为path.<strong>next</strong>()</p>
+<p>在python 3.x中 generator（有yield关键字的函数则会被识别为generator函数）中的next变为<strong>next</strong>了,<br>next是python 3.x以前版本中的方法, 需要两边加下划线</p>
 
       
     </div>
@@ -330,8 +330,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/04/27/Flow-statistics/" rel="prev" title="增加流量统计功能">
-                增加流量统计功能 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/03/14/bytes-and-str-in-python3/" rel="prev" title="bytes and str in python3">
+                bytes and str in python3 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -404,7 +404,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-count">62</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -412,7 +412,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>

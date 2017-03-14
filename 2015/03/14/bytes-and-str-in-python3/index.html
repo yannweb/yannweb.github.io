@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="阿里云," />
+  <meta name="keywords" content="python,3.5," />
 
 
 
@@ -86,19 +86,19 @@
 
 
 
-<meta name="description" content="rds导出报错，解决slb遇到图片服务器指向问题
-解决方法,和本地导出一样mysqldump,但是注意,rds的主机是哪个很长一串的字符, 密码是你建rds时自己设的,">
+<meta name="description" content="报错:
+#TypeError: Unicode-objects must be encoded before hashing">
 <meta property="og:type" content="article">
-<meta property="og:title" content="rds导出">
-<meta property="og:url" content="http://iamyann.com/2015/06/17/rdse5afbce587ba/index.html">
+<meta property="og:title" content="bytes and str in python3">
+<meta property="og:url" content="http://iamyann.com/2015/03/14/bytes-and-str-in-python3/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="rds导出报错，解决slb遇到图片服务器指向问题
-解决方法,和本地导出一样mysqldump,但是注意,rds的主机是哪个很长一串的字符, 密码是你建rds时自己设的,">
-<meta property="og:updated_time" content="2016-09-22T13:31:37.000Z">
+<meta property="og:description" content="报错:
+#TypeError: Unicode-objects must be encoded before hashing">
+<meta property="og:updated_time" content="2017-03-14T09:11:51.898Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="rds导出">
-<meta name="twitter:description" content="rds导出报错，解决slb遇到图片服务器指向问题
-解决方法,和本地导出一样mysqldump,但是注意,rds的主机是哪个很长一串的字符, 密码是你建rds时自己设的,">
+<meta name="twitter:title" content="bytes and str in python3">
+<meta name="twitter:description" content="报错:
+#TypeError: Unicode-objects must be encoded before hashing">
 
 
 
@@ -119,9 +119,9 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2015/06/17/rdse5afbce587ba/"/>
+  <link rel="canonical" href="http://iamyann.com/2015/03/14/bytes-and-str-in-python3/"/>
 
-  <title> rds导出 | yann的小站 </title>
+  <title> bytes and str in python3 | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +241,7 @@
             
             
               
-                rds导出
+                bytes and str in python3
               
             
           </h1>
@@ -253,8 +253,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-06-17T04:29:57+00:00" content="2015-06-17">
-              2015-06-17
+            <time itemprop="dateCreated" datetime="2015-03-14T09:10:18+00:00" content="2015-03-14">
+              2015-03-14
             </time>
           </span>
 
@@ -267,8 +267,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/故障记录/" itemprop="url" rel="index">
-                    <span itemprop="name">故障记录</span>
+                  <a href="/categories/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
                   </a>
                 </span>
 
@@ -283,8 +283,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/06/17/rdse5afbce587ba/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/17/rdse5afbce587ba/" itemprop="commentsCount"></span>
+                <a href="/2015/03/14/bytes-and-str-in-python3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/14/bytes-and-str-in-python3/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -307,8 +307,8 @@
       
 
       
-        <p>rds导出报错，解决<br>slb遇到图片服务器指向问题</p>
-<p>解决方法,和本地导出一样mysqldump,但是注意,rds的主机是哪个很长一串的字符, 密码是你建rds时自己设的,</p>
+        <p>报错:</p>
+<p>#TypeError: Unicode-objects must be encoded before hashing<br><a id="more"></a><br>修复代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> hashlib</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_checksum</span><span class="params">(path)</span>:</span></div><div class="line">        fp = open(path)</div><div class="line">        checksum = hashlib.md5()</div><div class="line">        <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">            buffer = fp.read(<span class="number">8192</span>)</div><div class="line">            <span class="keyword">if</span> <span class="keyword">not</span> buffer:<span class="keyword">break</span></div><div class="line">            <span class="comment">#checksum.update(buffer)</span></div><div class="line">            checksum.update(buffer.encode())</div><div class="line">        fp.close()</div><div class="line">        checksum = checksum.digest()</div><div class="line">        <span class="keyword">return</span> checksum</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -331,7 +331,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/阿里云/" rel="tag">#阿里云</a>
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+            <a href="/tags/3-5/" rel="tag">#3.5</a>
           
         </div>
       
@@ -340,16 +342,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/06/11/gitolite-set/" rel="next" title="gitolite搞定">
-                <i class="fa fa-chevron-left"></i> gitolite搞定
+              <a href="/2015/03/14/generator-error/" rel="next" title="使用generator对象时报错">
+                <i class="fa fa-chevron-left"></i> 使用generator对象时报错
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/06/25/ali-vpn/" rel="prev" title="阿里云vpn">
-                阿里云vpn <i class="fa fa-chevron-right"></i>
+              <a href="/2015/04/27/Flow-statistics/" rel="prev" title="增加流量统计功能">
+                增加流量统计功能 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -376,8 +378,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/06/17/rdse5afbce587ba/"
-           data-title="rds导出" data-url="http://iamyann.com/2015/06/17/rdse5afbce587ba/">
+      <div class="ds-thread" data-thread-key="2015/03/14/bytes-and-str-in-python3/"
+           data-title="bytes and str in python3" data-url="http://iamyann.com/2015/03/14/bytes-and-str-in-python3/">
       </div>
     
   </div>
