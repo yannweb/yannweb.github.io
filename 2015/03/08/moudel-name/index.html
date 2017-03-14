@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://iamyann.com/2015/03/08/moudel-name/index.html">
 <meta property="og:site_name" content="yann的小站">
 <meta property="og:description" content="python2 转到python3 之后, 一些模块改名">
-<meta property="og:updated_time" content="2017-03-08T09:20:08.643Z">
+<meta property="og:updated_time" content="2017-03-08T09:45:22.595Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些python3模块名字变动">
 <meta name="twitter:description" content="python2 转到python3 之后, 一些模块改名">
@@ -289,7 +289,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#import urllib</span></div><div class="line"><span class="keyword">import</span> urllib.request, urllib.parse, urllib.error</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line">--snip--</div><div class="line"></div><div class="line">urllib.request.urlretrieve(url, filename)</div></pre></td></tr></table></figure>
 <p>#urllib2更好支持认识及cookie</p>
 <p>#urllib2在Python3已拆分更名为urllib.request和urllib.error</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#import SimpleXMLRPCServer</span></div><div class="line"><span class="keyword">import</span> xmlrpc.server</div><div class="line"><span class="keyword">import</span> os</div><div class="line"></div><div class="line">--snip--</div><div class="line"></div><div class="line">    <span class="comment">#s = SimpleXMLRPCServer.SimpleXMLRPCServer(('127.0.0.1', 8765))</span></div><div class="line">    s = xmlrpc.server.SimpleXMLRPCServer((<span class="string">'127.0.0.1'</span>, <span class="number">8765</span>))</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#import SimpleXMLRPCServer</span></div><div class="line"><span class="keyword">import</span> xmlrpc.server</div><div class="line"><span class="keyword">import</span> os</div><div class="line"></div><div class="line">--snip--</div><div class="line"></div><div class="line">    <span class="comment">#s = SimpleXMLRPCServer.SimpleXMLRPCServer(('127.0.0.1', 8765))</span></div><div class="line">    s = xmlrpc.server.SimpleXMLRPCServer((<span class="string">'127.0.0.1'</span>, <span class="number">8765</span>))</div><div class="line"><span class="comment">#使用</span></div><div class="line"><span class="keyword">import</span> xmlrpc.client</div><div class="line">x = xmlrpc.client.ServerProxy(<span class="string">'http://localhost:8765'</span>)</div></pre></td></tr></table></figure>
 <p>还有一些早先遇到的,实在想不起来,想到再更新</p>
 
       
@@ -332,8 +332,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/04/27/Flow-statistics/" rel="prev" title="增加流量统计功能">
-                增加流量统计功能 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/03/14/generator-error/" rel="prev" title="使用generator对象时报错">
+                使用generator对象时报错 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -406,7 +406,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">60</span>
+              <span class="site-state-item-count">61</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
