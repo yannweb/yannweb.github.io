@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux,bash," />
+  <meta name="keywords" content="python,3.4," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="RSYNCOPT=(–rsh=”ssh -p 22 -c des” –rsync-path=\”/usr/bin/rsync\” –inplace –progress -az -vv –delete –stats)自昨天写出主备机同用户目录间同步的脚本之后,总想改善一下,于是就有了这一篇东西还是一样的东西,但做了标准化处理,封装了参数,">
+<meta name="description" content="python3 序列化的什么方法和前版本有一点差别报错如下:TypeError: write() argument must be str, not bytes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="auto rsync Standard script">
-<meta property="og:url" content="http://iamyann.com/2016/09/22/auto-rsync-Standard-script/index.html">
+<meta property="og:title" content="pickle">
+<meta property="og:url" content="http://iamyann.com/2015/03/27/pickle/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="RSYNCOPT=(–rsh=”ssh -p 22 -c des” –rsync-path=\”/usr/bin/rsync\” –inplace –progress -az -vv –delete –stats)自昨天写出主备机同用户目录间同步的脚本之后,总想改善一下,于是就有了这一篇东西还是一样的东西,但做了标准化处理,封装了参数,">
-<meta property="og:updated_time" content="2016-09-22T13:31:37.000Z">
+<meta property="og:description" content="python3 序列化的什么方法和前版本有一点差别报错如下:TypeError: write() argument must be str, not bytes">
+<meta property="og:updated_time" content="2017-03-27T07:05:12.231Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="auto rsync Standard script">
-<meta name="twitter:description" content="RSYNCOPT=(–rsh=”ssh -p 22 -c des” –rsync-path=\”/usr/bin/rsync\” –inplace –progress -az -vv –delete –stats)自昨天写出主备机同用户目录间同步的脚本之后,总想改善一下,于是就有了这一篇东西还是一样的东西,但做了标准化处理,封装了参数,">
+<meta name="twitter:title" content="pickle">
+<meta name="twitter:description" content="python3 序列化的什么方法和前版本有一点差别报错如下:TypeError: write() argument must be str, not bytes">
 
 
 
@@ -116,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2016/09/22/auto-rsync-Standard-script/"/>
+  <link rel="canonical" href="http://iamyann.com/2015/03/27/pickle/"/>
 
-  <title> auto rsync Standard script | yann的小站 </title>
+  <title> pickle | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +238,7 @@
             
             
               
-                auto rsync Standard script
+                pickle
               
             
           </h1>
@@ -250,8 +250,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-22T00:12:43+00:00" content="2016-09-22">
-              2016-09-22
+            <time itemprop="dateCreated" datetime="2015-03-27T07:04:24+00:00" content="2015-03-27">
+              2015-03-27
             </time>
           </span>
 
@@ -264,8 +264,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/模块化部署/" itemprop="url" rel="index">
-                    <span itemprop="name">模块化部署</span>
+                  <a href="/categories/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
                   </a>
                 </span>
 
@@ -280,8 +280,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/22/auto-rsync-Standard-script/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/22/auto-rsync-Standard-script/" itemprop="commentsCount"></span>
+                <a href="/2015/03/27/pickle/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/27/pickle/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -304,8 +304,10 @@
       
 
       
-        <p>RSYNCOPT=(–rsh=”ssh -p 22 -c des” –rsync-path=\”/usr/bin/rsync\” –inplace –progress -az -vv –delete –stats)<br>自昨天写出主备机同用户目录间同步的脚本之后,总想改善一下,于是就有了这一篇<br>东西还是一样的东西,但做了标准化处理,封装了参数,<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"><span class="comment">#赋值</span></div><div class="line"><span class="comment">#RSYNC_OPTS="-e \\\"ssh -p 22 -o StrictHostKeyChecking=no\\\" -azv --delete --stats"</span></div><div class="line">RSYNC=<span class="string">"/usr/bin/rsync"</span></div><div class="line"><span class="comment">#RSYNCOPT="--rsh=\"ssh -p 22 -c des\" --rsync-path=\"/opt/bin/rsync\" --inplace --progress -a -vv"</span></div><div class="line">USER=`whoami`</div><div class="line">REMOTE_HOST=<span class="string">"192.168.1.1"</span></div><div class="line">TARGET_DIR=<span class="string">"/目录/"</span></div><div class="line"><span class="comment">#REMOTE_USER="tomcat@"</span></div><div class="line">REMOTE_BASE=<span class="string">":"</span></div><div class="line">REMOTE_At=<span class="string">"@"</span></div><div class="line"><span class="comment"># 该脚本需要非root用户运行,注意更新例外文件</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="title">local_rsync</span></span>() &#123;</div><div class="line">RSYNCOPT=(--rsh=<span class="string">"ssh -p 22 -c des"</span> --rsync-path=\<span class="string">"/usr/bin/rsync\" --inplace --progress -az -vv --delete --stats)</span></div><div class="line">printf "%q <span class="string">" <span class="variable">$&#123;RSYNC&#125;</span> "</span><span class="variable">$&#123;RSYNCOPT[@]&#125;</span><span class="string">" --exclude "</span><span class="built_in">log</span>/<span class="string">" <span class="variable">$&#123;TARGET_DIR&#125;</span> <span class="variable">$&#123;USER&#125;</span><span class="variable">$&#123;REMOTE_At&#125;</span><span class="variable">$&#123;REMOTE_HOST&#125;</span><span class="variable">$&#123;REMOTE_BASE&#125;</span><span class="variable">$&#123;TARGET_DIR&#125;</span></span></div><div class="line">echo</div><div class="line"><span class="variable">$&#123;RSYNC&#125;</span> "<span class="variable">$&#123;RSYNCOPT[@]&#125;</span><span class="string">" --exclude "</span><span class="built_in">log</span>/<span class="string">" <span class="variable">$&#123;TARGET_DIR&#125;</span> <span class="variable">$&#123;USER&#125;</span><span class="variable">$&#123;REMOTE_At&#125;</span><span class="variable">$&#123;REMOTE_HOST&#125;</span><span class="variable">$&#123;REMOTE_BASE&#125;</span><span class="variable">$&#123;TARGET_DIR&#125;</span></span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>以下代码主要供演示,完整代码请移步<br><a href="http://www.iamyann.com/2016/09/19/auto-moudle-rsync/#more" target="_blank" rel="external">http://www.iamyann.com/2016/09/19/auto-moudle-rsync/#more</a></p>
+        <p>python3 序列化的什么方法和前版本有一点差别<br>报错如下:<br>TypeError: write() argument must be str, not bytes</p>
+<a id="more"></a>
+<p>代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pickle</div><div class="line">some_dict = &#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>&#125;</div><div class="line"><span class="comment">#pickle_file = open('some_dict.pkl', 'w')</span></div><div class="line">pickle_file = open(<span class="string">'some_dict.pkl'</span>, <span class="string">'wb'</span>)</div><div class="line">pickle.dump(some_dict, pickle_file)</div><div class="line">pickle_file.close()</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="keyword">import</span> pickle</div><div class="line"><span class="comment">#pickle_file = open('some_dict.pkl', 'r')</span></div><div class="line">pickle_file = open(<span class="string">'some_dict.pkl'</span>, <span class="string">'rb'</span>)</div><div class="line">another_name_for_some_dict = pickle.load(pickle_file)</div><div class="line">another_name_for_some_dict</div></pre></td></tr></table></figure></p>
+<p>序列化及反序列化时注意</p>
 
       
     </div>
@@ -328,9 +330,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag">#linux</a>
+            <a href="/tags/python/" rel="tag">#python</a>
           
-            <a href="/tags/bash/" rel="tag">#bash</a>
+            <a href="/tags/3-4/" rel="tag">#3.4</a>
           
         </div>
       
@@ -339,16 +341,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/19/auto-moudle-rsync/" rel="next" title="auto moudle rsync">
-                <i class="fa fa-chevron-left"></i> auto moudle rsync
+              <a href="/2015/03/23/file/" rel="next" title="process">
+                <i class="fa fa-chevron-left"></i> process
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/23/mybase-love-eventnote/" rel="prev" title="mybase love evernote">
-                mybase love evernote <i class="fa fa-chevron-right"></i>
+              <a href="/2015/04/27/Flow-statistics/" rel="prev" title="增加流量统计功能">
+                增加流量统计功能 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -375,8 +377,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/22/auto-rsync-Standard-script/"
-           data-title="auto rsync Standard script" data-url="http://iamyann.com/2016/09/22/auto-rsync-Standard-script/">
+      <div class="ds-thread" data-thread-key="2015/03/27/pickle/"
+           data-title="pickle" data-url="http://iamyann.com/2015/03/27/pickle/">
       </div>
     
   </div>
