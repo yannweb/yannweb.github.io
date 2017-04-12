@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git,禅道," />
+  <meta name="keywords" content="python,3.5," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="提交时输入task，bug及相关号码就会在禪道中有相应记录，不存在的号码自动忽略">
+<meta name="description" content="python2 转到python3 之后, 导入使用file方法故障报错如下:list indices must be integers or slices, not str">
 <meta property="og:type" content="article">
-<meta property="og:title" content="集成了git和禪道">
-<meta property="og:url" content="http://iamyann.com/2015/07/07/git-tentao/index.html">
+<meta property="og:title" content="process">
+<meta property="og:url" content="http://iamyann.com/2015/04/12/avalon/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="提交时输入task，bug及相关号码就会在禪道中有相应记录，不存在的号码自动忽略">
-<meta property="og:updated_time" content="2016-09-22T13:31:37.000Z">
+<meta property="og:description" content="python2 转到python3 之后, 导入使用file方法故障报错如下:list indices must be integers or slices, not str">
+<meta property="og:updated_time" content="2017-04-12T09:52:22.966Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="集成了git和禪道">
-<meta name="twitter:description" content="提交时输入task，bug及相关号码就会在禪道中有相应记录，不存在的号码自动忽略">
+<meta name="twitter:title" content="process">
+<meta name="twitter:description" content="python2 转到python3 之后, 导入使用file方法故障报错如下:list indices must be integers or slices, not str">
 
 
 
@@ -116,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2015/07/07/git-tentao/"/>
+  <link rel="canonical" href="http://iamyann.com/2015/04/12/avalon/"/>
 
-  <title> 集成了git和禪道 | yann的小站 </title>
+  <title> process | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +238,7 @@
             
             
               
-                集成了git和禪道
+                process
               
             
           </h1>
@@ -250,8 +250,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-07-07T04:49:03+00:00" content="2015-07-07">
-              2015-07-07
+            <time itemprop="dateCreated" datetime="2015-04-12T09:51:09+00:00" content="2015-04-12">
+              2015-04-12
             </time>
           </span>
 
@@ -264,8 +264,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/工作细节/" itemprop="url" rel="index">
-                    <span itemprop="name">工作细节</span>
+                  <a href="/categories/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
                   </a>
                 </span>
 
@@ -280,8 +280,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/07/07/git-tentao/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/07/git-tentao/" itemprop="commentsCount"></span>
+                <a href="/2015/04/12/avalon/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/12/avalon/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -304,7 +304,10 @@
       
 
       
-        <p>提交时输入task，bug及相关号码就会在禪道中有相应记录，不存在的号码自动忽略</p>
+        <p>python2 转到python3 之后, 导入使用file方法故障<br>报错如下:<br>list indices must be integers or slices, not str</p>
+<a id="more"></a>
+<p>代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">avalons = []</div><div class="line"></div><div class="line">polling_active = <span class="keyword">True</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> polling_active:</div><div class="line">    name = input(<span class="string">'\n What is your name'</span>)</div><div class="line">    response = input(<span class="string">'Where is your avalon'</span>)</div><div class="line"></div><div class="line">    avalons[name] = response</div><div class="line"></div><div class="line">    repeat = input(<span class="string">'Would you like to let another person respond? (yes/no)'</span>)</div><div class="line">    <span class="keyword">if</span> repeat == <span class="string">'no'</span>:</div><div class="line">        polling_active = <span class="keyword">False</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> name, response <span class="keyword">in</span> avalons.items():</div><div class="line">    print(name + <span class="string">' would you like to '</span> + response + <span class="string">'.'</span>)</div></pre></td></tr></table></figure></p>
+<p>其实和name那行一点关系都没有,是开头写错了,把字典写成了列表<br>所以报错也不一定是故障点,</p>
 
       
     </div>
@@ -327,9 +330,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag">#git</a>
+            <a href="/tags/python/" rel="tag">#python</a>
           
-            <a href="/tags/禅道/" rel="tag">#禅道</a>
+            <a href="/tags/3-5/" rel="tag">#3.5</a>
           
         </div>
       
@@ -338,16 +341,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/06/30/centos-deploy-node.js/" rel="next" title="node.js部署">
-                <i class="fa fa-chevron-left"></i> node.js部署
+              <a href="/2015/03/27/pickle/" rel="next" title="pickle">
+                <i class="fa fa-chevron-left"></i> pickle
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/16/GitHub-validation-failed/" rel="prev" title="github老是验证失败的解法">
-                github老是验证失败的解法 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/04/27/Flow-statistics/" rel="prev" title="增加流量统计功能">
+                增加流量统计功能 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -374,8 +377,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/07/07/git-tentao/"
-           data-title="集成了git和禪道" data-url="http://iamyann.com/2015/07/07/git-tentao/">
+      <div class="ds-thread" data-thread-key="2015/04/12/avalon/"
+           data-title="process" data-url="http://iamyann.com/2015/04/12/avalon/">
       </div>
     
   </div>
