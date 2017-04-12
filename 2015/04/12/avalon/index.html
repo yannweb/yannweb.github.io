@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="python2 转到python3 之后, 导入使用file方法故障报错如下:list indices must be integers or slices, not str">
+<meta name="description" content="报错如下:list indices must be integers or slices, not str">
 <meta property="og:type" content="article">
-<meta property="og:title" content="process">
+<meta property="og:title" content="avalon">
 <meta property="og:url" content="http://iamyann.com/2015/04/12/avalon/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="python2 转到python3 之后, 导入使用file方法故障报错如下:list indices must be integers or slices, not str">
-<meta property="og:updated_time" content="2017-04-12T09:52:22.966Z">
+<meta property="og:description" content="报错如下:list indices must be integers or slices, not str">
+<meta property="og:updated_time" content="2017-04-12T09:55:00.555Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="process">
-<meta name="twitter:description" content="python2 转到python3 之后, 导入使用file方法故障报错如下:list indices must be integers or slices, not str">
+<meta name="twitter:title" content="avalon">
+<meta name="twitter:description" content="报错如下:list indices must be integers or slices, not str">
 
 
 
@@ -118,7 +118,7 @@
 
   <link rel="canonical" href="http://iamyann.com/2015/04/12/avalon/"/>
 
-  <title> process | yann的小站 </title>
+  <title> avalon | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +238,7 @@
             
             
               
-                process
+                avalon
               
             
           </h1>
@@ -304,7 +304,7 @@
       
 
       
-        <p>python2 转到python3 之后, 导入使用file方法故障<br>报错如下:<br>list indices must be integers or slices, not str</p>
+        <p>报错如下:<br>list indices must be integers or slices, not str</p>
 <a id="more"></a>
 <p>代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">avalons = []</div><div class="line"></div><div class="line">polling_active = <span class="keyword">True</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> polling_active:</div><div class="line">    name = input(<span class="string">'\n What is your name'</span>)</div><div class="line">    response = input(<span class="string">'Where is your avalon'</span>)</div><div class="line"></div><div class="line">    avalons[name] = response</div><div class="line"></div><div class="line">    repeat = input(<span class="string">'Would you like to let another person respond? (yes/no)'</span>)</div><div class="line">    <span class="keyword">if</span> repeat == <span class="string">'no'</span>:</div><div class="line">        polling_active = <span class="keyword">False</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> name, response <span class="keyword">in</span> avalons.items():</div><div class="line">    print(name + <span class="string">' would you like to '</span> + response + <span class="string">'.'</span>)</div></pre></td></tr></table></figure></p>
 <p>其实和name那行一点关系都没有,是开头写错了,把字典写成了列表<br>所以报错也不一定是故障点,</p>
@@ -378,7 +378,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/04/12/avalon/"
-           data-title="process" data-url="http://iamyann.com/2015/04/12/avalon/">
+           data-title="avalon" data-url="http://iamyann.com/2015/04/12/avalon/">
       </div>
     
   </div>
