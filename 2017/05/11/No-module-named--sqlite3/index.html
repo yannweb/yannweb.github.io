@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python,3.5," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="内容后补">
+<meta name="description" content="报错如下:ImportError: No module named ‘_sqlite3’">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lvs 搞定，工作多的做不完">
-<meta property="og:url" content="http://iamyann.com/2015/06/08/lvs-set/index.html">
+<meta property="og:title" content="No module named _sqlite3 的另一种可能">
+<meta property="og:url" content="http://iamyann.com/2017/05/11/No-module-named--sqlite3/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="内容后补">
-<meta property="og:updated_time" content="2016-09-22T16:19:43.000Z">
+<meta property="og:description" content="报错如下:ImportError: No module named ‘_sqlite3’">
+<meta property="og:updated_time" content="2017-05-11T10:31:05.447Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lvs 搞定，工作多的做不完">
-<meta name="twitter:description" content="内容后补">
+<meta name="twitter:title" content="No module named _sqlite3 的另一种可能">
+<meta name="twitter:description" content="报错如下:ImportError: No module named ‘_sqlite3’">
 
 
 
@@ -116,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2015/06/08/lvs-set/"/>
+  <link rel="canonical" href="http://iamyann.com/2017/05/11/No-module-named--sqlite3/"/>
 
-  <title> lvs 搞定，工作多的做不完 | yann的小站 </title>
+  <title> No module named _sqlite3 的另一种可能 | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +238,7 @@
             
             
               
-                lvs 搞定，工作多的做不完
+                No module named _sqlite3 的另一种可能
               
             
           </h1>
@@ -250,8 +250,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-06-08T05:36:20+00:00" content="2015-06-08">
-              2015-06-08
+            <time itemprop="dateCreated" datetime="2017-05-11T10:11:35+00:00" content="2017-05-11">
+              2017-05-11
             </time>
           </span>
 
@@ -264,8 +264,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/系统部署/" itemprop="url" rel="index">
-                    <span itemprop="name">系统部署</span>
+                  <a href="/categories/部署/" itemprop="url" rel="index">
+                    <span itemprop="name">部署</span>
                   </a>
                 </span>
 
@@ -280,8 +280,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/06/08/lvs-set/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/08/lvs-set/" itemprop="commentsCount"></span>
+                <a href="/2017/05/11/No-module-named--sqlite3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/11/No-module-named--sqlite3/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -304,7 +304,9 @@
       
 
       
-        <p>内容后补</p>
+        <p>报错如下:<br>ImportError: No module named ‘_sqlite3’<br><a id="more"></a><br>代码:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">deactivate</div><div class="line">pip3 uninstall  virtualenv</div><div class="line">yum -y install sqlite-devel</div><div class="line"><span class="comment">#vi setup.py</span></div><div class="line">pip3 install --user virtualenv</div><div class="line"></div><div class="line"><span class="comment">#重新部署虚拟环境并激活</span></div></pre></td></tr></table></figure></p>
+<p>这个故障其实很多人都遇到过, 解决方法是安装sqlite-devel, 再重新编译python.<br>但我这次遇到的比较特殊, 用上述方法无效, 甚至修改安装文件也没有效果.</p>
+<p>最后经过分析,发现我使用了virtualenv, 一直修改都在环境外的python, 所以内部的python一直在报错<br>然后问题就简单了,按上文命令执行一下就解决了.<br>后记<br>这个问题,其实之前遇到过, 当时解决完就直接做别的事去了, 没有记下来结果又遇到了 orz</p>
 
       
     </div>
@@ -325,22 +327,26 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+            <a href="/tags/3-5/" rel="tag">#3.5</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/06/04/redis-with-nagios/" rel="next" title="nagios监控redis">
-                <i class="fa fa-chevron-left"></i> nagios监控redis
+              <a href="/2017/05/03/get-word/" rel="next" title="get word">
+                <i class="fa fa-chevron-left"></i> get word
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/06/10/rsync-think/" rel="prev" title="rsync机器多了的必然">
-                rsync机器多了的必然 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -366,8 +372,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/06/08/lvs-set/"
-           data-title="lvs 搞定，工作多的做不完" data-url="http://iamyann.com/2015/06/08/lvs-set/">
+      <div class="ds-thread" data-thread-key="2017/05/11/No-module-named--sqlite3/"
+           data-title="No module named _sqlite3 的另一种可能" data-url="http://iamyann.com/2017/05/11/No-module-named--sqlite3/">
       </div>
     
   </div>
