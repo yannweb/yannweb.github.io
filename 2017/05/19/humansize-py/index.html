@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux,vpn," />
+  <meta name="keywords" content="python,3.5," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="公司美工需要国外的图库素材,所以需要搭个vpn">
+<meta name="description" content="用途:数字转计算机单位, 可以控制1024进制和1000进制">
 <meta property="og:type" content="article">
-<meta property="og:title" content="阿里云vpn">
-<meta property="og:url" content="http://iamyann.com/2015/06/25/ali-vpn/index.html">
+<meta property="og:title" content="模块_进制转换">
+<meta property="og:url" content="http://iamyann.com/2017/05/19/humansize-py/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="公司美工需要国外的图库素材,所以需要搭个vpn">
-<meta property="og:updated_time" content="2016-09-22T13:31:37.000Z">
+<meta property="og:description" content="用途:数字转计算机单位, 可以控制1024进制和1000进制">
+<meta property="og:updated_time" content="2017-05-19T09:09:38.667Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿里云vpn">
-<meta name="twitter:description" content="公司美工需要国外的图库素材,所以需要搭个vpn">
+<meta name="twitter:title" content="模块_进制转换">
+<meta name="twitter:description" content="用途:数字转计算机单位, 可以控制1024进制和1000进制">
 
 
 
@@ -116,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2015/06/25/ali-vpn/"/>
+  <link rel="canonical" href="http://iamyann.com/2017/05/19/humansize-py/"/>
 
-  <title> 阿里云vpn | yann的小站 </title>
+  <title> 模块_进制转换 | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +238,7 @@
             
             
               
-                阿里云vpn
+                模块_进制转换
               
             
           </h1>
@@ -250,8 +250,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-06-25T05:45:32+00:00" content="2015-06-25">
-              2015-06-25
+            <time itemprop="dateCreated" datetime="2017-05-19T09:08:51+00:00" content="2017-05-19">
+              2017-05-19
             </time>
           </span>
 
@@ -264,8 +264,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/系统部署/" itemprop="url" rel="index">
-                    <span itemprop="name">系统部署</span>
+                  <a href="/categories/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
                   </a>
                 </span>
 
@@ -280,8 +280,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/06/25/ali-vpn/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/25/ali-vpn/" itemprop="commentsCount"></span>
+                <a href="/2017/05/19/humansize-py/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/19/humansize-py/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -304,9 +304,10 @@
       
 
       
-        <p>公司美工需要国外的图库素材,所以需要搭个vpn<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">yum install -y ppp iptables</div><div class="line">rpm -ivh pptpd-1.3.4-2.el6.x86_64.rpm</div><div class="line">vi /etc/pptpd.conf</div><div class="line">vi /etc/ppp/options.pptpd</div><div class="line">vi /etc/ppp/chap-secrets</div><div class="line">vi /etc/sysctl.conf</div><div class="line">sysctl -p</div><div class="line">iptables -t nat -A POSTROUTING <span class="_">-s</span> 192.168.0.0/24 -o eth1 -jMASQUERADE</div><div class="line">/etc/init.d/pptpd restart</div><div class="line">chkconfig pptpd on</div><div class="line">netstat -tunpl</div></pre></td></tr></table></figure></p>
-<p>修改成<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">localip 192.168.0.1 </div><div class="line">remoteip 192.168.0.234-238,192.168.0.245</div><div class="line">ms-dns 8.8.8.8 </div><div class="line">ms-dns 8.8.4.4 </div><div class="line">kuro pptpd 123456 * </div><div class="line">/etc/init.d/iptables save</div><div class="line">/etc/init.d/iptablesrestart</div><div class="line">chkconfig pptpd on </div><div class="line">chkconfig iptables on</div></pre></td></tr></table></figure></p>
-<p>应该是这样的，可惜主机卖完了</p>
+        <p>用途:<br>数字转计算机单位, 可以控制1024进制和1000进制</p>
+<a id="more"></a>
+<p>代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">SUFFIXES = &#123;<span class="number">1000</span>: [<span class="string">'KB'</span>, <span class="string">'MB'</span>, <span class="string">'GB'</span>, <span class="string">'TB'</span>, <span class="string">'PB'</span>, <span class="string">'EB'</span>, <span class="string">'ZB'</span>, <span class="string">'YB'</span>],</div><div class="line">            <span class="number">1024</span>: [<span class="string">'KiB'</span>, <span class="string">'MiB'</span>, <span class="string">'GiB'</span>, <span class="string">'TiB'</span>, <span class="string">'PiB'</span>, <span class="string">'EiB'</span>, <span class="string">'ZiB'</span>, <span class="string">'YiB'</span>]&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">approximate_size</span><span class="params">(size, a_kilobyte_is_1024_bytes=True)</span>:</span></div><div class="line">    <span class="string">'''Convert a file size to human-readable form.</span></div><div class="line"></div><div class="line">    Keyword arguments:</div><div class="line">    size -- file size in bytes</div><div class="line">    a_kilobyte_is_1024_bytes -- if True (default), use multiples of 1024</div><div class="line">                                if False, use multiples of 1000</div><div class="line"></div><div class="line">    Returns: string</div><div class="line"></div><div class="line">    '''</div><div class="line">    <span class="keyword">if</span> size &lt; <span class="number">0</span>:</div><div class="line">        <span class="keyword">raise</span> ValueError(<span class="string">'number must be non-negative'</span>)</div><div class="line"></div><div class="line">    multiple = <span class="number">1024</span> <span class="keyword">if</span> a_kilobyte_is_1024_bytes <span class="keyword">else</span> <span class="number">1000</span></div><div class="line">    <span class="keyword">for</span> suffix <span class="keyword">in</span> SUFFIXES[multiple]:</div><div class="line">        size /= multiple</div><div class="line">        <span class="comment">#不停的自除</span></div><div class="line">        <span class="keyword">if</span> size &lt; multiple:</div><div class="line">            <span class="keyword">return</span> <span class="string">'&#123;0:.1f&#125; &#123;1&#125;'</span>.format(size, suffix)</div><div class="line">            <span class="comment">#.1f表示结果留一位结果,&#123;1&#125;表示字典的第二列</span></div><div class="line"></div><div class="line">    <span class="keyword">raise</span> ValueError(<span class="string">'number too large'</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    print(approximate_size(<span class="number">1000000000000</span>, <span class="keyword">False</span>))</div><div class="line">    print(approximate_size(<span class="number">1000000000000</span>))</div></pre></td></tr></table></figure></p>
+<p>今天学到了一个很厉害的代码,想明白了就一句话,感觉脑子不够用<br>这个模块的厉害之处是用单位做循环记次的,一般都用数字,还真想不到这种用法.还有高阶字典的用法.</p>
 
       
     </div>
@@ -329,9 +330,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag">#linux</a>
+            <a href="/tags/python/" rel="tag">#python</a>
           
-            <a href="/tags/vpn/" rel="tag">#vpn</a>
+            <a href="/tags/3-5/" rel="tag">#3.5</a>
           
         </div>
       
@@ -340,17 +341,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/06/17/rdse5afbce587ba/" rel="next" title="rds导出">
-                <i class="fa fa-chevron-left"></i> rds导出
+              <a href="/2017/05/03/get-word/" rel="next" title="get word">
+                <i class="fa fa-chevron-left"></i> get word
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/06/30/mv/" rel="prev" title="git mv">
-                git mv <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -376,8 +373,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/06/25/ali-vpn/"
-           data-title="阿里云vpn" data-url="http://iamyann.com/2015/06/25/ali-vpn/">
+      <div class="ds-thread" data-thread-key="2017/05/19/humansize-py/"
+           data-title="模块_进制转换" data-url="http://iamyann.com/2017/05/19/humansize-py/">
       </div>
     
   </div>
