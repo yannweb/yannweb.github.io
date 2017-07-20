@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux,hexo," />
+  <meta name="keywords" content="python,3.5," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="今天发生了件不好的事情正在我快乐的调试bash命令的时候,boss和我说效益不好,部门在上海的部分被砍掉了所以我得找工作了等晚上回家写简历去,吹牛的东西,肯定不能在公司写吧orz">
+<meta name="description" content="用途:一个简单的函数,一个简单的测试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Seek job opportunities">
-<meta property="og:url" content="http://iamyann.com/2016/10/17/Seek-job-opportunities/index.html">
+<meta property="og:title" content="Duplicate Encoder">
+<meta property="og:url" content="http://iamyann.com/2017/07/20/Duplicate-Encoder/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="今天发生了件不好的事情正在我快乐的调试bash命令的时候,boss和我说效益不好,部门在上海的部分被砍掉了所以我得找工作了等晚上回家写简历去,吹牛的东西,肯定不能在公司写吧orz">
-<meta property="og:updated_time" content="2016-10-17T07:35:42.000Z">
+<meta property="og:description" content="用途:一个简单的函数,一个简单的测试">
+<meta property="og:updated_time" content="2017-07-20T03:55:26.708Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Seek job opportunities">
-<meta name="twitter:description" content="今天发生了件不好的事情正在我快乐的调试bash命令的时候,boss和我说效益不好,部门在上海的部分被砍掉了所以我得找工作了等晚上回家写简历去,吹牛的东西,肯定不能在公司写吧orz">
+<meta name="twitter:title" content="Duplicate Encoder">
+<meta name="twitter:description" content="用途:一个简单的函数,一个简单的测试">
 
 
 
@@ -116,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2016/10/17/Seek-job-opportunities/"/>
+  <link rel="canonical" href="http://iamyann.com/2017/07/20/Duplicate-Encoder/"/>
 
-  <title> Seek job opportunities | yann的小站 </title>
+  <title> Duplicate Encoder | yann的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +238,7 @@
             
             
               
-                Seek job opportunities
+                Duplicate Encoder
               
             
           </h1>
@@ -250,8 +250,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-17T15:24:45+00:00" content="2016-10-17">
-              2016-10-17
+            <time itemprop="dateCreated" datetime="2017-07-20T03:41:22+00:00" content="2017-07-20">
+              2017-07-20
             </time>
           </span>
 
@@ -264,8 +264,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/闲聊/" itemprop="url" rel="index">
-                    <span itemprop="name">闲聊</span>
+                  <a href="/categories/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
                   </a>
                 </span>
 
@@ -280,8 +280,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/17/Seek-job-opportunities/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/17/Seek-job-opportunities/" itemprop="commentsCount"></span>
+                <a href="/2017/07/20/Duplicate-Encoder/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/07/20/Duplicate-Encoder/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -304,9 +304,10 @@
       
 
       
-        <p>今天发生了件不好的事情<br>正在我快乐的调试bash命令的时候,boss和我说效益不好,部门在上海的部分被砍掉了<br>所以我得找工作了<br>等晚上回家写简历去,吹牛的东西,肯定不能在公司写吧orz<br><a id="more"></a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!base</span></div><div class="line"></div><div class="line"> ID=`ps -u pp|egrep <span class="string">"X001"</span> |wc <span class="_">-l</span>`</div><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$ID</span>"</span> <span class="_">-gt</span> <span class="string">"1"</span> ]; <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"gt"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">   <span class="built_in">echo</span> <span class="string">"st"</span></div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> [ <span class="string">"`ps -u pp|egrep "</span>X001<span class="string">" |wc -l`"</span> <span class="_">-gt</span> <span class="string">"1"</span> ]; <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"true"</span>;</div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
-<p>以上为草稿,待会就挪走</p>
+        <p>用途:<br>一个简单的函数,一个简单的测试</p>
+<a id="more"></a>
+<p>代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">duplicate_encode</span><span class="params">(word)</span>:</span></div><div class="line">    <span class="string">'''</span></div><div class="line">    &gt;&gt;&gt; duplicate_encode("din")</div><div class="line">    '((('</div><div class="line">    '''</div><div class="line">    <span class="keyword">return</span> <span class="string">""</span>.join([<span class="string">"("</span> <span class="keyword">if</span> word.lower().count(c) == <span class="number">1</span> <span class="keyword">else</span> <span class="string">")"</span> <span class="keyword">for</span> c <span class="keyword">in</span> word.lower()])</div><div class="line">~</div></pre></td></tr></table></figure></p>
+<p>最近一直忙着敲来敲去,日志都没更新,看github比较好<br>每一次写出比较pythonic的代码,还是很开心的</p>
 
       
     </div>
@@ -329,9 +330,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag">#linux</a>
+            <a href="/tags/python/" rel="tag">#python</a>
           
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
+            <a href="/tags/3-5/" rel="tag">#3.5</a>
           
         </div>
       
@@ -340,17 +341,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/12/many-war-packet-many-tomcat-startup-and-shutdown/" rel="next" title="many war packet many tomcat startup and shutdown">
-                <i class="fa fa-chevron-left"></i> many war packet many tomcat startup and shutdown
+              <a href="/2017/05/19/humansize-py/" rel="next" title="模块_进制转换">
+                <i class="fa fa-chevron-left"></i> 模块_进制转换
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/09/source-install-tmux-2-3/" rel="prev" title="source install tmux 2.3">
-                source install tmux 2.3 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -376,8 +373,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/17/Seek-job-opportunities/"
-           data-title="Seek job opportunities" data-url="http://iamyann.com/2016/10/17/Seek-job-opportunities/">
+      <div class="ds-thread" data-thread-key="2017/07/20/Duplicate-Encoder/"
+           data-title="Duplicate Encoder" data-url="http://iamyann.com/2017/07/20/Duplicate-Encoder/">
       </div>
     
   </div>
