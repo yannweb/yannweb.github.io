@@ -240,6 +240,128 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/22/auto-rsync-Standard-script/" itemprop="url">
+                  auto rsync Standard script
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-22T00:12:43+00:00" content="2016-09-22">
+              2016-09-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/模块化部署/" itemprop="url" rel="index">
+                    <span itemprop="name">模块化部署</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/22/auto-rsync-Standard-script/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/22/auto-rsync-Standard-script/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>RSYNCOPT=(–rsh=”ssh -p 22 -c des” –rsync-path=\”/usr/bin/rsync\” –inplace –progress -az -vv –delete –stats)<br>自昨天写出主备机同用户目录间同步的脚本之后,总想改善一下,于是就有了这一篇<br>东西还是一样的东西,但做了标准化处理,封装了参数,<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/22/auto-rsync-Standard-script/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/19/auto-moudle-rsync/" itemprop="url">
                   auto moudle rsync
                 </a>
@@ -1248,126 +1370,6 @@
           
             <p>先说一个字，作<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">touch ~/.ssh/config </div><div class="line"><span class="comment">#个人</span></div><div class="line">chmod 600  ~/.ssh/config</div><div class="line">   /etc/ssh/ssh_config <span class="comment">#全局</span></div><div class="line">Host *</div><div class="line">User git</div><div class="line">Port 22</div><div class="line">CheckHostIP no</div><div class="line">Compression yes</div><div class="line">ForwardAgent yes</div><div class="line">IdentityFile ~/.ssh/e540</div><div class="line"></div><div class="line">Host 114.80.119.*</div><div class="line">User www</div><div class="line">Port 22</div><div class="line">IdentityFile ~/.ssh/ya</div></pre></td></tr></table></figure></p>
 <p>请参考以上自行修改</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/07/07/git-tentao/" itemprop="url">
-                  集成了git和禪道
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-07-07T04:49:03+00:00" content="2015-07-07">
-              2015-07-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/工作细节/" itemprop="url" rel="index">
-                    <span itemprop="name">工作细节</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/07/07/git-tentao/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/07/git-tentao/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>提交时输入task，bug及相关号码就会在禪道中有相应记录，不存在的号码自动忽略</p>
 
           
         
