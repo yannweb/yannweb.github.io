@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="python,3.5," />
+  <meta name="keywords" content="python,blog" />
 
 
 
@@ -81,19 +81,18 @@
 
 
 
-<meta name="description" content="报错:
-#TypeError: Unicode-objects must be encoded before hashing">
+<meta name="description" content="在win7环境下,几种安装python的方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 3.x的bytes和str处理">
-<meta property="og:url" content="http://iamyann.com/2015/03/14/bytes-and-str-in-python3/index.html">
+<meta property="og:title" content="yann学长的运维开发指南02">
+<meta property="og:url" content="http://iamyann.com/2018/02/27/python3_win7/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="报错:
-#TypeError: Unicode-objects must be encoded before hashing">
-<meta property="og:updated_time" content="2017-03-14T09:15:39.000Z">
+<meta property="og:description" content="在win7环境下,几种安装python的方法">
+<meta property="og:image" content="http://hero.iamyann.com/20180227.png">
+<meta property="og:updated_time" content="2018-02-27T10:37:37.972Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python 3.x的bytes和str处理">
-<meta name="twitter:description" content="报错:
-#TypeError: Unicode-objects must be encoded before hashing">
+<meta name="twitter:title" content="yann学长的运维开发指南02">
+<meta name="twitter:description" content="在win7环境下,几种安装python的方法">
+<meta name="twitter:image" content="http://hero.iamyann.com/20180227.png">
 
 
 
@@ -123,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2015/03/14/bytes-and-str-in-python3/"/>
+  <link rel="canonical" href="http://iamyann.com/2018/02/27/python3_win7/"/>
 
 
 
 
 
-  <title>Python 3.x的bytes和str处理 | yann的小站</title>
+  <title>yann学长的运维开发指南02 | yann的小站</title>
   
 
 
@@ -236,7 +235,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iamyann.com/2015/03/14/bytes-and-str-in-python3/">
+    <link itemprop="mainEntityOfPage" href="http://iamyann.com/2018/02/27/python3_win7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yann Cao">
@@ -253,7 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python 3.x的bytes和str处理</h1>
+          <h1 class="post-title" itemprop="name headline">yann学长的运维开发指南02</h1>
         
 
         <div class="post-meta">
@@ -265,8 +264,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-03-14T09:10:18+00:00">
-                2015-03-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-27T17:52:59+00:00">
+                2018-02-27
               </time>
             
 
@@ -288,8 +287,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/开发/" itemprop="url" rel="index">
-                    <span itemprop="name">开发</span>
+                  <a href="/categories/运维开发/" itemprop="url" rel="index">
+                    <span itemprop="name">运维开发</span>
                   </a>
                 </span>
 
@@ -307,8 +306,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2015/03/14/bytes-and-str-in-python3/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2015/03/14/bytes-and-str-in-python3/" itemprop="commentsCount"></span>
+                <a href="/2018/02/27/python3_win7/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/02/27/python3_win7/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -321,6 +320,10 @@
 
           
 
+          
+              <div class="post-description">
+                  在win7环境下,几种安装python的方法
+              </div>
           
 
         </div>
@@ -336,8 +339,22 @@
       
 
       
-        <p>报错:</p>
-<p>#TypeError: Unicode-objects must be encoded before hashing<br><a id="more"></a><br>修复代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> hashlib</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_checksum</span><span class="params">(path)</span>:</span></div><div class="line">        fp = open(path)</div><div class="line">        checksum = hashlib.md5()</div><div class="line">        <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">            buffer = fp.read(<span class="number">8192</span>)</div><div class="line">            <span class="keyword">if</span> <span class="keyword">not</span> buffer:<span class="keyword">break</span></div><div class="line">            <span class="comment">#checksum.update(buffer)</span></div><div class="line">            checksum.update(buffer.encode())</div><div class="line">        fp.close()</div><div class="line">        checksum = checksum.digest()</div><div class="line">        <span class="keyword">return</span> checksum</div></pre></td></tr></table></figure></p>
+        <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>安装方式梳理<br><img src="http://hero.iamyann.com/20180227.png" alt="http://hero.iamyann.com/20180227.png"><br><a id="more"></a></p>
+<h3 id="极简哲学"><a href="#极简哲学" class="headerlink" title="极简哲学"></a>极简哲学</h3><p>在win7环境下,有多种方式可以安装python:</p>
+<blockquote>
+<ul>
+<li>choco</li>
+<li>Anaconda</li>
+<li>Cygwin</li>
+<li>cmder</li>
+</ul>
+</blockquote>
+<p>一般来说,分为两大类, 在win7下构造类linux环境方式安装,或使用win7本向环境方式安装.<br>两种方式各有优劣, 主要在家目录路径和字符编码方面会有差别,请自行取舍.</p>
+<p>yann学长自己比较喜欢choco的方式, 主要是各种环境都用这个部署比较习惯<br>具体方法如下:<br>按win键,在弹出的文本框输入cmd,然后按 CTRL+SHIFT+ENTER 组合键<br>在弹出的cmd命令行界面输入以下命令:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">powershell -NoProfile -ExecutionPolicy Bypass -Command <span class="string">"iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))"</span> &amp;&amp; SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin</div><div class="line"></div><div class="line"><span class="comment"># 安装 Python</span></div><div class="line">choco install python</div></pre></td></tr></table></figure></p>
+<ul>
+<li>注意<br>安装其他软件也需要使用 CTRL+SHIFT+ENTER 组合键的方式打开命令行<br>考虑到中国的网络情况,如果报错请多试几次</li>
+</ul>
+<h3 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h3><p>以上为今天的内容, 下次会介绍在linux下通过命令行安装python的操作,敬请期待</p>
 
       
     </div>
@@ -357,8 +374,6 @@
           
             <a href="/tags/python/" rel="tag"># python</a>
           
-            <a href="/tags/3-5/" rel="tag"># 3.5</a>
-          
         </div>
       
 
@@ -370,8 +385,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/03/14/generator-error/" rel="next" title="使用generator对象时报错">
-                <i class="fa fa-chevron-left"></i> 使用generator对象时报错
+              <a href="/2018/02/25/about/" rel="next" title="yann学长的运维开发指南01">
+                <i class="fa fa-chevron-left"></i> yann学长的运维开发指南01
               </a>
             
           </div>
@@ -379,10 +394,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/03/23/process/" rel="prev" title="process">
-                process <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -439,8 +450,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -509,6 +529,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#说明"><span class="nav-number">1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#极简哲学"><span class="nav-number">2.</span> <span class="nav-text">极简哲学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预告"><span class="nav-number">3.</span> <span class="nav-text">预告</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
