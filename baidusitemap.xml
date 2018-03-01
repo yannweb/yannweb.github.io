@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://iamyann.com/2018/03/01/python-linux-md/</loc>
+    <lastmod>2018-03-01T11:51:13.197Z</lastmod>
+    <data>
+        <display>
+        <title>yann学长的运维开发指南03</title>
+        <pubTime>2018-03-01T11:18:35.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="运维开发" url="http://iamyann.com/categories/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://iamyann.com/2018/02/27/python3_win7/</loc>
-    <lastmod>2018-02-27T10:37:37.972Z</lastmod>
+    <lastmod>2018-02-28T01:56:43.004Z</lastmod>
     <data>
         <display>
         <title>yann学长的运维开发指南02</title>
@@ -964,6 +984,122 @@
 
     
   <url>
+    <loc>http://iamyann.com/2015/05/06/crontab/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>crontab</title>
+        <pubTime>2015-05-06T10:36:46.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="工作细节" url="http://iamyann.com/categories/%E5%B7%A5%E4%BD%9C%E7%BB%86%E8%8A%82/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2015/05/13/git-clone-sourcetree/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>git历史数据搞定</title>
+        <pubTime>2015-05-13T01:55:09.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2015/07/07/git-tentao/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>集成了git和禪道</title>
+        <pubTime>2015-07-07T04:49:03.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>禅道</tag>
+         
+         
+           
+             
+              <breadCrumb title="工作细节" url="http://iamyann.com/categories/%E5%B7%A5%E4%BD%9C%E7%BB%86%E8%8A%82/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2015/05/05/git-tools/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>git 命令行操作</title>
+        <pubTime>2015-05-05T01:59:27.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2016/09/11/Import-articles-from-WordPress/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>Import-articles-from-WordPress</title>
+        <pubTime>2016-09-11T00:34:32.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2015/06/01/gzip/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>gzip</title>
+        <pubTime>2015-06-01T02:33:26.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://iamyann.com/2016/09/22/auto-rsync-Standard-script/</loc>
     <lastmod>2016-09-22T13:31:37.000Z</lastmod>
     <data>
@@ -986,16 +1122,14 @@
 
     
   <url>
-    <loc>http://iamyann.com/2015/06/03/nagios/</loc>
+    <loc>http://iamyann.com/2015/06/30/mv/</loc>
     <lastmod>2016-09-22T13:31:37.000Z</lastmod>
     <data>
         <display>
-        <title>nagios</title>
-        <pubTime>2015-06-03T09:05:21.000Z</pubTime>
+        <title>git mv</title>
+        <pubTime>2015-06-30T04:19:21.000Z</pubTime>
         
-        <tag>linux</tag>
-         
-        <tag>阿里云</tag>
+        <tag>git</tag>
          
          
            
@@ -1008,13 +1142,55 @@
 
     
   <url>
-    <loc>http://iamyann.com/2015/05/22/aliyun-memcache-to-redis/</loc>
+    <loc>http://iamyann.com/2015/06/17/rdse5afbce587ba/</loc>
     <lastmod>2016-09-22T13:31:37.000Z</lastmod>
     <data>
         <display>
-        <title>redis 3.0</title>
-        <pubTime>2015-05-22T02:00:22.000Z</pubTime>
+        <title>rds导出</title>
+        <pubTime>2015-06-17T04:29:57.000Z</pubTime>
         
+        <tag>阿里云</tag>
+         
+         
+           
+             
+              <breadCrumb title="故障记录" url="http://iamyann.com/categories/%E6%95%85%E9%9A%9C%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2015/06/04/redis-with-nagios/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>nagios监控redis</title>
+        <pubTime>2015-06-04T10:25:29.000Z</pubTime>
+        
+        <tag>nagios</tag>
+         
+         
+           
+             
+              <breadCrumb title="故障记录" url="http://iamyann.com/categories/%E6%95%85%E9%9A%9C%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2015/04/30/local-git/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>部署本地git服务器</title>
+        <pubTime>2015-04-30T11:07:44.000Z</pubTime>
+        
+        <tag>git</tag>
+         
          
            
              
@@ -1047,12 +1223,32 @@
 
     
   <url>
-    <loc>http://iamyann.com/2016/09/17/name-and-name/</loc>
+    <loc>http://iamyann.com/2015/06/10/rsync-think/</loc>
     <lastmod>2016-09-22T13:31:37.000Z</lastmod>
     <data>
         <display>
-        <title>name and name</title>
-        <pubTime>2016-09-17T22:00:41.000Z</pubTime>
+        <title>rsync机器多了的必然</title>
+        <pubTime>2015-06-10T05:26:18.000Z</pubTime>
+        
+        <tag>rsync</tag>
+         
+         
+           
+             
+              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2015/07/16/GitHub-validation-failed/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>github老是验证失败的解法</title>
+        <pubTime>2015-07-16T09:14:23.000Z</pubTime>
         
         <tag>linux</tag>
          
@@ -1060,25 +1256,102 @@
          
          
            
+             
+              <breadCrumb title="故障记录" url="http://iamyann.com/categories/%E6%95%85%E9%9A%9C%E8%AE%B0%E5%BD%95/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>http://iamyann.com/2015/06/30/mv/</loc>
+    <loc>http://iamyann.com/2015/05/08/domain-name/</loc>
     <lastmod>2016-09-22T13:31:37.000Z</lastmod>
     <data>
         <display>
-        <title>git mv</title>
-        <pubTime>2015-06-30T04:19:21.000Z</pubTime>
+        <title>域名</title>
+        <pubTime>2015-05-08T10:43:38.000Z</pubTime>
         
-        <tag>git</tag>
+        <tag>lnmp</tag>
          
          
            
              
-              <breadCrumb title="工作细节" url="http://iamyann.com/categories/%E5%B7%A5%E4%BD%9C%E7%BB%86%E8%8A%82/"/>
+              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2015/05/20/memcache/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>memcache</title>
+        <pubTime>2015-05-20T04:34:17.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2015/05/15/mnmp/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>mnmp</title>
+        <pubTime>2015-05-15T13:54:21.000Z</pubTime>
+        
+        <tag>lamp</tag>
+         
+         
+           
+             
+              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2015/06/30/centos-deploy-node.js/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>node.js部署</title>
+        <pubTime>2015-06-30T09:04:19.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="系统部署" url="http://iamyann.com/categories/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2015/05/14/something-about-lnmp/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>忙乱的一天</title>
+        <pubTime>2015-05-14T11:24:16.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
           
         </display>
     </data>
@@ -1128,260 +1401,6 @@
 
     
   <url>
-    <loc>http://iamyann.com/2015/06/17/rdse5afbce587ba/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>rds导出</title>
-        <pubTime>2015-06-17T04:29:57.000Z</pubTime>
-        
-        <tag>阿里云</tag>
-         
-         
-           
-             
-              <breadCrumb title="故障记录" url="http://iamyann.com/categories/%E6%95%85%E9%9A%9C%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://iamyann.com/2015/06/04/redis-with-nagios/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>nagios监控redis</title>
-        <pubTime>2015-06-04T10:25:29.000Z</pubTime>
-        
-        <tag>nagios</tag>
-         
-         
-           
-             
-              <breadCrumb title="故障记录" url="http://iamyann.com/categories/%E6%95%85%E9%9A%9C%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://iamyann.com/2015/05/15/mnmp/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>mnmp</title>
-        <pubTime>2015-05-15T13:54:21.000Z</pubTime>
-        
-        <tag>lamp</tag>
-         
-         
-           
-             
-              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://iamyann.com/2016/09/11/Import-articles-from-WordPress/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>Import-articles-from-WordPress</title>
-        <pubTime>2016-09-11T00:34:32.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://iamyann.com/2015/06/10/rsync-think/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>rsync机器多了的必然</title>
-        <pubTime>2015-06-10T05:26:18.000Z</pubTime>
-        
-        <tag>rsync</tag>
-         
-         
-           
-             
-              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://iamyann.com/2015/05/20/memcache/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>memcache</title>
-        <pubTime>2015-05-20T04:34:17.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://iamyann.com/2015/07/16/GitHub-validation-failed/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>github老是验证失败的解法</title>
-        <pubTime>2015-07-16T09:14:23.000Z</pubTime>
-        
-        <tag>linux</tag>
-         
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="故障记录" url="http://iamyann.com/categories/%E6%95%85%E9%9A%9C%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://iamyann.com/2015/04/30/local-git/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>部署本地git服务器</title>
-        <pubTime>2015-04-30T11:07:44.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://iamyann.com/2015/06/04/phpredisadmin-with-white-screen/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>phpredisadmin白屏</title>
-        <pubTime>2015-06-04T07:59:02.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="故障记录" url="http://iamyann.com/categories/%E6%95%85%E9%9A%9C%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://iamyann.com/2015/06/01/gzip/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>gzip</title>
-        <pubTime>2015-06-01T02:33:26.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://iamyann.com/2015/05/14/something-about-lnmp/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>忙乱的一天</title>
-        <pubTime>2015-05-14T11:24:16.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://iamyann.com/2015/05/05/git-tools/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>git 命令行操作</title>
-        <pubTime>2015-05-05T01:59:27.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://iamyann.com/2015/07/07/git-tentao/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>集成了git和禪道</title>
-        <pubTime>2015-07-07T04:49:03.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-        <tag>禅道</tag>
-         
-         
-           
-             
-              <breadCrumb title="工作细节" url="http://iamyann.com/categories/%E5%B7%A5%E4%BD%9C%E7%BB%86%E8%8A%82/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://iamyann.com/2015/06/03/tmux-short-key/</loc>
     <lastmod>2016-09-22T13:31:37.000Z</lastmod>
     <data>
@@ -1424,12 +1443,12 @@
 
     
   <url>
-    <loc>http://iamyann.com/2015/05/13/git-clone-sourcetree/</loc>
+    <loc>http://iamyann.com/2015/05/22/aliyun-memcache-to-redis/</loc>
     <lastmod>2016-09-22T13:31:37.000Z</lastmod>
     <data>
         <display>
-        <title>git历史数据搞定</title>
-        <pubTime>2015-05-13T01:55:09.000Z</pubTime>
+        <title>redis 3.0</title>
+        <pubTime>2015-05-22T02:00:22.000Z</pubTime>
         
          
            
@@ -1482,57 +1501,58 @@
 
     
   <url>
-    <loc>http://iamyann.com/2015/06/30/centos-deploy-node.js/</loc>
+    <loc>http://iamyann.com/2015/06/03/nagios/</loc>
     <lastmod>2016-09-22T13:31:37.000Z</lastmod>
     <data>
         <display>
-        <title>node.js部署</title>
-        <pubTime>2015-06-30T09:04:19.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="系统部署" url="http://iamyann.com/categories/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://iamyann.com/2015/05/08/domain-name/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>域名</title>
-        <pubTime>2015-05-08T10:43:38.000Z</pubTime>
-        
-        <tag>lnmp</tag>
-         
-         
-           
-             
-              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://iamyann.com/2015/05/06/crontab/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>crontab</title>
-        <pubTime>2015-05-06T10:36:46.000Z</pubTime>
+        <title>nagios</title>
+        <pubTime>2015-06-03T09:05:21.000Z</pubTime>
         
         <tag>linux</tag>
+         
+        <tag>阿里云</tag>
          
          
            
              
               <breadCrumb title="工作细节" url="http://iamyann.com/categories/%E5%B7%A5%E4%BD%9C%E7%BB%86%E8%8A%82/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2016/09/17/name-and-name/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>name and name</title>
+        <pubTime>2016-09-17T22:00:41.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iamyann.com/2015/06/04/phpredisadmin-with-white-screen/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>phpredisadmin白屏</title>
+        <pubTime>2015-06-04T07:59:02.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="故障记录" url="http://iamyann.com/categories/%E6%95%85%E9%9A%9C%E8%AE%B0%E5%BD%95/"/>
           
         </display>
     </data>
