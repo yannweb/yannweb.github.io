@@ -233,6 +233,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://iamyann.com/2016/11/09/source-install-tmux-2-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yann Cao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yann的小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/09/source-install-tmux-2-3/" itemprop="url">source install tmux 2.3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-09T01:49:19+00:00">
+                2016-11-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/效率/" itemprop="url" rel="index">
+                    <span itemprop="name">效率</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2016/11/09/source-install-tmux-2-3/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://iamyann.com/2016/11/09/source-install-tmux-2-3/" class="cy_cmt_count" data-xid="2016/11/09/source-install-tmux-2-3/" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>尚未脚本化<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#libevent</span></div><div class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src</div><div class="line">sudo yum install -y gcc</div><div class="line">sudo wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz</div><div class="line">sudo tar xf libevent-2.0.21-stable.tar.gz</div><div class="line"><span class="built_in">cd</span> libevent-2.0.21-stable</div><div class="line">sudo ./configure </div><div class="line">sudo make &amp;&amp; sudo make install</div><div class="line"> </div><div class="line"><span class="comment">#编译安装tmux</span></div><div class="line">sudo yum install -y automake ncurses-libs ncurses-devel</div><div class="line"></div><div class="line">git <span class="built_in">clone</span> https://github.com/tmux/tmux.git</div><div class="line"><span class="built_in">cd</span> tmux</div><div class="line">sudo sh autogen.sh</div><div class="line">./configure --prefix=/usr/<span class="built_in">local</span>/tmux</div><div class="line">sudo make &amp;&amp; sudo make install</div><div class="line"> </div><div class="line"><span class="comment">#提供头文件</span></div><div class="line">sudo ln -sv /usr/<span class="built_in">local</span>/lib/libevent-2.0.so.5 /usr/lib64/libevent-2.0.so.5</div><div class="line">ldconfig -v</div><div class="line"> </div><div class="line"><span class="comment">#将tmux 脚本路径加入到PATH</span></div><div class="line"></div><div class="line"><span class="comment">#sudo sh -c "echo 'export PATH=$PATH:/usr/local/tmux/bin' &gt;&gt; /etc/profile.d/tmux.sh"</span></div><div class="line">sudo touch /etc/profile.d/tmux.sh</div><div class="line"><span class="built_in">echo</span> <span class="string">"export PATH=<span class="variable">$PATH</span>:/usr/local/tmux/bin"</span> |sudo tee <span class="_">-a</span> /etc/profile.d/tmux.sh</div><div class="line"><span class="comment">#sudo -s </span></div><div class="line"><span class="comment">#会报权限不足</span></div><div class="line"><span class="built_in">source</span> /etc/profile</div><div class="line"> </div><div class="line"><span class="comment">#将tmux命令man 文档路径添加到MANPATH</span></div><div class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/tmux/share/ &amp;&amp; sudo touch man</div><div class="line"><span class="built_in">echo</span> <span class="string">"MANPATH /usr/local/tmux/share/man"</span> |sudo tee <span class="_">-a</span> /usr/<span class="built_in">local</span>/tmux/share/man</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://iamyann.com/2016/10/12/many-war-packet-many-tomcat-startup-and-shutdown/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1584,163 +1737,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iamyann.com/2015/10/14/su-tomcat-in-script/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yann Cao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yann的小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2015/10/14/su-tomcat-in-script/" itemprop="url">su tomcat in script</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-14T14:44:37+00:00">
-                2015-10-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工作细节/" itemprop="url" rel="index">
-                    <span itemprop="name">工作细节</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2015/10/14/su-tomcat-in-script/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://iamyann.com/2015/10/14/su-tomcat-in-script/" class="cy_cmt_count" data-xid="2015/10/14/su-tomcat-in-script/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>接上次的问题:<br>使用root帐号运行脚本<br>启动tomcat后发现部分文件是root权限的<br>说明启动过程中以root身份启动tomcat的<br>但是在脚本中有指令从root su到tomcat了啊<br>以下展开分析</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/10/14/su-tomcat-in-script/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1791,7 +1787,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-count">77</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

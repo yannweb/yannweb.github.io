@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="在linux环境下安装及配置pip的方法">
+<meta name="description" content="在mac环境下安装方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="yann学长的运维开发指南03">
-<meta property="og:url" content="http://iamyann.com/2018/03/01/python-linux-md/index.html">
+<meta property="og:title" content="yann学长的运维开发指南04">
+<meta property="og:url" content="http://iamyann.com/2018/03/03/python-mac/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="在linux环境下安装及配置pip的方法">
+<meta property="og:description" content="在mac环境下安装方法">
 <meta property="og:image" content="http://hero.iamyann.com/20180301193050.png">
-<meta property="og:updated_time" content="2018-03-01T11:51:13.197Z">
+<meta property="og:updated_time" content="2018-03-03T14:32:05.462Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yann学长的运维开发指南03">
-<meta name="twitter:description" content="在linux环境下安装及配置pip的方法">
+<meta name="twitter:title" content="yann学长的运维开发指南04">
+<meta name="twitter:description" content="在mac环境下安装方法">
 <meta name="twitter:image" content="http://hero.iamyann.com/20180301193050.png">
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2018/03/01/python-linux-md/"/>
+  <link rel="canonical" href="http://iamyann.com/2018/03/03/python-mac/"/>
 
 
 
 
 
-  <title>yann学长的运维开发指南03 | yann的小站</title>
+  <title>yann学长的运维开发指南04 | yann的小站</title>
   
 
 
@@ -235,7 +235,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iamyann.com/2018/03/01/python-linux-md/">
+    <link itemprop="mainEntityOfPage" href="http://iamyann.com/2018/03/03/python-mac/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yann Cao">
@@ -252,7 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">yann学长的运维开发指南03</h1>
+          <h1 class="post-title" itemprop="name headline">yann学长的运维开发指南04</h1>
         
 
         <div class="post-meta">
@@ -264,8 +264,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-01T11:18:35+00:00">
-                2018-03-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-03T11:18:35+00:00">
+                2018-03-03
               </time>
             
 
@@ -306,8 +306,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2018/03/01/python-linux-md/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/03/01/python-linux-md/" itemprop="commentsCount"></span>
+                <a href="/2018/03/03/python-mac/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/03/03/python-mac/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -322,7 +322,7 @@
 
           
               <div class="post-description">
-                  在linux环境下安装及配置pip的方法
+                  在mac环境下安装方法
               </div>
           
 
@@ -340,16 +340,17 @@
 
       
         <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>安装方式梳理<br><img src="http://hero.iamyann.com/20180301193050.png" alt="http://hero.iamyann.com/20180301193050.png"><br><a id="more"></a></p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>pip是python下的包管理工具,python3.4版本以上自带pip,本次内容有两点:</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>mac下也是自带python的, 不过要python3就要自己安装了,推荐一个包管理器HomeBrew</p>
 <blockquote>
 <ul>
-<li>centos7下安装python3.4</li>
-<li>python 2.7版本安装pip</li>
+<li>安装HomeBrew</li>
+<li>安装python3</li>
 </ul>
 </blockquote>
-<p>安装python3<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo yum install epel-release</div><div class="line">sudo yum install python34</div><div class="line">sudo pip install -U pip</div></pre></td></tr></table></figure></p>
-<p>centos默认python2环境安装pip:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/pypa/pip/archive/8.1.2.tar.gz</div><div class="line">wget https://bootstrap.pypa.io/ez_setup.py</div><div class="line">python ez_setup.py install</div><div class="line">tar zxvf 8.1.2.tar.gz</div><div class="line"><span class="built_in">cd</span> pip-8.1.2</div><div class="line">./configure /usr/<span class="built_in">local</span>/pip</div><div class="line">make &amp;&amp; make install</div><div class="line">ln -sv /usr/<span class="built_in">local</span>/pip/bin/pip /usr/bin/pip</div></pre></td></tr></table></figure></p>
-<h3 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h3><p>以上为今天的内容, 下次会介绍在mac下安装python的操作,敬请期待</p>
+<p>安装HomeBrew<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#打开终端窗口，输入以下命令</span></div><div class="line"></div><div class="line">/usr/bin/ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure></p>
+<p>有时候mac中已经有brew了,但是安装不了某些软件,请先升级<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">brew update</div><div class="line">brew outdated</div><div class="line">brew upgrade             <span class="comment"># 更新所有的包</span></div><div class="line">brew upgrade <span class="variable">$FORMULA</span>    <span class="comment"># 更新指定的包</span></div></pre></td></tr></table></figure></p>
+<p>安装python3<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew install python3</div><div class="line">brew linkapps python3</div></pre></td></tr></table></figure></p>
+<h3 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h3><p>以上为今天的内容, 下次会介绍神奇pyenv的使用,敬请期待</p>
 
       
     </div>
@@ -380,8 +381,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/27/python3_win7/" rel="next" title="yann学长的运维开发指南02">
-                <i class="fa fa-chevron-left"></i> yann学长的运维开发指南02
+              <a href="/2018/03/01/python-linux/" rel="next" title="yann学长的运维开发指南03">
+                <i class="fa fa-chevron-left"></i> yann学长的运维开发指南03
               </a>
             
           </div>
@@ -470,7 +471,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-count">77</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
