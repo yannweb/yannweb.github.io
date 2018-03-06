@@ -233,6 +233,141 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://iamyann.com/2016/09/08/deploy2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yann Cao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yann的小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/09/08/deploy2/" itemprop="url">回归第一篇</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-08T23:50:33+00:00">
+                2016-09-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2016/09/08/deploy2/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://iamyann.com/2016/09/08/deploy2/" class="cy_cmt_count" data-xid="2016/09/08/deploy2/" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>测试了这么久,终于要写正式的了.<br>hexo的 3.2.2 貌似不再支持2个仓库发布了(我是没找到方法),无奈之余想了个曲线救国的方法:”发布之前手工替换配置文件”.<br>蠢是蠢了点,好坏满足我的需求了</p>
+<p>脚本如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sed -i <span class="string">'/^  repo/c \  repo: git@github.com:xxx/xxx.github.io.git'</span> _config.yml</div><div class="line">hexo g</div><div class="line">hexo d</div><div class="line">sed -i <span class="string">'/^  repo/c \  repo: git@git.coding.net:xxx/xxx.git'</span> _config.yml</div><div class="line">hexo d</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
+<p>写完这篇文章的第二天就验证了自己的愚蠢,同时发布2个仓库是可以的,只是格式比较严,<br>讨厌yml.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  message: <span class="string">""</span></div><div class="line">  repo: </div><div class="line">    github: git@github.com:xxx/xxx.github.io.git,master</div><div class="line">    coding: git@git.coding.net:xxx/xxx.git,coding-pages</div></pre></td></tr></table></figure>
+<p>deploy2,如上,这是一篇比较2的deploy脚本的故事,yann</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://iamyann.com/2015/10/14/su-tomcat-in-script/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1614,160 +1749,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iamyann.com/2015/06/17/rdse5afbce587ba/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yann Cao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yann的小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2015/06/17/rdse5afbce587ba/" itemprop="url">rds导出</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-06-17T04:29:57+00:00">
-                2015-06-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/故障记录/" itemprop="url" rel="index">
-                    <span itemprop="name">故障记录</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2015/06/17/rdse5afbce587ba/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://iamyann.com/2015/06/17/rdse5afbce587ba/" class="cy_cmt_count" data-xid="2015/06/17/rdse5afbce587ba/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>rds导出报错，解决<br>slb遇到图片服务器指向问题</p>
-<p>解决方法,和本地导出一样mysqldump,但是注意,rds的主机是哪个很长一串的字符, 密码是你建rds时自己设的,</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1818,7 +1799,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-count">78</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
