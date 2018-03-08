@@ -87,7 +87,7 @@
 <meta property="og:url" content="http://iamyann.com/2018/03/06/go-gvm/index.html">
 <meta property="og:site_name" content="yann的小站">
 <meta property="og:description" content="在linux下安装多版本go环境">
-<meta property="og:updated_time" content="2018-03-06T06:30:50.975Z">
+<meta property="og:updated_time" content="2018-03-06T06:37:36.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一段错误代码引发的血案">
 <meta name="twitter:description" content="在linux下安装多版本go环境">
@@ -337,9 +337,10 @@
       
 
       
-        <p>起因:<br>最近在学习docker,看到一段错误代码<br><a id="more"></a><br>起因:<br>最近在学习docker,看到一段实例代码编译时会出错,也有人给出了正确的代码:<br><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// cmd.SysProcAttr.Credential = &amp;syscall.Credential&#123;Uid: uint32(1), Gid: uint32(1)&#125;</span></div><div class="line"></div><div class="line">cmd.SysProcAttr.UidMappings = []syscall.SysProcIDMap&#123;</div><div class="line">&#123;ContainerID: <span class="number">5001</span>, HostID: syscall.Getuid(), Size: <span class="number">1</span>&#125;,</div><div class="line">&#125;</div><div class="line">cmd.SysProcAttr.GidMappings = []syscall.SysProcIDMap&#123;</div><div class="line">&#123;ContainerID: <span class="number">5001</span>, HostID: syscall.Getgid(), Size: <span class="number">1</span>&#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>起因:<br>最近在学习docker,看到一段错误代码<br><a id="more"></a></p>
+<h3 id="过程"><a href="#过程" class="headerlink" title="过程:"></a>过程:</h3><p>最近在学习docker,看到一段实例代码编译时会出错,也有人给出了正确的代码:<br><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// cmd.SysProcAttr.Credential = &amp;syscall.Credential&#123;Uid: uint32(1), Gid: uint32(1)&#125;</span></div><div class="line"></div><div class="line">cmd.SysProcAttr.UidMappings = []syscall.SysProcIDMap&#123;</div><div class="line">&#123;ContainerID: <span class="number">5001</span>, HostID: syscall.Getuid(), Size: <span class="number">1</span>&#125;,</div><div class="line">&#125;</div><div class="line">cmd.SysProcAttr.GidMappings = []syscall.SysProcIDMap&#123;</div><div class="line">&#123;ContainerID: <span class="number">5001</span>, HostID: syscall.Getgid(), Size: <span class="number">1</span>&#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>然而,不见南墙心不死的我感觉也许是版本差异,换到作者的版本(1.7.1)说不定就可以运行了,<br>我用的版本(1.9.1). 正好收藏里有个可以切换版本的gvm,于是折腾就开始了</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">bash &lt; &lt;(curl <span class="_">-s</span> -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)</div><div class="line"><span class="comment"># 安装</span></div><div class="line"></div><div class="line"> ls -al ~/.gvm</div><div class="line"> // apt-get install binutils bison gcc make</div><div class="line"> gvm  list</div><div class="line"> gvm listall</div><div class="line"> gvm install go1.7.1 -B</div><div class="line"> gvm use go1.7.1</div><div class="line"><span class="comment"># 常用命令</span></div><div class="line"></div><div class="line"> <span class="built_in">cd</span> ~/</div><div class="line"> git <span class="built_in">clone</span> git@github.com:golang/go.git</div><div class="line"> <span class="built_in">cd</span> go</div><div class="line"> git checkout -b 1.4.3 go1.4.3</div><div class="line"> ls</div><div class="line"> git branch</div><div class="line"> <span class="built_in">cd</span> src</div><div class="line"> ./all.bash</div><div class="line"><span class="comment"># 编译环境</span></div><div class="line"></div><div class="line">cp ~/go ~/go1.4 -rf</div><div class="line"></div><div class="line">gvm install go1.7.1 --source=https://github.com/golang/go</div><div class="line"><span class="comment"># 墙</span></div></pre></td></tr></table></figure>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">bash &lt; &lt;(curl <span class="_">-s</span> -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)</div><div class="line"><span class="comment"># 安装</span></div><div class="line"></div><div class="line"> ls -al ~/.gvm</div><div class="line"> // apt-get install binutils bison gcc make</div><div class="line"> gvm  list</div><div class="line"> gvm listall</div><div class="line"> gvm install go1.7.1 -B</div><div class="line"> gvm use go1.7.1</div><div class="line"><span class="comment"># 常用命令</span></div><div class="line"></div><div class="line"> <span class="built_in">cd</span> ~/</div><div class="line"> git <span class="built_in">clone</span> git@github.com:golang/go.git</div><div class="line"> <span class="built_in">cd</span> go</div><div class="line"> git checkout -b 1.4.3 go1.4.3</div><div class="line"> ls</div><div class="line"> git branch</div><div class="line"> <span class="built_in">cd</span> src</div><div class="line"> ./all.bash</div><div class="line"><span class="comment"># 编译环境</span></div><div class="line"></div><div class="line">cp ~/go ~/go1.4 -rf</div><div class="line"></div><div class="line">gvm install go1.7.1 --source=https://github.com/golang/go</div><div class="line"><span class="comment"># 墙</span></div></pre></td></tr></table></figure>
 <h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>一上午就这样过去了,总归还是有收获的,结果大佬说一般开发用不到多版本,哭orz</p>
 
       
@@ -382,6 +383,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/08/ipython/" rel="prev" title="yann学长的运维开发指南06">
+                yann学长的运维开发指南06 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -463,7 +468,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">79</span>
+                  <span class="site-state-item-count">80</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -527,7 +532,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#结论"><span class="nav-number">1.</span> <span class="nav-text">结论</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#过程"><span class="nav-number">1.</span> <span class="nav-text">过程:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署"><span class="nav-number">2.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结论"><span class="nav-number">3.</span> <span class="nav-text">结论</span></a></li></ol></div>
             
 
           </div>
