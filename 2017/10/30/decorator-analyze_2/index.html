@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,3.5," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="yann的小站" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="用途:这是国外的一篇文章, 12步骤理解装饰器, 借来刷刷代码. 与上一篇相同,并不是单纯的代码,有REPL和输出结果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="decorator分解(下篇)">
+<meta property="og:url" content="http://iamyann.com/2017/10/30/decorator-analyze_2/index.html">
+<meta property="og:site_name" content="yann的小站">
+<meta property="og:description" content="用途:这是国外的一篇文章, 12步骤理解装饰器, 借来刷刷代码. 与上一篇相同,并不是单纯的代码,有REPL和输出结果">
+<meta property="og:updated_time" content="2017-10-31T02:17:19.546Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="decorator分解(下篇)">
+<meta name="twitter:description" content="用途:这是国外的一篇文章, 12步骤理解装饰器, 借来刷刷代码. 与上一篇相同,并不是单纯的代码,有REPL和输出结果">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://iamyann.com/2017/10/30/decorator-analyze_2/"/>
+
+
+
+
+
+  <title>decorator分解(下篇) | yann的小站</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">yann的小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">做运维写代码,git版本天天打,个人小站是我家</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://iamyann.com/2017/10/30/decorator-analyze_2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yann Cao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yann的小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">decorator分解(下篇)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-30T19:59:37+00:00">
+                2017-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/10/30/decorator-analyze_2/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/10/30/decorator-analyze_2/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>用途:<br>这是国外的一篇文章, 12步骤理解装饰器, 借来刷刷代码. 与上一篇相同,并不是单纯的代码,有REPL和输出结果 </p>
+<a id="more"></a>
+<p>代码:</p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> <span class="number">1</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo()</div><div class="line"><span class="number">1</span></div></pre></td></tr></table></figure>
+<h1 id="作用域-Scope"><a href="#作用域-Scope" class="headerlink" title="作用域 Scope"></a>作用域 Scope</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a_string = <span class="string">"This is a global variable"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">print</span> locals()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> globals()</div><div class="line">&#123;<span class="string">'__builtins__'</span>: &lt;module <span class="string">'__builtin__'</span> (built-<span class="keyword">in</span>)&gt;, <span class="string">'a_string'</span>: <span class="string">'This is a global variable'</span>, <span class="string">'__package__'</span>: <span class="keyword">None</span>, <span class="string">'__name__'</span>: <span class="string">'__main__'</span>, <span class="string">'foo'</span>: &lt;function foo at <span class="number">0x7f4a5ee1c758</span>&gt;, <span class="string">'__doc__'</span>: <span class="keyword">None</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo()</div><div class="line"><span class="comment"># &#123;&#125; 本地和全局,本地变量为空</span></div></pre></td></tr></table></figure>
+<h1 id="变量解析规则"><a href="#变量解析规则" class="headerlink" title="变量解析规则"></a>变量解析规则</h1><p>variable resolution rules<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a_string = <span class="string">"This is a global variable"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">print</span> a_string</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo()</div><div class="line">This <span class="keyword">is</span> a <span class="keyword">global</span> variable</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a_string = <span class="string">"This is a global variable"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line"><span class="meta">... </span>    a_string = <span class="string">"test"</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">print</span> locals()</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo()</div><div class="line">&#123;<span class="string">'a_string'</span>: <span class="string">'test'</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a_string</div><div class="line"><span class="string">'This is a global variable'</span></div><div class="line"><span class="comment"># 创建变量在当前作用域,访问先本地再向上,闭合作用域</span></div><div class="line"><span class="comment"># 全局变量可以被访问到,可变类甚至可以修改,但不能赋值,会新建同名</span></div></pre></td></tr></table></figure></p>
+<h1 id="变量生存周期-Variable-lifetime"><a href="#变量生存周期-Variable-lifetime" class="headerlink" title="变量生存周期 Variable lifetime"></a>变量生存周期 Variable lifetime</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line"><span class="meta">... </span>    x = <span class="number">1</span></div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> x</div><div class="line">NameError: name <span class="string">'x'</span> <span class="keyword">is</span> <span class="keyword">not</span> defined</div><div class="line"><span class="comment"># x只在作用域内有效</span></div><div class="line"><span class="comment"># 函数foo的命名空间随着函数调用开始而开始，结束而销毁</span></div></pre></td></tr></table></figure>
+<h1 id="函数参数-Function-parameters"><a href="#函数参数-Function-parameters" class="headerlink" title="函数参数 Function parameters"></a>函数参数 Function parameters</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(x)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">print</span> locals()</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo(<span class="number">1</span>)</div><div class="line">&#123;<span class="string">'x'</span>: <span class="number">1</span>&#125;</div><div class="line"><span class="comment"># python允许我们向函数传递参数，参数会变成本地变量存在于函数内部</span></div></pre></td></tr></table></figure>
+<h1 id="嵌套函数-Nested-functions"><a href="#嵌套函数-Nested-functions" class="headerlink" title="嵌套函数 Nested functions"></a>嵌套函数 Nested functions</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">outer</span><span class="params">()</span>:</span></div><div class="line"><span class="meta">... </span>    x = <span class="number">1</span></div><div class="line"><span class="meta">... </span>    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></div><div class="line"><span class="meta">... </span>            <span class="keyword">print</span> x</div><div class="line"><span class="meta">... </span>    inner()</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>outer()</div><div class="line"><span class="number">1</span></div><div class="line"><span class="comment"># 在函数里面定义函数而且现有的作用域和变量生存周期依旧适用</span></div></pre></td></tr></table></figure>
+<h1 id="函数是python世界里的一个类对象"><a href="#函数是python世界里的一个类对象" class="headerlink" title="函数是python世界里的一个类对象"></a>函数是python世界里的一个类对象</h1><p>Functions are first class objects in Python<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>issubclass(int, object)</div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">pass</span></div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo.__class__</div><div class="line">&lt;type <span class="string">'function'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>issubclass(foo.__class__, object)</div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="comment"># 注意上两句的用法</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">sub</span><span class="params">(x, y)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> x -y</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x, y)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> x + y</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">apply</span><span class="params">(func, x, y)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> func(x, y)</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>apply(add, <span class="number">2</span>, <span class="number">1</span>)</div><div class="line"><span class="number">3</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>apply(sub, <span class="number">2</span>, <span class="number">1</span>)</div><div class="line"><span class="number">1</span></div><div class="line"><span class="comment"># 把函数当参数用</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">outer</span><span class="params">()</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></div><div class="line"><span class="meta">... </span>            <span class="keyword">print</span> <span class="string">"Inside inner"</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> inner</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="comment"># 每次函数outer被调用的时候，函数inner都会被重新定义</span></div><div class="line"><span class="comment"># ,如果它不被当做变量返回的话，每次执行过后它将不复存在</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo = outer()</div><div class="line"><span class="comment"># 捕获住返回值 - 函数inner，将它存在一个新的变量foo里</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo</div><div class="line">&lt;function inner at <span class="number">0x7f7e477996e0</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo()</div><div class="line">Inside inner</div></pre></td></tr></table></figure>
+<h1 id="闭包-Closures"><a href="#闭包-Closures" class="headerlink" title="闭包 Closures"></a>闭包 Closures</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">outer</span><span class="params">()</span>:</span></div><div class="line"><span class="meta">... </span>    x = <span class="number">1</span></div><div class="line"><span class="meta">... </span>    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></div><div class="line"><span class="meta">... </span>            <span class="keyword">print</span> x</div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> inner</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo = outer()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo.func_closure</div><div class="line">(&lt;cell at <span class="number">0x7f7e4779d910</span>: int object at <span class="number">0x117dc68</span>&gt;,)</div><div class="line"><span class="comment"># 嵌套定义在非全局作用域里面的函数能够记住它在被定义的时候它所处的封闭命名空间</span></div><div class="line"><span class="comment"># 比如这里的x, 注意函数的func_closure属性</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">outer</span><span class="params">(x)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></div><div class="line"><span class="meta">... </span>            <span class="keyword">print</span> x</div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> inner</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print1 = outer(<span class="number">1</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print2 = outer(<span class="number">2</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print1()</div><div class="line"><span class="number">1</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print2()</div><div class="line"><span class="number">2</span></div><div class="line"><span class="comment"># 一个硬编码的参数, 创建了能够打印各种数字的各种自定义版本</span></div><div class="line"><span class="comment"># 一个类似于面向对象的技术：outer像是给inner服务的构造器，x像一个私有变量</span></div><div class="line"><span class="comment"># itemgetter方法, lambda方法,</span></div></pre></td></tr></table></figure>
+<h1 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">outer</span><span class="params">(some_func)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></div><div class="line"><span class="meta">... </span>            <span class="keyword">print</span> <span class="string">"before some_func"</span></div><div class="line"><span class="meta">... </span>            ret = some_func()</div><div class="line"><span class="meta">... </span>            <span class="keyword">return</span> ret + <span class="number">1</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> inner</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> <span class="number">1</span></div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>decorated = outer(foo)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>decorated()</div><div class="line">before some_func</div><div class="line"><span class="number">2</span></div><div class="line"><span class="comment"># 装饰器把一个函数当做参数然后返回一个替代版函数</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo = outer(foo)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo</div><div class="line">&lt;function inner at <span class="number">0x7f7e47799aa0</span>&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">Coordinate</span><span class="params">(object)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x, y)</span>:</span></div><div class="line"><span class="meta">... </span>            self.x = x</div><div class="line"><span class="meta">... </span>            self.y = y</div><div class="line"><span class="meta">... </span>    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></div><div class="line"><span class="meta">... </span>            <span class="keyword">return</span> <span class="string">"Coord: "</span> + str(self.__dict__)</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a, b)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> Coordinate(a.x + b.x, a.y + b.y)</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">sub</span><span class="params">(a, b)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> Coordinate(a.x -b.x, a.y - b.y)</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>one = Coordinate(<span class="number">100</span>, <span class="number">200</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>two = Coordinate(<span class="number">300</span>, <span class="number">200</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>add (one, two)</div><div class="line">Coord: &#123;<span class="string">'y'</span>: <span class="number">400</span>, <span class="string">'x'</span>: <span class="number">400</span>&#125;</div><div class="line"><span class="comment"># 对坐标进行加减运算的函数</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>one = Coordinate(<span class="number">100</span>, <span class="number">200</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>two = Coordinate(<span class="number">300</span>, <span class="number">200</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>add (one, two)</div><div class="line">Coord: &#123;<span class="string">'y'</span>: <span class="number">400</span>, <span class="string">'x'</span>: <span class="number">400</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>one = Coordinate(<span class="number">100</span>, <span class="number">200</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>two = Coordinate(<span class="number">300</span>, <span class="number">200</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>three = Coordinate(<span class="number">-100</span>, <span class="number">-100</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sub(one, two)</div><div class="line">Coord: &#123;<span class="string">'y'</span>: <span class="number">0</span>, <span class="string">'x'</span>: <span class="number">-200</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>add(one, three)</div><div class="line">Coord: &#123;<span class="string">'y'</span>: <span class="number">100</span>, <span class="string">'x'</span>: <span class="number">0</span>&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(func)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">checker</span><span class="params">(a, b)</span>:</span></div><div class="line">        <span class="keyword">if</span> a.x &lt; <span class="number">0</span> <span class="keyword">or</span> a.y &lt; <span class="number">0</span>:</div><div class="line">            a = Coordinate(a.x <span class="keyword">if</span> a.x &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>, a.y <span class="keyword">if</span> a.y &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>)</div><div class="line">        <span class="keyword">if</span> b.x &lt; <span class="number">0</span> <span class="keyword">or</span> b.y &lt; <span class="number">0</span>:</div><div class="line">            b = Coordinate(b.x <span class="keyword">if</span> b.x &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>, b.y <span class="keyword">if</span> b.y &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>)</div><div class="line">        ret = func(a, b)</div><div class="line">        <span class="keyword">if</span> ret.x &lt; <span class="number">0</span> <span class="keyword">or</span> ret.y &lt; <span class="number">0</span>:</div><div class="line">            ret = Coordinate(ret.x <span class="keyword">if</span> ret.x &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>, ret.y <span class="keyword">if</span> ret.y &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>)</div><div class="line">        <span class="keyword">return</span> ret</div><div class="line">    <span class="keyword">return</span> checker</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>add(one, three)</div><div class="line">Coord: &#123;<span class="string">'y'</span>: <span class="number">100</span>, <span class="string">'x'</span>: <span class="number">0</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>add = wrapper(add)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sub = wrapper(sub)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sub(one, two)</div><div class="line">Coord: &#123;<span class="string">'y'</span>: <span class="number">0</span>, <span class="string">'x'</span>: <span class="number">0</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>add(one, three)</div><div class="line">Coord: &#123;<span class="string">'y'</span>: <span class="number">200</span>, <span class="string">'x'</span>: <span class="number">100</span>&#125;</div><div class="line"><span class="comment"># 边界检查,不能出现负值</span></div></pre></td></tr></table></figure>
+<h1 id="使用-标识符将装饰器应用到函数"><a href="#使用-标识符将装饰器应用到函数" class="headerlink" title="使用 @ 标识符将装饰器应用到函数"></a>使用 @ 标识符将装饰器应用到函数</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">add = wrapper(add)</div><div class="line"><span class="comment"># 等价于</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>@wrapper</div><div class="line"><span class="meta">... </span><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a, b)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> Coordinate(a.x + b.x, a.y + b.y)</div></pre></td></tr></table></figure>
+<h1 id="args-and-kwargs"><a href="#args-and-kwargs" class="headerlink" title="args and *kwargs"></a><em>args and *</em>kwargs</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">one</span><span class="params">(*args)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">print</span> args</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>one()</div><div class="line">()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>one(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</div><div class="line">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">two</span><span class="params">(x, y, *args)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">print</span> x, y, args</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>two(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</div><div class="line">a b (<span class="string">'c'</span>,)</div><div class="line"><span class="comment"># *args仅仅只是用在函数定义的时候用来表示位置参数应该存储在变量args</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x, y)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> x + y</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>lst = [<span class="number">1</span>,<span class="number">2</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>add(lst[<span class="number">0</span>], lst[<span class="number">1</span>])</div><div class="line"><span class="number">3</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>add(*lst)</div><div class="line"><span class="number">3</span></div><div class="line"><span class="comment"># *args要么是表示调用方法大的时候额外的参数可以从一个可迭代列表中取得</span></div><div class="line"><span class="comment"># ,要么就是定义方法的时候标志这个方法能够接受任意的位置参数</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(**kwargs)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">print</span> kwargs</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo()</div><div class="line">&#123;&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo(x=<span class="number">1</span>, y=<span class="number">2</span>)</div><div class="line">&#123;<span class="string">'y'</span>: <span class="number">2</span>, <span class="string">'x'</span>: <span class="number">1</span>&#125;</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>dct = &#123;<span class="string">'x'</span>:<span class="number">1</span>, <span class="string">'y'</span>:<span class="number">2</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">(x,y)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> x+y</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>bar(**dct)</div><div class="line"><span class="number">3</span></div><div class="line"><span class="comment"># **代表着键值对的参数字典</span></div></pre></td></tr></table></figure>
+<h1 id="更通用的装饰器"><a href="#更通用的装饰器" class="headerlink" title="更通用的装饰器"></a>更通用的装饰器</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">logger</span><span class="params">(func)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args, **kwargs)</span>:</span></div><div class="line"><span class="meta">... </span>            <span class="keyword">print</span><span class="string">"Arguments were: %s, %s"</span> % (args, kwargs)</div><div class="line"><span class="meta">... </span>            <span class="keyword">return</span> func(*args, **kwargs)</div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> inner</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>@logger</div><div class="line"><span class="meta">... </span><span class="function"><span class="keyword">def</span> <span class="title">foo1</span><span class="params">(x, y=<span class="number">1</span>)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> x * y</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>@logger</div><div class="line"><span class="meta">... </span><span class="function"><span class="keyword">def</span> <span class="title">foo2</span><span class="params">()</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> <span class="number">2</span></div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo1(<span class="number">5</span>, <span class="number">4</span>)</div><div class="line">Arguments were: (<span class="number">5</span>, <span class="number">4</span>), &#123;&#125;</div><div class="line"><span class="number">20</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>foo2()</div><div class="line">Arguments were: (), &#123;&#125;</div><div class="line"><span class="number">2</span></div><div class="line"><span class="comment"># 日志输出到界面,函数inner，它能够接受任意数量和类型的参数并把它们传递给被包装的方法</span></div><div class="line"><span class="comment"># ，因此能够用这个装饰器来装饰任何方法</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/3-5/" rel="tag"># 3.5</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/28/decorator-analyze/" rel="next" title="decorator分解(上篇)">
+                <i class="fa fa-chevron-left"></i> decorator分解(上篇)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/25/about/" rel="prev" title="yann学长的运维开发指南01">
+                yann学长的运维开发指南01 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Yann Cao</p>
+              <p class="site-description motion-element" itemprop="description">yann's blog | linux | git | auto deploy</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">80</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">1.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作用域-Scope"><span class="nav-number">2.</span> <span class="nav-text">作用域 Scope</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量解析规则"><span class="nav-number">3.</span> <span class="nav-text">变量解析规则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量生存周期-Variable-lifetime"><span class="nav-number">4.</span> <span class="nav-text">变量生存周期 Variable lifetime</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数参数-Function-parameters"><span class="nav-number">5.</span> <span class="nav-text">函数参数 Function parameters</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#嵌套函数-Nested-functions"><span class="nav-number">6.</span> <span class="nav-text">嵌套函数 Nested functions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数是python世界里的一个类对象"><span class="nav-number">7.</span> <span class="nav-text">函数是python世界里的一个类对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包-Closures"><span class="nav-number">8.</span> <span class="nav-text">闭包 Closures</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#装饰器"><span class="nav-number">9.</span> <span class="nav-text">装饰器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用-标识符将装饰器应用到函数"><span class="nav-number">10.</span> <span class="nav-text">使用 @ 标识符将装饰器应用到函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#args-and-kwargs"><span class="nav-number">11.</span> <span class="nav-text">args and *kwargs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更通用的装饰器"><span class="nav-number">12.</span> <span class="nav-text">更通用的装饰器</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yann Cao</span>
+
+  
+</div>
+
+<div class="theme-info">
+  主题 -
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次 |  <a href=http://www.miitbeian.gov.cn.>沪ICP备15003427号-1</a></span>
+
+  <div class="powered-by">由 丸丸丸子大王 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info"></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cythgDCdm';
+      var conf = 'eee93a11b1a9d3198930fa6b95c645d0';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<a href="https://github.com/yannweb"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
