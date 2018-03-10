@@ -4,26 +4,6 @@
 
     
   <url>
-    <loc>http://iamyann.com/2018/03/10/unittest/</loc>
-    <lastmod>2018-03-10T06:28:43.075Z</lastmod>
-    <data>
-        <display>
-        <title>yann学长的运维开发指南07</title>
-        <pubTime>2018-03-10T04:51:09.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="运维开发" url="http://iamyann.com/categories/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://iamyann.com/2018/03/08/ipython/</loc>
     <lastmod>2018-03-08T12:21:26.656Z</lastmod>
     <data>
@@ -1086,6 +1066,24 @@
 
     
   <url>
+    <loc>http://iamyann.com/2016/09/11/Import-articles-from-WordPress/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>Import-articles-from-WordPress</title>
+        <pubTime>2016-09-11T00:34:32.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://iamyann.com/2016/09/22/auto-rsync-Standard-script/</loc>
     <lastmod>2016-09-22T13:31:37.000Z</lastmod>
     <data>
@@ -1544,24 +1542,6 @@
 
     
   <url>
-    <loc>http://iamyann.com/2015/06/04/phpredisadmin-with-white-screen/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>phpredisadmin白屏</title>
-        <pubTime>2015-06-04T07:59:02.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="故障记录" url="http://iamyann.com/categories/%E6%95%85%E9%9A%9C%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://iamyann.com/2015/05/15/wordpresse690ace5aeb6/</loc>
     <lastmod>2016-09-22T13:31:37.000Z</lastmod>
     <data>
@@ -1602,6 +1582,24 @@
 
     
   <url>
+    <loc>http://iamyann.com/2015/06/04/phpredisadmin-with-white-screen/</loc>
+    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>phpredisadmin白屏</title>
+        <pubTime>2015-06-04T07:59:02.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="故障记录" url="http://iamyann.com/categories/%E6%95%85%E9%9A%9C%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://iamyann.com/2015/07/07/git-tentao/</loc>
     <lastmod>2016-09-22T13:31:37.000Z</lastmod>
     <data>
@@ -1633,24 +1631,6 @@
         
         <tag>git</tag>
          
-         
-           
-             
-              <breadCrumb title="闲聊" url="http://iamyann.com/categories/%E9%97%B2%E8%81%8A/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://iamyann.com/2016/09/11/Import-articles-from-WordPress/</loc>
-    <lastmod>2016-09-22T13:31:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>Import-articles-from-WordPress</title>
-        <pubTime>2016-09-11T00:34:32.000Z</pubTime>
-        
          
            
              
