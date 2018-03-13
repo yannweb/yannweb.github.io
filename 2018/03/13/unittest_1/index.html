@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="python,blog" />
 
 
 
@@ -81,16 +81,18 @@
 
 
 
-<meta name="description" content="crontab 没起作用，还是通过php环境运行的，排查花了不少时间，环境变量很重要">
+<meta name="description" content="测试基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="crontab">
-<meta property="og:url" content="http://iamyann.com/2015/05/06/crontab/index.html">
+<meta property="og:title" content="yann学长的运维开发指南08">
+<meta property="og:url" content="http://iamyann.com/2018/03/13/unittest_1/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="crontab 没起作用，还是通过php环境运行的，排查花了不少时间，环境变量很重要">
-<meta property="og:updated_time" content="2016-09-22T13:31:37.000Z">
+<meta property="og:description" content="测试基础">
+<meta property="og:image" content="http://hero.iamyann.com/20180313174437.png">
+<meta property="og:updated_time" content="2018-03-13T10:36:34.476Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="crontab">
-<meta name="twitter:description" content="crontab 没起作用，还是通过php环境运行的，排查花了不少时间，环境变量很重要">
+<meta name="twitter:title" content="yann学长的运维开发指南08">
+<meta name="twitter:description" content="测试基础">
+<meta name="twitter:image" content="http://hero.iamyann.com/20180313174437.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2015/05/06/crontab/"/>
+  <link rel="canonical" href="http://iamyann.com/2018/03/13/unittest_1/"/>
 
 
 
 
 
-  <title>crontab | yann的小站</title>
+  <title>yann学长的运维开发指南08 | yann的小站</title>
   
 
 
@@ -233,7 +235,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iamyann.com/2015/05/06/crontab/">
+    <link itemprop="mainEntityOfPage" href="http://iamyann.com/2018/03/13/unittest_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yann Cao">
@@ -250,7 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">crontab</h1>
+          <h1 class="post-title" itemprop="name headline">yann学长的运维开发指南08</h1>
         
 
         <div class="post-meta">
@@ -262,8 +264,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-05-06T10:36:46+00:00">
-                2015-05-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-13T17:51:09+00:00">
+                2018-03-13
               </time>
             
 
@@ -285,8 +287,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工作细节/" itemprop="url" rel="index">
-                    <span itemprop="name">工作细节</span>
+                  <a href="/categories/运维开发/" itemprop="url" rel="index">
+                    <span itemprop="name">运维开发</span>
                   </a>
                 </span>
 
@@ -304,8 +306,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2015/05/06/crontab/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2015/05/06/crontab/" itemprop="commentsCount"></span>
+                <a href="/2018/03/13/unittest_1/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/03/13/unittest_1/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -318,6 +320,10 @@
 
           
 
+          
+              <div class="post-description">
+                  测试基础
+              </div>
           
 
         </div>
@@ -333,7 +339,24 @@
       
 
       
-        <p>crontab 没起作用，还是通过php环境运行的，排查花了不少时间，环境变量很重要</p>
+        <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>目前的进度及后续的课程<br><img src="http://hero.iamyann.com/20180313174437.png" alt="http://hero.iamyann.com/20180313174437.png"><br><a id="more"></a></p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>具体内容如下:</p>
+<blockquote>
+<ul>
+<li>构造测试用的函数</li>
+<li>测试概念</li>
+<li>测试通过</li>
+<li>测试不通过</li>
+</ul>
+</blockquote>
+<h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><p>一般来说, 测试代码和程序代码是分开的, 测试代码引入程序的函数, 并测试是否能获得既定值.<br>name_function.py      函数<br>names.py              使用函数<br>test_name<em>function.py 测试(文件名需要以test</em> 开头)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ cat name_function.py</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_formatted_name</span><span class="params">(first, last)</span>:</span></div><div class="line">    <span class="string">"""Generate a neatly formatted full name."""</span></div><div class="line">    full_name = first + <span class="string">' '</span> + last</div><div class="line">    <span class="keyword">return</span> full_name.title()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$ cat names.py</div><div class="line"><span class="keyword">from</span> name_function <span class="keyword">import</span> get_formatted_name</div><div class="line">print(<span class="string">"Enter 'q' at any time to quit."</span>)</div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    first = input(<span class="string">"\nPlease give me a first name: "</span>)</div><div class="line">    <span class="keyword">if</span> first == <span class="string">'q'</span>:</div><div class="line">        <span class="keyword">break</span></div><div class="line">    last = input(<span class="string">"Please give me a last name: "</span>)</div><div class="line">    <span class="keyword">if</span> last == <span class="string">'q'</span>:</div><div class="line">        <span class="keyword">break</span></div><div class="line"></div><div class="line">    formatted_name = get_formatted_name(first, last)</div><div class="line">    print(<span class="string">"\tNeatly formatted name: "</span> + formatted_name + <span class="string">'.'</span>)</div></pre></td></tr></table></figure>
+<h4 id="测试函数"><a href="#测试函数" class="headerlink" title="测试函数"></a>测试函数</h4><p>先照着描一个测试代码出来,其实后面用起来,也是照着描的^^:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">$ cat test_name_function.py</div><div class="line"><span class="keyword">import</span> unittest</div><div class="line"><span class="keyword">from</span> name_function <span class="keyword">import</span> get_formatted_name</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NamesTestCase</span><span class="params">(unittest.TestCase)</span>:</span></div><div class="line">    <span class="string">"""test name_function.py"""</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_first_last_name</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="string">"""get Janis Joplin?"""</span></div><div class="line">        formatted_name = get_formatted_name(<span class="string">'janis'</span>, <span class="string">'joplin'</span>)</div><div class="line">        self.assertEqual(formatted_name, <span class="string">'Janis Joplin'</span>)</div><div class="line"></div><div class="line">unittest.main()</div><div class="line"></div><div class="line"></div><div class="line">$ python test_name_function.py</div><div class="line">.</div><div class="line">----------------------------------------------------------------------</div><div class="line">Ran <span class="number">1</span> test <span class="keyword">in</span> <span class="number">0.000</span>s</div><div class="line"></div><div class="line">OK</div></pre></td></tr></table></figure>
+<h4 id="测试失败"><a href="#测试失败" class="headerlink" title="测试失败"></a>测试失败</h4><p>修改一下函数代码, 看一下测试不通过是什么样子</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">vi name_function.py</div><div class="line"><span class="comment">#full_name = first + ' ' + middle + ' ' + last$</span></div><div class="line"></div><div class="line"></div><div class="line">$ python test_name_function.py</div><div class="line">E</div><div class="line">======================================================================</div><div class="line">ERROR: test_first_last_name (__main__.NamesTestCase)</div><div class="line">get Janis Joplin?</div><div class="line">----------------------------------------------------------------------</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"test_name_function.py"</span>, line 9, <span class="keyword">in</span> test_first_last_name</div><div class="line">    formatted_name = get_formatted_name(<span class="string">'janis'</span>, <span class="string">'joplin'</span>)</div><div class="line">TypeError: get_formatted_name() missing 1 required positional argument: <span class="string">'last'</span></div><div class="line"></div><div class="line">----------------------------------------------------------------------</div><div class="line">Ran 1 <span class="built_in">test</span> <span class="keyword">in</span> 0.001s</div><div class="line"></div><div class="line">FAILED (errors=1)</div></pre></td></tr></table></figure>
+<h3 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h3><p>今天是第一次尝试,出了很多疏漏,下次争取做的好一点,谢谢观看</p>
 
       
     </div>
@@ -351,7 +374,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -364,8 +387,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/05/05/zentao-explain/" rel="next" title="禅道 禅知 然知">
-                <i class="fa fa-chevron-left"></i> 禅道 禅知 然知
+              <a href="/2018/03/10/unittest/" rel="next" title="yann学长的运维开发指南07">
+                <i class="fa fa-chevron-left"></i> yann学长的运维开发指南07
               </a>
             
           </div>
@@ -373,10 +396,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/05/08/domain-name/" rel="prev" title="域名">
-                域名 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -433,8 +452,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -503,6 +531,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#说明"><span class="nav-number">1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">2.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数"><span class="nav-number">2.1.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试函数"><span class="nav-number">2.2.</span> <span class="nav-text">测试函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试失败"><span class="nav-number">2.3.</span> <span class="nav-text">测试失败</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预告"><span class="nav-number">3.</span> <span class="nav-text">预告</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
