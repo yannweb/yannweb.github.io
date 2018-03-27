@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://iamyann.com/2018/03/27/django-1/</loc>
+    
+    <lastmod>2018-03-27T15:33:23.500Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://iamyann.com/2018/03/22/unittest_4/</loc>
     
     <lastmod>2018-03-22T11:44:25.853Z</lastmod>
