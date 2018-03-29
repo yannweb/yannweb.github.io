@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="tmux,效率," />
+  <meta name="keywords" content="python,blog" />
 
 
 
@@ -81,16 +81,19 @@
 
 
 
-<meta name="description" content="又用了一段时间tmux我觉得面板功能很好用,不足之处就是如果ssh的话,要ssh2次先用tmux new -s xx 建立会话用 C-b % 开两个面板然后用 C-b M-3和1切换,以维持多窗口和最大视野 (M=alt)如果用大屏幕,也可以奢侈一点开4个面板, C-b x关闭需要解决的是屏幕移动，用过，又忘了">
+<meta name="description" content="django部署">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开始使用tmux1">
-<meta property="og:url" content="http://iamyann.com/2015/06/03/tmux-short-key/index.html">
+<meta property="og:title" content="yann学长的运维开发指南14">
+<meta property="og:url" content="http://iamyann.com/2018/03/29/django-2/index.html">
 <meta property="og:site_name" content="yann的小站">
-<meta property="og:description" content="又用了一段时间tmux我觉得面板功能很好用,不足之处就是如果ssh的话,要ssh2次先用tmux new -s xx 建立会话用 C-b % 开两个面板然后用 C-b M-3和1切换,以维持多窗口和最大视野 (M=alt)如果用大屏幕,也可以奢侈一点开4个面板, C-b x关闭需要解决的是屏幕移动，用过，又忘了">
-<meta property="og:updated_time" content="2016-09-22T13:31:37.000Z">
+<meta property="og:description" content="django部署">
+<meta property="og:image" content="http://www.iamyann.com/images/20180327135914.png">
+<meta property="og:image" content="http://hero.iamyann.com/blog_webchat.jpg">
+<meta property="og:updated_time" content="2018-03-29T12:49:56.852Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开始使用tmux1">
-<meta name="twitter:description" content="又用了一段时间tmux我觉得面板功能很好用,不足之处就是如果ssh的话,要ssh2次先用tmux new -s xx 建立会话用 C-b % 开两个面板然后用 C-b M-3和1切换,以维持多窗口和最大视野 (M=alt)如果用大屏幕,也可以奢侈一点开4个面板, C-b x关闭需要解决的是屏幕移动，用过，又忘了">
+<meta name="twitter:title" content="yann学长的运维开发指南14">
+<meta name="twitter:description" content="django部署">
+<meta name="twitter:image" content="http://www.iamyann.com/images/20180327135914.png">
 
 
 
@@ -120,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://iamyann.com/2015/06/03/tmux-short-key/"/>
+  <link rel="canonical" href="http://iamyann.com/2018/03/29/django-2/"/>
 
 
 
 
 
-  <title>开始使用tmux1 | yann的小站</title>
+  <title>yann学长的运维开发指南14 | yann的小站</title>
   
 
 
@@ -233,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iamyann.com/2015/06/03/tmux-short-key/">
+    <link itemprop="mainEntityOfPage" href="http://iamyann.com/2018/03/29/django-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yann Cao">
@@ -250,7 +253,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">开始使用tmux1</h1>
+          <h1 class="post-title" itemprop="name headline">yann学长的运维开发指南14</h1>
         
 
         <div class="post-meta">
@@ -262,8 +265,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-06-03T02:46:12+00:00">
-                2015-06-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-29T20:06:09+00:00">
+                2018-03-29
               </time>
             
 
@@ -285,8 +288,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工作细节/" itemprop="url" rel="index">
-                    <span itemprop="name">工作细节</span>
+                  <a href="/categories/运维开发/" itemprop="url" rel="index">
+                    <span itemprop="name">运维开发</span>
                   </a>
                 </span>
 
@@ -304,8 +307,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2015/06/03/tmux-short-key/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2015/06/03/tmux-short-key/" itemprop="commentsCount"></span>
+                <a href="/2018/03/29/django-2/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/03/29/django-2/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -318,6 +321,10 @@
 
           
 
+          
+              <div class="post-description">
+                  django部署
+              </div>
           
 
         </div>
@@ -333,7 +340,35 @@
       
 
       
-        <p>又用了一段时间tmux<br>我觉得面板功能很好用,不足之处就是如果ssh的话,要ssh2次<br>先用tmux new -s xx 建立会话<br>用 C-b % 开两个面板<br>然后用 C-b M-3和1切换,以维持多窗口和最大视野 (M=alt)<br>如果用大屏幕,也可以奢侈一点开4个面板, C-b x关闭<br>需要解决的是屏幕移动，用过，又忘了</p>
+        <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>目前的进度及后续的课程<br><img src="http://www.iamyann.com/images/20180327135914.png" alt="http://www.iamyann.com/images/20180327135914.png"><br><a id="more"></a></p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>具体内容如下:</p>
+<blockquote>
+<ul>
+<li>基础知识</li>
+<li>组件功能</li>
+<li>框架结构</li>
+</ul>
+</blockquote>
+<h4 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h4><p>基础知识其实没啥好写的,不过是网上抄而已</p>
+<p>接百度百科的说法:一个开放源代码的Web应用框架，由Python语言编写……</p>
+<p>优点：一个大而全的框架</p>
+<h4 id="组件功能"><a href="#组件功能" class="headerlink" title="组件功能"></a>组件功能</h4><p><strong>urls.py</strong><br>网址入口，访问一个网址就对应一个函数</p>
+<p><strong>views.py</strong><br>页面渲染</p>
+<p><strong>models.py</strong><br>处理数据库</p>
+<p><strong>forms.py</strong><br>表单，用户在浏览器上输入数据提交</p>
+<p><strong>templates 文件夹</strong><br>templates中的Html模板,给视图模块使用</p>
+<p><strong>admin.py</strong><br>后台组件</p>
+<p><strong>settings.py</strong><br>Django 的设置，配置文件，比如 DEBUG 的开关，静态文件的位置等。</p>
+<h4 id="框架结构"><a href="#框架结构" class="headerlink" title="框架结构"></a>框架结构</h4><pre><code>        浏览器
+  HTTP请求  返回HTTP          Manage
+        WSGI                 Settings
+        Urls                 Apps
+        Views                Tests
+Models  模板语言    Templates
+数据库               Static
+</code></pre><p>其实网上有现成的图片,不过自己打一次更熟悉<br>markdown其实是可以画图的,不过我不太熟悉,有机会再更新吧</p>
+<h3 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h3><p>简单说明了一下django的组件及结构,下次会分析两个示例程序的文件结构,以加深印象.</p>
+<p><img src="http://hero.iamyann.com/blog_webchat.jpg" alt="http://hero.iamyann.com/blog_webchat.jpg"></p>
 
       
     </div>
@@ -351,9 +386,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/tmux/" rel="tag"># tmux</a>
-          
-            <a href="/tags/效率/" rel="tag"># 效率</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -366,8 +399,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/06/01/gzip/" rel="next" title="gzip">
-                <i class="fa fa-chevron-left"></i> gzip
+              <a href="/2018/03/27/django-1/" rel="next" title="yann学长的运维开发指南13">
+                <i class="fa fa-chevron-left"></i> yann学长的运维开发指南13
               </a>
             
           </div>
@@ -375,10 +408,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/06/03/nagios/" rel="prev" title="nagios">
-                nagios <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -435,8 +464,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -505,6 +543,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#说明"><span class="nav-number">1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">2.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础知识"><span class="nav-number">2.1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#组件功能"><span class="nav-number">2.2.</span> <span class="nav-text">组件功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#框架结构"><span class="nav-number">2.3.</span> <span class="nav-text">框架结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预告"><span class="nav-number">3.</span> <span class="nav-text">预告</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
